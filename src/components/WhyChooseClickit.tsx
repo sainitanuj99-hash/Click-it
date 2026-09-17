@@ -159,11 +159,11 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             {/* Photo Container */}
             <div className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
               <img 
-                src="/personal-delivery.png" 
+                src="/images/individuals.jpg" 
                 onError={(e) => {
                   const target = e.currentTarget;
-                  if (target.src !== '/images/house-shifting.jpg') {
-                    target.src = '/images/house-shifting.jpg';
+                  if (target.src !== 'https://plain-apac-prod-public.komododecks.com/202609/17/pY4EZPeZUXM3ar0wx8ZV/image.jpg') {
+                    target.src = 'https://plain-apac-prod-public.komododecks.com/202609/17/pY4EZPeZUXM3ar0wx8ZV/image.jpg';
                   }
                 }}
                 alt="Clickit express delivery courier delivering package to customer"
