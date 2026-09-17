@@ -89,8 +89,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'zap',
       title: 'Hyperlocal 2-Wheeler Express Courier',
       subtitle: 'Fastest doorstep pickup in 10-15 mins for documents, keys, parcels & food orders.',
-      imageUrl: 'https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?auto=format&fit=crop&q=85&w=1400',
-      fallbackUrl: 'https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&q=85&w=1400',
+      imageUrl: '/images/2w-express.jpg',
+      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/bhfnPun1VOcfo2hy95Ky/image.jpg',
       eta: '10–15 Min Pickup',
       liveBadge: '⚡ 320+ Active Bikers',
       highlightPill: 'Instant Bike Dispatch • ₹40 Base'
