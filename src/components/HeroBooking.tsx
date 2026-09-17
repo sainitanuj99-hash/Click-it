@@ -115,8 +115,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'store',
       title: 'Wholesale Drops & Store Restocking',
       subtitle: 'Multi-stop delivery for shops, traders, distributors, textile & hardware merchants.',
-      imageUrl: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&q=85&w=1400',
-      fallbackUrl: 'https://i.postimg.cc/QdwnXXVp/Chat-GPT-Image-Aug-22-2026-01-14-30-PM.png',
+      imageUrl: '/images/retailers-wholesalers.jpg',
+      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/Bc7pnwwZMZwUNSmxyGaA/image.jpg',
       eta: 'Instant Dispatch',
       liveBadge: '🛒 Bulk GST Invoicing',
       highlightPill: 'Multi-Stop Drop Routes'
