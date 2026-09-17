@@ -102,8 +102,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'home',
       title: 'Stress-Free House & Room Shifting',
       subtitle: 'Sofas, beds, appliances, carton packaging & verified loading helper crews.',
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=85&w=1400',
-      fallbackUrl: 'https://i.postimg.cc/7LSXw0FP/Chat-GPT-Image-Aug-22-2026-02-44-14-PM.png',
+      imageUrl: '/images/house-shifting.jpg',
+      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/dmTDhWzQlEurfK9IKr7Z/image.jpg',
       eta: 'Immediate / Scheduled',
       liveBadge: '📦 100% Zero-Damage',
       highlightPill: 'Trained Helper & Labor Support'

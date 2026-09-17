@@ -162,8 +162,8 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                 src="/personal-delivery.png" 
                 onError={(e) => {
                   const target = e.currentTarget;
-                  if (target.src !== 'https://i.postimg.cc/7LSXw0FP/Chat-GPT-Image-Aug-22-2026-02-44-14-PM.png') {
-                    target.src = 'https://i.postimg.cc/7LSXw0FP/Chat-GPT-Image-Aug-22-2026-02-44-14-PM.png';
+                  if (target.src !== '/images/house-shifting.jpg') {
+                    target.src = '/images/house-shifting.jpg';
                   }
                 }}
                 alt="Clickit express delivery courier delivering package to customer"
