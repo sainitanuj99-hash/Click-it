@@ -38,7 +38,7 @@ export const CustomerTestimonials: React.FC = () => {
       city: 'Jagatpura, Jaipur',
       quote: 'Great service for our business deliveries from Mansarovar to Jagatpura. The multi-stop drop option and instant digital e-POD saved us 35% in monthly courier expenses.',
       rating: 5,
-      avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=300',
+      avatar: '/images/ankit-verma.jpg',
       tripsDone: '650+ Orders'
     },
     {
@@ -192,6 +192,12 @@ export const CustomerTestimonials: React.FC = () => {
                   src={item.avatar}
                   alt={item.name}
                   className="w-12 h-12 rounded-2xl object-cover border-2 border-orange-500/30 shadow-md"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Shubham_Bhati_2026.jpg') {
+                      target.src = 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Shubham_Bhati_2026.jpg';
+                    }
+                  }}
                 />
                 <div className="min-w-0">
                   <h4 className="text-sm font-bold text-slate-900 truncate">{item.name}</h4>

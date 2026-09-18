@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 450" width="1400" height="450">
+  <g transform="translate(60, 50)">
+    <!-- ==================== C ==================== -->
+    <path d="M 215 220 C 215 315 160 365 95 365 C 24 365 -25 305 -25 210 C -25 115 28 55 102 55 C 165 55 210 102 212 165 L 155 165 C 152 125 128 98 100 98 C 55 98 25 145 25 210 C 25 275 55 322 100 322 C 142 322 165 282 168 220 Z" 
+          fill="#FF5D00" />
+
+    <!-- ==================== l ==================== -->
+    <rect x="250" y="58" width="52" height="304" rx="4" fill="#FF5D00" />
+
+    <!-- ==================== i (Click) ==================== -->
+    <!-- stem -->
+    <rect x="335" y="150" width="52" height="212" rx="4" fill="#FF5D00" />
+    <!-- Solid Orange Circular Dot -->
+    <circle cx="361" cy="92" r="30" fill="#FF5D00" />
+
+    <!-- ==================== c ==================== -->
+    <path d="M 580 225 C 580 312 535 365 480 365 C 418 365 376 312 376 256 C 376 195 420 145 481 145 C 536 145 577 190 579 235 L 528 235 C 525 206 505 186 481 186 C 446 186 425 220 425 256 C 425 294 446 324 481 324 C 505 324 526 304 528 275 L 580 275 Z" 
+          fill="#FF5D00" />
+
+    <!-- ==================== k ==================== -->
+    <rect x="612" y="58" width="52" height="304" rx="4" fill="#FF5D00" />
+    <!-- Top diagonal arm -->
+    <polygon points="650,250 745,150 812,150 695,272" fill="#FF5D00" />
+    <!-- Bottom diagonal leg -->
+    <polygon points="685,255 780,362 848,362 725,232" fill="#FF5D00" />
+
+    <!-- ==================== i (it) ==================== -->
+    <!-- stem: white with crisp subtle outline -->
+    <rect x="875" y="150" width="52" height="212" rx="4" 
+          fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2.5" />
+    
+    <!-- Hollow Ring Dot: white ring with subtle border, transparent inside -->
+    <circle cx="901" cy="92" r="29" 
+            fill="none" stroke="#FFFFFF" stroke-width="14" />
+    <circle cx="901" cy="92" r="36" 
+            fill="none" stroke="#D1D5DB" stroke-width="1.5" />
+    <circle cx="901" cy="92" r="22" 
+            fill="none" stroke="#D1D5DB" stroke-width="1.5" />
+
+    <!-- ==================== t (it) ==================== -->
+    <g transform="translate(960, 85)">
+      <!-- Main body of t with crossbar and bottom curve -->
+      <path d="M 52 0 L 52 65 L 108 65 L 108 106 L 52 106 L 52 215 C 52 252 70 274 110 274 C 122 274 133 271 138 268 L 138 310 C 129 314 114 316 98 316 C 45 316 8 285 8 224 L 8 106 L -16 106 L -16 65 L 8 65 L 8 0 Z" 
+            fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2.5" stroke-linejoin="round" />
+    </g>
+  </g>
+</svg>

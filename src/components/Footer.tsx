@@ -29,8 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
             <ClickitWordmark 
               className="group-hover:scale-[1.01] transition-transform duration-300"
               textColorIt="white"
-              showTrailingDot={true}
-              animatedPin={false}
+              showTrailingDot={false}
             />
           </h1>
         </div>

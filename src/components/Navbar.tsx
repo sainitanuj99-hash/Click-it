@@ -84,12 +84,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           {/* Integrated Logo Wordmark & Rotating Vehicle Typography */}
           <div className="flex items-baseline gap-2 sm:gap-2.5 select-none">
-            {/* Clickit Wordmark with Monogram Tittle on 'i' and Trailing Brand Dot */}
+            {/* Clickit Official Default Wordmark */}
             <ClickitWordmark 
               className="text-2xl sm:text-[30px] group-hover:opacity-95 transition-opacity"
               textColorIt="white"
-              showTrailingDot={true}
-              animatedPin={false}
+              showTrailingDot={false}
             />
 
             {/* Seamless Schbang-Style Typographic Slash */}

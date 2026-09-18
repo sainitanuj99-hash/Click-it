@@ -70,95 +70,88 @@ export interface WordmarkProps {
   textColorIt?: 'white' | 'dark' | 'orange';
   showTrailingDot?: boolean;
   animatedPin?: boolean;
+  useImage?: boolean;
 }
 
 /**
- * Clickit Wordmark with Custom Monogram Tittle (Dot) and Trailing Accent Dot
- * - 'i' after 'l' uses the C-pin location monogram instead of standard dot
- * - Trailing brand dot after the logo (Clickit.)
+ * Clickit Official Default Wordmark:
+ * - "Click" in solid brand orange (#FF5D00) with solid circular dot on 'i'
+ * - "it" in white (or dark) with signature hollow ring dot on 'i'
+ * - Perfectly matches user's official default logo.png
  */
 export const ClickitWordmark: React.FC<WordmarkProps> = ({
   className = '',
   textColorIt = 'white',
-  showTrailingDot = true,
-  animatedPin = false,
+  showTrailingDot = false,
+  useImage = false,
 }) => {
-  const pinContent = (
-    <span
-      className="absolute bottom-[0.53em] left-1/2 -translate-x-1/2 pointer-events-none drop-shadow-[0_2px_10px_rgba(255,93,0,0.6)]"
-      style={{
-        width: '0.34em',
-        height: '0.45em',
-      }}
-    >
-      <svg
-        viewBox="13 3 74 98"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full overflow-visible"
-      >
-        {/* Inner bright white core of C */}
-        <circle cx="50" cy="40" r="11" fill="#FFFFFF" />
-        {/* Outer C-Pin pointing directly downward at the 'i' stem */}
-        <path
-          d="M 82.88 25.36 A 36 36 0 1 0 21.2 61.6 L 50 100 L 78.8 61.6 A 36 36 0 0 0 81.79 56.9 L 66.77 48.92 A 19 19 0 1 1 67.35 32.27 Z"
-          fill="#FF5D00"
-        />
-      </svg>
-    </span>
-  );
+  if (useImage) {
+    return (
+      <img
+        src="/logo.png"
+        alt="Clickit"
+        className={`inline-block select-none object-contain ${className}`}
+      />
+    );
+  }
 
   return (
     <span
       className={`font-['Poppins',sans-serif] font-bold tracking-[-0.025em] leading-none inline-flex items-baseline select-none ${className}`}
     >
-      {/* "Click" Section with Monogram as Dot over the 'i' */}
+      {/* "Click" Section: Solid Orange with solid circular dot on 'i' */}
       <span className="text-[#FF5D00] inline-flex items-baseline">
-        <span>Cl</span>
-        
-        {/* Custom 'i' after 'l': stem on baseline with monogram C-pin as its tittle (dot) */}
+        Click
+      </span>
+
+      {/* "it" Section: White (or dark) with hollow ring dot on 'i' */}
+      <span
+        className={`inline-flex items-baseline ${
+          textColorIt === 'white'
+            ? 'text-white'
+            : textColorIt === 'orange'
+            ? 'text-[#FF5D00]'
+            : 'text-zinc-900'
+        }`}
+      >
+        {/* Custom 'i' in "it" with hollow ring dot */}
         <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
-          {animatedPin ? (
-            <motion.span
-              animate={{ y: [0, -2, 0] }}
-              transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="contents"
-            >
-              {pinContent}
-            </motion.span>
-          ) : (
-            pinContent
-          )}
-          {/* Vertical stem of 'i', perfectly matched with Poppins Bold x-height */}
+          {/* Hollow ring dot: circular ring with transparent center */}
           <span
-            className="inline-block bg-[#FF5D00] rounded-[0.015em]"
+            className={`absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] ${
+              textColorIt === 'white'
+                ? 'border-white bg-transparent'
+                : textColorIt === 'orange'
+                ? 'border-[#FF5D00] bg-transparent'
+                : 'border-zinc-900 bg-transparent'
+            }`}
+            style={{
+              width: '0.155em',
+              height: '0.155em',
+            }}
+          />
+          {/* Stem of 'i' */}
+          <span
+            className={`inline-block rounded-[0.015em] ${
+              textColorIt === 'white'
+                ? 'bg-white'
+                : textColorIt === 'orange'
+                ? 'bg-[#FF5D00]'
+                : 'bg-zinc-900'
+            }`}
             style={{
               width: '0.135em',
               height: '0.52em',
             }}
           />
         </span>
-
-        <span>ck</span>
+        <span>t</span>
       </span>
 
-      {/* "it" Section */}
-      <span
-        className={
-          textColorIt === 'white'
-            ? 'text-white'
-            : textColorIt === 'orange'
-            ? 'text-[#FF5D00]'
-            : 'text-zinc-900'
-        }
-      >
-        it
-      </span>
-
-      {/* Trailing Brand Dot after the logo */}
+      {/* Optional Trailing Brand Dot (defaults to false to match logo.png) */}
       {showTrailingDot && (
         <span
-          className="inline-block rounded-full bg-[#FF5D00] align-baseline shrink-0 shadow-[0_0_8px_rgba(255,93,0,0.6)]"
+          className="inline-block rounded-full bg-[#FF5D00] align-baseline shrink-0"
           style={{
             width: '0.15em',
             height: '0.15em',
@@ -230,8 +223,7 @@ export const ClickitLogo: React.FC<LogoProps> = ({
           <ClickitWordmark
             className={textSizeMap[size]}
             textColorIt={textColor === 'mixed' || textColor === 'white' ? 'white' : textColor === 'orange' ? 'orange' : 'dark'}
-            showTrailingDot={true}
-            animatedPin={animated}
+            showTrailingDot={false}
           />
         ) : (
           <span className={`font-['Poppins',sans-serif] font-bold leading-none ${textSizeMap[size]} transition-all`}>
