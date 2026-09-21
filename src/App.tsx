@@ -3,22 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroBooking } from './components/HeroBooking';
 import { MobileAppBanner } from './components/MobileAppBanner';
-import { EnterpriseQuoteModal } from './components/EnterpriseQuoteModal';
 import { WhyChooseClickit } from './components/WhyChooseClickit';
 import { FAQSection } from './components/FAQSection';
 import { CustomerTestimonials } from './components/CustomerTestimonials';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsAndConditions from './pages/TermsAndConditions';
-import AboutUs from './pages/AboutUs';
-import HelpSupport from './pages/HelpSupport';
-import DriverAgreement from './pages/DriverAgreement';
-import DriverFAQs from './pages/DriverFAQs';
-import { PartnerModal } from './components/PartnerModal';
 import { Footer } from './components/Footer';
+
+// Lazy-loaded secondary pages & modals for optimal initial page-load performance
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const HelpSupport = lazy(() => import('./pages/HelpSupport'));
+const DriverAgreement = lazy(() => import('./pages/DriverAgreement'));
+const DriverFAQs = lazy(() => import('./pages/DriverFAQs'));
+const EnterpriseQuoteModal = lazy(() => import('./components/EnterpriseQuoteModal').then(m => ({ default: m.EnterpriseQuoteModal })));
+const PartnerModal = lazy(() => import('./components/PartnerModal').then(m => ({ default: m.PartnerModal })));
 
 // Helper to determine initial tab from URL pathname, hash, or query param
 const getTabFromLocation = (): string => {
@@ -185,29 +187,31 @@ export default function App() {
             </>
           )}
 
-          {(activeTab === 'about-us' || activeTab === 'about') && (
-            <AboutUs onNavigate={navigateByPath} />
-          )}
+          <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-zinc-400">Loading...</div>}>
+            {(activeTab === 'about-us' || activeTab === 'about') && (
+              <AboutUs onNavigate={navigateByPath} />
+            )}
 
-          {(activeTab === 'driver-agreement' || activeTab === 'driver-terms') && (
-            <DriverAgreement onNavigate={navigateByPath} />
-          )}
+            {(activeTab === 'driver-agreement' || activeTab === 'driver-terms') && (
+              <DriverAgreement onNavigate={navigateByPath} />
+            )}
 
-          {(activeTab === 'driver-faqs' || activeTab === 'driver-faq') && (
-            <DriverFAQs onNavigate={navigateByPath} />
-          )}
+            {(activeTab === 'driver-faqs' || activeTab === 'driver-faq') && (
+              <DriverFAQs onNavigate={navigateByPath} />
+            )}
 
-          {activeTab === 'privacy-policy' && (
-            <PrivacyPolicy onNavigate={navigateByPath} />
-          )}
+            {activeTab === 'privacy-policy' && (
+              <PrivacyPolicy onNavigate={navigateByPath} />
+            )}
 
-          {(activeTab === 'terms-and-conditions' || activeTab === 'terms') && (
-            <TermsAndConditions onNavigate={navigateByPath} />
-          )}
+            {(activeTab === 'terms-and-conditions' || activeTab === 'terms') && (
+              <TermsAndConditions onNavigate={navigateByPath} />
+            )}
 
-          {(activeTab === 'help-support' || activeTab === 'help') && (
-            <HelpSupport onNavigate={navigateByPath} />
-          )}
+            {(activeTab === 'help-support' || activeTab === 'help') && (
+              <HelpSupport onNavigate={navigateByPath} />
+            )}
+          </Suspense>
         </main>
 
         {/* 
@@ -254,18 +258,23 @@ export default function App() {
         openPartnerModal={() => setIsPartnerModalOpen(true)}
       />
 
-      {/* Enterprise Rate Quote Modal */}
-      <EnterpriseQuoteModal
-        isOpen={isQuoteModalOpen}
-        onClose={() => setIsQuoteModalOpen(false)}
-        initialCargoDetails={aiAdvisorCargo}
-      />
+      {/* Lazy Modals */}
+      <Suspense fallback={null}>
+        {isQuoteModalOpen && (
+          <EnterpriseQuoteModal
+            isOpen={isQuoteModalOpen}
+            onClose={() => setIsQuoteModalOpen(false)}
+            initialCargoDetails={aiAdvisorCargo}
+          />
+        )}
 
-      {/* Partner Onboarding Modal */}
-      <PartnerModal
-        isOpen={isPartnerModalOpen}
-        onClose={() => setIsPartnerModalOpen(false)}
-      />
+        {isPartnerModalOpen && (
+          <PartnerModal
+            isOpen={isPartnerModalOpen}
+            onClose={() => setIsPartnerModalOpen(false)}
+          />
+        )}
+      </Suspense>
 
     </div>
   );

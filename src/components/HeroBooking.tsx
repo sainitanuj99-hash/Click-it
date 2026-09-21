@@ -300,6 +300,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     src={activeSlide.imageUrl}
                     alt={activeSlide.title}
                     referrerPolicy="no-referrer"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover object-center brightness-[1.03] contrast-[1.06] saturate-[1.14] transition-transform duration-1000 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.currentTarget;
