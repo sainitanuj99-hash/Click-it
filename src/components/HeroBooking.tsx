@@ -120,19 +120,6 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       eta: 'Instant Dispatch',
       liveBadge: '🛒 Bulk GST Invoicing',
       highlightPill: 'Multi-Stop Drop Routes'
-    },
-    {
-      id: 'heavy-freight',
-      category: 'Tata Ace & 8ft Commercial Fleet',
-      tabLabel: 'Heavy Freight',
-      iconType: 'truck',
-      title: 'Heavy Freight & Full Truckload',
-      subtitle: 'Machinery, raw materials, wholesale cartons & pallet freight up to 2.5 Tons.',
-      imageUrl: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=85&w=1400',
-      fallbackUrl: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=85&w=1400',
-      eta: 'Commercial Haulage',
-      liveBadge: '🚛 750kg - 2500kg',
-      highlightPill: 'Live GPS Pin & Cargo Insurance'
     }
   ], []);
 
@@ -202,7 +189,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       id: 'bolero',
       illustrationId: 'pickup-8ft',
       name: '8ft Pickup / Bolero',
-      badge: 'Heavy Freight',
+      badge: 'High Capacity',
       capacity: 'Up to 1,500 kg',
       payloadKg: 1500,
       eta: '16 mins',
@@ -419,7 +406,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 </div>
 
                 {/* Sleek Segmented Slide Bars with Icons */}
-                <div className="grid grid-cols-4 gap-2 pt-1">
+                <div className="grid grid-cols-3 gap-2.5 pt-1">
                   {imageSlides.map((slide, idx) => {
                     const isActive = currentSlideIndex === idx;
                     const IconComponent = 

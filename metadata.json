@@ -1,6 +1,6 @@
 {
   "name": "Clickit - Intracity Logistics & Delivery Network",
-  "description": "India's smartest delivery network for instant bike, auto, pickup, mini truck, and heavy freight bookings with real-time tracking.",
+  "description": "India's smartest on-demand intracity delivery network for instant bike, 3-wheeler loader, Tata Ace, and pickup truck bookings with real-time GPS tracking.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

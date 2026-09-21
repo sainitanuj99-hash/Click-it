@@ -151,7 +151,7 @@ export const VEHICLE_FLEET: VehicleType[] = [
     bodyType: 'Closed Container',
     idealFor: ['Full Factory Dispatches', 'Pan-India Enterprise Freight', 'Automotive Assemblies', 'Bulk Raw Material'],
     whatFitsInside: ['10-12 Industrial Freight Pallets', 'Automotive Spare Parts & Engines', 'Bulk Manufacturing Goods', 'Up to 250 Commercial Boxes'],
-    badge: 'Heavy Freight',
+    badge: 'Enterprise Cargo',
     sizeCategoryTag: '19ft Container',
     popularForB2B: true,
   },

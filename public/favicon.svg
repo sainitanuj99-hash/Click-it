@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="clickitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6200" />
+      <stop offset="100%" stop-color="#EA4E00" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded squircle badge for mobile icons, search engines & home screen shortcuts -->
+  <rect width="512" height="512" rx="115" fill="url(#clickitGrad)" />
+  
+  <!-- Centered White Clickit C-Location Pin -->
+  <g transform="translate(91, 79) scale(3.4)">
+    <!-- Outer Location Pin C in Pure White -->
+    <path
+      d="M 82.88 25.36 A 36 36 0 1 0 21.2 61.6 L 50 100 L 78.8 61.6 A 36 36 0 0 0 81.79 56.9 L 66.77 48.92 A 19 19 0 1 1 67.35 32.27 Z"
+      fill="#FFFFFF"
+    />
+    <!-- Inner Core Cutout matching brand orange -->
+    <circle cx="50" cy="40" r="11" fill="#EA4E00" />
+  </g>
+</svg>
