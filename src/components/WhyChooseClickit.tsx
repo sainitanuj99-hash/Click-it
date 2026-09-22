@@ -54,10 +54,10 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             <span>Tailored for Every Need</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 tracking-tight">
-            Built for everyone
+            Built for Everyone in Jaipur
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 font-medium">
-            Whether you run a shop or need an urgent delivery
+            Whether you run a local business or need instant personal delivery across Jaipur
           </p>
         </div>
 

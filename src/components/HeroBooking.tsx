@@ -264,16 +264,16 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200/90 text-xs font-bold text-[#FF5D00] shadow-md shadow-orange-500/5"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#FF5D00]" />
-                <span className="tracking-wide uppercase text-[11px] font-black">India's On-Demand Logistics Network</span>
+                <span className="tracking-wide uppercase text-[11px] font-black">Clickit Jaipur • On-Demand Fleet</span>
                 <span className="text-zinc-300">•</span>
                 <span className="text-emerald-600 font-bold text-[11px] flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  10–15 Min Pickup
+                  10–15 Min Pickup in Jaipur
                 </span>
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.12]">
-                Deliver Anything In Your City. <br />
+                Clickit Jaipur — Deliver Anything In Your City. <br />
                 <span className="text-[#FF5D00] drop-shadow-[0_2px_18px_rgba(255,93,0,0.22)]">Fast, Safe &amp; On-Demand.</span>
               </h1>
             </div>

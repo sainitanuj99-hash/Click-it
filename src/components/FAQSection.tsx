@@ -68,12 +68,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
       category: 'general',
       categoryLabel: 'Booking & Dispatch',
       categoryIcon: Clock,
-      question: 'How quickly does a Clickit driver partner arrive after booking?',
-      answer: 'With our automated hyperlocal dispatch engine, driver partners are typically assigned in under 2 minutes and arrive at your pickup location within 10 to 15 minutes across all covered city zones.',
+      question: 'How quickly does a Clickit driver partner arrive after booking in Jaipur?',
+      answer: 'With our automated hyperlocal dispatch engine, Clickit driver partners arrive at your pickup address in Jaipur within 10 to 15 minutes across Mansarovar, Malviya Nagar, Vaishali Nagar, Sitapura, VKIA, Raja Park, and C-Scheme.',
       points: [
-        'Instant driver allocation powered by real-time proximity matching',
-        'Fully verified drivers with valid commercial licenses and background checks',
-        'Direct driver call and in-app messaging available immediately upon dispatch'
+        'Instant driver allocation powered by real-time proximity matching across Jaipur',
+        'Fully verified drivers with valid commercial licenses and local route knowledge',
+        'Direct driver call and live in-app GPS tracking available immediately upon dispatch'
       ],
       highlight: '10-15 Min Pickup'
     },
