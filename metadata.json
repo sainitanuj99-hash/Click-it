@@ -1,6 +1,6 @@
 {
   "name": "Clickit - Intracity Logistics & Delivery Network",
-  "description": "India's smartest on-demand intracity delivery network for instant bike, 3-wheeler loader, Tata Ace, and pickup truck bookings with real-time GPS tracking.",
+  "description": "Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking and upfront pricing across Jaipur.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

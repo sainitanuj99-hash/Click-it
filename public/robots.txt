@@ -1,3 +1,4 @@
+# Clickit Logistics Robots Policy
 User-agent: *
 Allow: /
 Allow: /favicon.ico
@@ -5,6 +6,7 @@ Allow: /favicon*.png
 Allow: /favicon.svg
 Allow: /apple-touch-icon.png
 Allow: /site.webmanifest
+Allow: /assets/
 
 User-agent: Googlebot
 Allow: /
@@ -12,4 +14,14 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 Sitemap: https://www.justclickit.in/sitemap.xml
+Host: https://www.justclickit.in
