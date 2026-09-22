@@ -15,7 +15,8 @@ import {
   AlertTriangle,
   FileText,
   Headphones,
-  ExternalLink
+  ExternalLink,
+  MapPin
 } from "lucide-react";
 
 interface HelpSupportProps {
@@ -474,6 +475,29 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
               <div className="text-sm font-bold text-white break-all">grievance@justclickit.in</div>
               <p className="text-[11px] text-zinc-500">Statutory IT escalation cell</p>
             </div>
+          </div>
+
+          {/* Registered Office & Google Business Profile (GMB) Verification */}
+          <div className="mt-4 bg-zinc-950/80 p-5 rounded-2xl border border-zinc-800/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-xs text-zinc-400 font-semibold uppercase tracking-wider">Clickit Jaipur Headquarters & Dispatch Center (Google Business Profile)</div>
+                <div className="text-sm font-bold text-white mt-0.5">B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan, India</div>
+                <p className="text-xs text-zinc-500 mt-1">Walk-ins welcome for Driver Onboarding & Enterprise Partner Account Management (Mon–Sat, 9:00 AM – 7:00 PM)</p>
+              </div>
+            </div>
+            <a 
+              href="https://maps.google.com/?q=Clickit+Logistics+Bani+Park+Jaipur" 
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs font-bold text-white transition-all shadow-sm shrink-0"
+            >
+              <span>View on Google Maps</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#FF5D00]" />
+            </a>
           </div>
         </section>
       </div>

@@ -3,7 +3,11 @@ import {
   Linkedin, 
   Instagram, 
   Youtube, 
-  Facebook
+  Facebook,
+  MapPin,
+  Phone,
+  Mail,
+  ExternalLink
 } from 'lucide-react';
 import { ClickitWordmark } from './ClickitLogo';
 
@@ -40,6 +44,40 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
 
       {/* Divider Line Matching Schbang */}
       <div className="w-full border-t border-zinc-800/90 my-2 sm:my-2.5" />
+
+      {/* GMB Verified NAP (Name, Address, Phone) & Google Maps Link for Local Search */}
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-2.5 text-[11px] sm:text-xs text-zinc-400 py-1">
+        <div className="flex items-center gap-1.5 text-center lg:text-left flex-wrap justify-center lg:justify-start">
+          <MapPin className="w-3.5 h-3.5 text-[#FF5D00] shrink-0" />
+          <span>
+            <strong className="text-zinc-200">Clickit Logistics (Jaipur HQ):</strong> B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan
+          </span>
+        </div>
+        <div className="flex items-center gap-3 text-zinc-400 flex-wrap justify-center">
+          <a href="tel:+911414982200" className="hover:text-white transition-colors flex items-center gap-1">
+            <Phone className="w-3 h-3 text-[#FF5D00]" />
+            <span>+91 141 498 2200</span>
+          </a>
+          <span className="text-zinc-700 hidden sm:inline">•</span>
+          <a href="mailto:support@justclickit.in" className="hover:text-white transition-colors flex items-center gap-1">
+            <Mail className="w-3 h-3 text-[#FF5D00]" />
+            <span>support@justclickit.in</span>
+          </a>
+          <span className="text-zinc-700 hidden sm:inline">•</span>
+          <a 
+            href="https://maps.google.com/?q=Clickit+Logistics+Bani+Park+Jaipur" 
+            target="_blank" 
+            rel="noreferrer"
+            className="text-[#FF5D00] hover:underline flex items-center gap-1 font-semibold"
+            title="Clickit on Google Maps"
+          >
+            <span>Google Maps</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+
+      <div className="w-full border-t border-zinc-900 my-1 sm:my-1.5" />
 
       {/* Bottom Row: Socials (Left), Navigation (Center), Copyright (Right) */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-5 text-xs text-zinc-400">
