@@ -48,19 +48,19 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
       {/* GMB Verified NAP (Name, Address, Phone) & Google Maps Link for Local Search */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-2.5 text-[11px] sm:text-xs text-zinc-400 py-1">
         <div className="flex items-center gap-1.5 text-center lg:text-left flex-wrap justify-center lg:justify-start">
-          <MapPin className="w-3.5 h-3.5 text-[#FF5D00] shrink-0" />
+          <MapPin className="w-3.5 h-3.5 text-[#00a6c7] shrink-0" />
           <span>
             <strong className="text-zinc-200">Clickit Logistics (Jaipur HQ):</strong> B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan
           </span>
         </div>
         <div className="flex items-center gap-3 text-zinc-400 flex-wrap justify-center">
           <a href="tel:+911414982200" className="hover:text-white transition-colors flex items-center gap-1">
-            <Phone className="w-3 h-3 text-[#FF5D00]" />
+            <Phone className="w-3 h-3 text-[#00a6c7]" />
             <span>+91 141 498 2200</span>
           </a>
           <span className="text-zinc-700 hidden sm:inline">•</span>
           <a href="mailto:support@justclickit.in" className="hover:text-white transition-colors flex items-center gap-1">
-            <Mail className="w-3 h-3 text-[#FF5D00]" />
+            <Mail className="w-3 h-3 text-[#00a6c7]" />
             <span>support@justclickit.in</span>
           </a>
           <span className="text-zinc-700 hidden sm:inline">•</span>
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
             href="https://maps.google.com/?q=Clickit+Logistics+Bani+Park+Jaipur" 
             target="_blank" 
             rel="noreferrer"
-            className="text-[#FF5D00] hover:underline flex items-center gap-1 font-semibold"
+            className="text-[#00a6c7] hover:underline flex items-center gap-1 font-semibold"
             title="Clickit on Google Maps"
           >
             <span>Google Maps</span>
@@ -126,37 +126,37 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
         <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-5 font-medium text-white/85 text-xs sm:text-[13px]">
           <button 
             onClick={() => setActiveTab('about-us')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             About Us
           </button>
           <button 
             onClick={() => setActiveTab('driver-faqs')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             Driver FAQs
           </button>
           <button 
             onClick={() => setActiveTab('driver-agreement')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             Driver Agreement
           </button>
           <button 
             onClick={() => setActiveTab('help-support')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             Contact
           </button>
           <button 
             onClick={() => setActiveTab('privacy-policy')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             Privacy
           </button>
           <button 
             onClick={() => setActiveTab('terms-and-conditions')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             Terms
           </button>

@@ -34,7 +34,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
       
       {/* 1. Hero Banner */}
       <section className="relative overflow-hidden pt-16 pb-20 border-b border-zinc-800/80 bg-gradient-to-b from-zinc-950 via-[#0E1017] to-[#0B0C0E]">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FF5D00]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#00a6c7]/10 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-orange-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
@@ -44,7 +44,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto">
-            Moving <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5D00] via-orange-400 to-amber-300">Jaipur & India</span> Forward, One Click at a Time.
+            Moving <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00a6c7] via-orange-400 to-amber-300">Jaipur & India</span> Forward, One Click at a Time.
           </h1>
 
           <p className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
@@ -54,7 +54,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
           <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
             <button
               onClick={() => setActiveTab('estimate')}
-              className="bg-[#FF5D00] hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-xl shadow-orange-500/20 transition-all flex items-center gap-2 text-sm"
+              className="bg-[#00a6c7] hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-xl shadow-orange-500/20 transition-all flex items-center gap-2 text-sm"
             >
               Book Delivery Now <ArrowRight className="w-4 h-4" />
             </button>
@@ -72,7 +72,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#12141C] border border-zinc-800 p-6 rounded-2xl shadow-2xl">
           <div className="p-4 border-r border-zinc-800/80 last:border-none text-center">
-            <p className="text-2xl sm:text-4xl font-extrabold text-[#FF5D00] font-mono">50,000+</p>
+            <p className="text-2xl sm:text-4xl font-extrabold text-[#00a6c7] font-mono">50,000+</p>
             <p className="text-xs text-zinc-400 font-medium mt-1">Trips Completed</p>
           </div>
           <div className="p-4 border-r border-zinc-800/80 last:border-none text-center">
@@ -256,7 +256,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
 
       {/* 6. Call To Action Footer Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-orange-600 via-[#FF5D00] to-amber-600 rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div className="bg-gradient-to-r from-orange-600 via-[#00a6c7] to-amber-600 rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
           <div className="space-y-3 text-center lg:text-left">
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Ready to Simplify Your Logistics?</h3>
             <p className="text-orange-100 text-xs sm:text-sm max-w-xl">

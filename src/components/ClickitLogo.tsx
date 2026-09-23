@@ -16,7 +16,7 @@ export interface LogoMarkProps {
 export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
   className = 'w-12 h-13',
   animated = false,
-  color = '#FF5D00',
+  color = '#00a6c7',
   pulse = true,
 }) => {
   const content = (
@@ -26,7 +26,7 @@ export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
         <motion.span
           animate={{ scale: [0.85, 1.35, 0.85], opacity: [0.6, 0.15, 0.6] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-1 w-2/3 h-1.5 bg-[#FF5D00]/40 rounded-full blur-[2px] pointer-events-none"
+          className="absolute -bottom-1 w-2/3 h-1.5 bg-[#00a6c7]/40 rounded-full blur-[2px] pointer-events-none"
         />
       )}
 
@@ -35,7 +35,7 @@ export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
         viewBox="0 0 100 115"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-[0_2px_8px_rgba(255,93,0,0.3)] select-none"
+        className="w-full h-full drop-shadow-[0_2px_8px_rgba(0, 166, 199,0.3)] select-none"
       >
         {/* Refined White Center Core of C */}
         <circle cx="50" cy="40" r="11" fill="#FFFFFF" />
@@ -75,7 +75,7 @@ export interface WordmarkProps {
 
 /**
  * Clickit Official Default Wordmark:
- * - "Click" in solid brand orange (#FF5D00) with solid circular dot on 'i'
+ * - "Click" in solid brand orange (#00a6c7) with solid circular dot on 'i'
  * - "it" in white (or dark) with signature hollow ring dot on 'i'
  * - Perfectly matches user's official default logo.png
  */
@@ -100,7 +100,7 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
       className={`font-['Poppins',sans-serif] font-bold tracking-[-0.025em] leading-none inline-flex items-baseline select-none ${className}`}
     >
       {/* "Click" Section: Solid Orange with solid circular dot on 'i' */}
-      <span className="text-[#FF5D00] inline-flex items-baseline">
+      <span className="text-[#00a6c7] inline-flex items-baseline">
         Click
       </span>
 
@@ -110,7 +110,7 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
           textColorIt === 'white'
             ? 'text-white'
             : textColorIt === 'orange'
-            ? 'text-[#FF5D00]'
+            ? 'text-[#00a6c7]'
             : 'text-zinc-900'
         }`}
       >
@@ -122,7 +122,7 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
               textColorIt === 'white'
                 ? 'border-white bg-transparent'
                 : textColorIt === 'orange'
-                ? 'border-[#FF5D00] bg-transparent'
+                ? 'border-[#00a6c7] bg-transparent'
                 : 'border-zinc-900 bg-transparent'
             }`}
             style={{
@@ -136,7 +136,7 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
               textColorIt === 'white'
                 ? 'bg-white'
                 : textColorIt === 'orange'
-                ? 'bg-[#FF5D00]'
+                ? 'bg-[#00a6c7]'
                 : 'bg-zinc-900'
             }`}
             style={{
@@ -151,7 +151,7 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
       {/* Optional Trailing Brand Dot (defaults to false to match logo.png) */}
       {showTrailingDot && (
         <span
-          className="inline-block rounded-full bg-[#FF5D00] align-baseline shrink-0"
+          className="inline-block rounded-full bg-[#00a6c7] align-baseline shrink-0"
           style={{
             width: '0.15em',
             height: '0.15em',
@@ -212,7 +212,7 @@ export const ClickitLogo: React.FC<LogoProps> = ({
         <ClickitLogoMark
           className={iconSizeMap[size]}
           animated={animated}
-          color="#FF5D00"
+          color="#00a6c7"
           pulse={animated}
         />
       )}
@@ -227,12 +227,12 @@ export const ClickitLogo: React.FC<LogoProps> = ({
           />
         ) : (
           <span className={`font-['Poppins',sans-serif] font-bold leading-none ${textSizeMap[size]} transition-all`}>
-            {textColor === 'orange' && <span className="text-[#FF5D00]">{brandText}</span>}
+            {textColor === 'orange' && <span className="text-[#00a6c7]">{brandText}</span>}
             {textColor === 'white' && <span className="text-white">{brandText}</span>}
             {textColor === 'dark' && <span className="text-zinc-900">{brandText}</span>}
             {(textColor === 'mixed' || textColor === 'mixed-dark') && (
               <>
-                <span className="text-[#FF5D00]">Click</span>
+                <span className="text-[#00a6c7]">Click</span>
                 {brandText === 'Clickit' && (
                   <span className={textColor === 'mixed' ? 'text-white' : 'text-zinc-900'}>it</span>
                 )}

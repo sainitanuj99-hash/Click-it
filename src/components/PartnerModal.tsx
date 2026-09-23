@@ -38,7 +38,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                 Partner Onboarding
               </span>
               <h2 className="text-2xl font-black text-white pt-1">
-                Become a <span className="text-[#FF5D00]">Clickit</span> Delivery Partner
+                Become a <span className="text-[#00a6c7]">Clickit</span> Delivery Partner
               </h2>
               <p className="text-xs text-zinc-400">
                 Earn up to ₹45,000/month with daily & weekly payouts, flexible hours, and bonus incentives.
@@ -135,7 +135,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
 
               <button
                 type="submit"
-                className="w-full bg-[#FF5D00] hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-xs transition-colors shadow-lg shadow-orange-500/25 flex items-center justify-center gap-1.5"
+                className="w-full bg-[#00a6c7] hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-xs transition-colors shadow-lg shadow-orange-500/25 flex items-center justify-center gap-1.5"
               >
                 Submit Partner Application <ArrowRight className="w-4 h-4" />
               </button>
@@ -152,7 +152,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
             </p>
             <button
               onClick={() => { setSubmitted(false); onClose(); }}
-              className="bg-[#FF5D00] hover:bg-orange-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-colors"
+              className="bg-[#00a6c7] hover:bg-orange-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-colors"
             >
               Done
             </button>

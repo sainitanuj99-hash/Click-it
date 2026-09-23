@@ -196,9 +196,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#FF5D00] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#00a6c7] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
           >
-            <ArrowLeft className="w-4 h-4 text-[#FF5D00]" />
+            <ArrowLeft className="w-4 h-4 text-[#00a6c7]" />
             {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Home'}
           </button>
 
@@ -210,7 +210,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === 'en'
-                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -221,7 +221,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === 'hi'
-                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -256,7 +256,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <header className="mb-8 border-b border-zinc-800 pb-6 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400">
-              <Shield className="w-3.5 h-3.5 text-[#FF5D00]" />
+              <Shield className="w-3.5 h-3.5 text-[#00a6c7]" />
               {t.badge}
             </div>
             <div className="inline-flex items-center gap-1.5 text-xs text-orange-400 font-semibold bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
@@ -279,7 +279,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             </div>
             <button
               onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-              className="text-[#FF5D00] hover:underline font-semibold text-left sm:text-right"
+              className="text-[#00a6c7] hover:underline font-semibold text-left sm:text-right"
             >
               {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
             </button>
@@ -299,7 +299,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
               className="bg-[#12141C] border border-zinc-800/80 hover:border-zinc-700/80 transition-all rounded-2xl p-6 sm:p-7 shadow-sm space-y-4"
             >
               <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                <span className="text-[#FF5D00]">{section.title}</span>
+                <span className="text-[#00a6c7]">{section.title}</span>
               </h2>
 
               {section.paragraph && (
@@ -323,7 +323,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 <ul className="space-y-2.5 text-zinc-300 text-sm sm:text-base pt-1">
                   {section.list.map((item, j) => (
                     <li key={j} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5D00] mt-2 shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00a6c7] mt-2 shrink-0"></span>
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -361,9 +361,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <div className="mt-12 pt-8 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={() => onNavigate ? onNavigate('/terms-and-conditions') : null}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#FF5D00] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#00a6c7] transition-colors"
           >
-            <FileText className="w-4 h-4 text-[#FF5D00]" />
+            <FileText className="w-4 h-4 text-[#00a6c7]" />
             {lang === 'hi' ? 'नियम एवं शर्तें (Terms and Conditions) देखें' : 'View Terms and Conditions'}
           </button>
           <div className="text-xs text-zinc-500">

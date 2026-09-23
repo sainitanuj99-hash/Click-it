@@ -261,9 +261,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200/90 text-xs font-bold text-[#FF5D00] shadow-md shadow-orange-500/5"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200/90 text-xs font-bold text-[#00a6c7] shadow-md shadow-orange-500/5"
               >
-                <Sparkles className="w-3.5 h-3.5 text-[#FF5D00]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#00a6c7]" />
                 <span className="tracking-wide uppercase text-[11px] font-black">Clickit Jaipur • On-Demand Fleet</span>
                 <span className="text-zinc-300">•</span>
                 <span className="text-emerald-600 font-bold text-[11px] flex items-center gap-1.5">
@@ -274,7 +274,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.12]">
                 Clickit Jaipur — Deliver Anything In Your City. <br />
-                <span className="text-[#FF5D00] drop-shadow-[0_2px_18px_rgba(255,93,0,0.22)]">Fast, Safe &amp; On-Demand.</span>
+                <span className="text-[#00a6c7] drop-shadow-[0_2px_18px_rgba(0, 166, 199,0.22)]">Fast, Safe &amp; On-Demand.</span>
               </h1>
             </div>
 
@@ -282,7 +282,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 THE LEFT-SIDE RICH IMAGE SHOWCASE (MINIMAL TEXT, MAX IMAGE IMPACT)
                 ========================================================================= */}
             <div 
-              className="relative rounded-3xl overflow-hidden border border-orange-200/90 ring-4 ring-orange-500/15 bg-zinc-950 shadow-[0_22px_55px_-12px_rgba(255,93,0,0.25)] group h-[430px] sm:h-[470px] lg:h-[500px] flex flex-col justify-between"
+              className="relative rounded-3xl overflow-hidden border border-orange-200/90 ring-4 ring-orange-500/15 bg-zinc-950 shadow-[0_22px_55px_-12px_rgba(0, 166, 199,0.25)] group h-[430px] sm:h-[470px] lg:h-[500px] flex flex-col justify-between"
               onMouseEnter={() => setIsSlideAutoPlaying(false)}
               onMouseLeave={() => setIsSlideAutoPlaying(true)}
             >
@@ -327,7 +327,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   className="absolute right-4 top-20 z-10 pointer-events-none hidden sm:block"
                 >
                   <div className="px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-orange-400/40 text-[11px] font-black text-white shadow-xl shadow-orange-500/10 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#FF5D00] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#00a6c7] animate-pulse" />
                     <span>{activeSlide.highlightPill}</span>
                   </div>
                 </motion.div>
@@ -337,7 +337,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               <div className="relative z-10 p-4 sm:p-5 flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-white/25 text-xs font-extrabold text-white shadow-xl">
-                    <span className="w-2 h-2 rounded-full bg-[#FF5D00] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#00a6c7] animate-ping" />
                     <span className="text-[#FF7A29] font-black">{activeSlide.category}</span>
                     <span className="text-white/40">•</span>
                     <span className="text-zinc-200 font-medium">{activeSlide.eta}</span>
@@ -402,7 +402,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
 
                   {/* Guaranteed Safe Tag */}
                   <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-900/90 border border-white/20 text-[11px] font-semibold text-zinc-200 shrink-0">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#FF5D00]" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00a6c7]" />
                     <span>OTP &amp; GPS Verified</span>
                   </div>
                 </div>
@@ -428,7 +428,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                             key={`${slide.id}-${isActive ? currentSlideIndex : 'inactive'}`}
                             className={`h-full ${
                               isActive 
-                                ? 'bg-[#FF5D00] shadow-[0_0_10px_#FF5D00] animate-slide-progress' 
+                                ? 'bg-[#00a6c7] shadow-[0_0_10px_#00a6c7] animate-slide-progress' 
                                 : idx < currentSlideIndex 
                                 ? 'bg-white/65 w-full' 
                                 : 'bg-transparent w-0'
@@ -438,7 +438,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                         <div className={`flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold truncate transition-colors ${
                           isActive ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'
                         }`}>
-                          <IconComponent className={`w-3 h-3 shrink-0 ${isActive ? 'text-[#FF5D00]' : 'text-zinc-500'}`} />
+                          <IconComponent className={`w-3 h-3 shrink-0 ${isActive ? 'text-[#00a6c7]' : 'text-zinc-500'}`} />
                           <span className="truncate">{slide.tabLabel}</span>
                         </div>
                       </button>
@@ -458,7 +458,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   handleTriggerInstall();
                   if (onDownloadAppClick) onDownloadAppClick();
                 }}
-                className="group relative overflow-hidden bg-[#FF5D00] hover:bg-[#E05200] text-white font-black text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent"
+                className="group relative overflow-hidden bg-[#00a6c7] hover:bg-[#008fae] text-white font-black text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent"
               >
                 <Smartphone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span>Install Clickit App</span>
@@ -471,7 +471,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 onClick={() => setShowQrModal(true)}
                 className="bg-white hover:bg-orange-50/70 text-zinc-900 font-bold text-xs sm:text-sm px-4 py-3.5 rounded-xl border border-zinc-200 shadow-sm hover:border-orange-300 hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <QrCode className="w-4 h-4 text-[#FF5D00]" />
+                <QrCode className="w-4 h-4 text-[#00a6c7]" />
                 <span>Scan QR</span>
               </button>
 
@@ -482,7 +482,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   className="text-xs sm:text-sm font-bold text-zinc-600 hover:text-zinc-950 flex items-center gap-1.5 transition-colors cursor-pointer py-2 group"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <Truck className="w-4 h-4 text-[#FF5D00] group-hover:scale-110 transition-transform" />
+                  <Truck className="w-4 h-4 text-[#00a6c7] group-hover:scale-110 transition-transform" />
                   <span>Attach Vehicle &amp; Earn ₹45,000+</span>
                   <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:translate-x-0.5 transition-transform" />
                 </button>
@@ -545,7 +545,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 onClick={() => handleManualStageSelect('in_app')}
                 className={`px-3.5 py-1 rounded-full text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                   installStage === 'in_app' 
-                    ? 'bg-[#FF5D00] text-white shadow-sm' 
+                    ? 'bg-[#00a6c7] text-white shadow-sm' 
                     : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
                 }`}
               >
@@ -746,21 +746,21 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                             <div className="text-[11px] font-bold text-zinc-300">App Preview</div>
                             <div className="grid grid-cols-3 gap-2">
                               <div className="bg-zinc-900/90 rounded-xl p-2 border border-zinc-800 text-center space-y-1">
-                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#FF5D00] flex items-center justify-center text-xs">
+                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#00a6c7] flex items-center justify-center text-xs">
                                   🛵
                                 </div>
                                 <div className="text-[9px] font-extrabold text-white leading-tight">2-Wheelers</div>
                                 <div className="text-[8px] text-zinc-400">10 Min Pickup</div>
                               </div>
                               <div className="bg-zinc-900/90 rounded-xl p-2 border border-zinc-800 text-center space-y-1">
-                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#FF5D00] flex items-center justify-center text-xs">
+                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#00a6c7] flex items-center justify-center text-xs">
                                   🚚
                                 </div>
                                 <div className="text-[9px] font-extrabold text-white leading-tight">Tata Ace</div>
                                 <div className="text-[8px] text-zinc-400">Up to 750kg</div>
                               </div>
                               <div className="bg-zinc-900/90 rounded-xl p-2 border border-zinc-800 text-center space-y-1">
-                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#FF5D00] flex items-center justify-center text-xs">
+                                <div className="w-6 h-6 mx-auto rounded-lg bg-orange-500/20 text-[#00a6c7] flex items-center justify-center text-xs">
                                   🚛
                                 </div>
                                 <div className="text-[9px] font-extrabold text-white leading-tight">8ft Pickup</div>
@@ -834,7 +834,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                             </div>
 
                             <div className="flex items-center gap-2.5">
-                              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5D00] shadow-sm shrink-0" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#00a6c7] shadow-sm shrink-0" />
                               <div className="min-w-0 flex-1">
                                 <div className="text-[9px] text-zinc-400 font-semibold uppercase tracking-wider">Drop Point</div>
                                 <div className="text-xs font-bold text-white truncate">Malviya Nagar Industrial Area</div>
@@ -859,7 +859,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                                   onClick={() => setSelectedFleetId(fleet.id)}
                                   className={`p-2 rounded-xl border transition-all cursor-pointer flex items-center justify-between gap-2 ${
                                     isSelected
-                                      ? 'bg-gradient-to-r from-[#FF5D00]/25 to-[#181B26] border-[#FF5D00] shadow-md ring-1 ring-[#FF5D00]/40'
+                                      ? 'bg-gradient-to-r from-[#00a6c7]/25 to-[#181B26] border-[#00a6c7] shadow-md ring-1 ring-[#00a6c7]/40'
                                       : 'bg-[#151722]/80 hover:bg-[#1A1C2A] border-zinc-800/80 text-zinc-300'
                                   }`}
                                 >
@@ -871,7 +871,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                                       <div className="text-xs font-extrabold text-white flex items-center gap-1">
                                         <span>{fleet.name}</span>
                                         {isSelected && (
-                                          <span className="text-[8px] bg-[#FF5D00] text-white px-1.5 py-0.2 rounded font-bold">
+                                          <span className="text-[8px] bg-[#00a6c7] text-white px-1.5 py-0.2 rounded font-bold">
                                             Ready
                                           </span>
                                         )}
@@ -897,7 +897,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                           <button
                             type="button"
                             onClick={onDownloadAppClick}
-                            className="w-full py-3 px-4 rounded-2xl bg-[#FF5D00] hover:bg-[#E05200] text-white font-black text-xs sm:text-sm flex items-center justify-between shadow-lg shadow-orange-500/30 transition-all cursor-pointer group"
+                            className="w-full py-3 px-4 rounded-2xl bg-[#00a6c7] hover:bg-[#008fae] text-white font-black text-xs sm:text-sm flex items-center justify-between shadow-lg shadow-orange-500/30 transition-all cursor-pointer group"
                           >
                             <span>1-Tap Book {activeFleet.name}</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -915,7 +915,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               <div className="grid grid-cols-2 gap-2.5 mt-4 w-full">
                 <div className="bg-white rounded-2xl p-2.5 sm:p-3 border border-orange-200/90 shadow-md shadow-orange-500/5 flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center justify-center shrink-0 p-1">
-                    <ClickitLogoMark className="w-5 h-5" animated={false} pulse={false} color="#FF5D00" />
+                    <ClickitLogoMark className="w-5 h-5" animated={false} pulse={false} color="#00a6c7" />
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs font-black text-zinc-900 leading-tight">10–15 Min Pickup</div>
@@ -963,7 +963,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               </button>
 
               <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/15 text-[#FF5D00] text-xs font-bold border border-orange-500/30">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/15 text-[#00a6c7] text-xs font-bold border border-orange-500/30">
                   <QrCode className="w-3.5 h-3.5" /> Instant App Download
                 </div>
                 <h3 className="text-xl font-black text-white">Scan to Install Clickit</h3>
@@ -971,19 +971,19 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               </div>
 
               {/* Styled High-Contrast QR Code Visual */}
-              <div className="bg-white p-5 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
+              <div className="bg-white p-5 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#00a6c7]/20">
                 <svg viewBox="0 0 100 100" className="w-40 h-40">
                   <rect x="0" y="0" width="30" height="30" fill="#000" rx="3" />
                   <rect x="5" y="5" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="9" y="9" width="12" height="12" fill="#FF5D00" rx="1" />
+                  <rect x="9" y="9" width="12" height="12" fill="#00a6c7" rx="1" />
 
                   <rect x="70" y="0" width="30" height="30" fill="#000" rx="3" />
                   <rect x="75" y="5" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="79" y="9" width="12" height="12" fill="#FF5D00" rx="1" />
+                  <rect x="79" y="9" width="12" height="12" fill="#00a6c7" rx="1" />
 
                   <rect x="0" y="70" width="30" height="30" fill="#000" rx="3" />
                   <rect x="5" y="75" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="9" y="79" width="12" height="12" fill="#FF5D00" rx="1" />
+                  <rect x="9" y="79" width="12" height="12" fill="#00a6c7" rx="1" />
 
                   <rect x="36" y="8" width="6" height="6" fill="#000" />
                   <rect x="48" y="8" width="6" height="14" fill="#000" />
@@ -993,9 +993,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   <rect x="8" y="48" width="6" height="12" fill="#000" />
                   <rect x="18" y="54" width="8" height="6" fill="#000" />
 
-                  <rect x="36" y="36" width="28" height="28" fill="#FF5D00" rx="4" />
+                  <rect x="36" y="36" width="28" height="28" fill="#00a6c7" rx="4" />
                   <circle cx="50" cy="50" r="8" fill="#FFF" />
-                  <path d="M 47 48 L 53 48 L 50 54 Z" fill="#FF5D00" />
+                  <path d="M 47 48 L 53 48 L 50 54 Z" fill="#00a6c7" />
 
                   <rect x="70" y="36" width="8" height="14" fill="#000" />
                   <rect x="84" y="42" width="10" height="8" fill="#000" />

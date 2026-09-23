@@ -609,7 +609,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#FF5D00] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#00a6c7] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Home'}
           </button>
@@ -621,7 +621,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'en'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -631,7 +631,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'hi'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -665,7 +665,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         {/* Developer Deep Link Helper Banner */}
         <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
+            <Globe className="w-4 h-4 text-[#00a6c7] shrink-0" />
             <span>{lang === 'hi' ? 'मोबाइल ऐप डेवलपर्स के लिए इन-ऐप यूआरएल:' : 'In-App URL for mobile app developers:'}</span>
             <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
               /driver-agreement?lang={lang}
@@ -694,7 +694,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
               <div className="p-3 bg-zinc-900/60 font-semibold text-zinc-400 border-b sm:border-b-0 sm:border-r border-zinc-800/80">
                 {lang === 'hi' ? 'ब्रांड (Brand)' : 'Brand'}
               </div>
-              <div className="p-3 sm:col-span-2 text-white font-bold text-[#FF5D00]">
+              <div className="p-3 sm:col-span-2 text-white font-bold text-[#00a6c7]">
                 {companyDetails.brand}
               </div>
             </div>
@@ -745,7 +745,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
               className="bg-[#12141C] border border-zinc-800/90 hover:border-zinc-700/80 rounded-2xl p-6 sm:p-7 shadow-sm transition-all"
             >
               <h2 className="text-base sm:text-lg font-bold text-white mb-4 flex items-start gap-2.5">
-                <span className="text-[#FF5D00] font-black shrink-0">{sec.num}.</span>
+                <span className="text-[#00a6c7] font-black shrink-0">{sec.num}.</span>
                 <span className="uppercase tracking-wide leading-snug">{sec.title}</span>
               </h2>
 
@@ -763,7 +763,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         {/* Driver Partner Acknowledgement Form (Exact from Document Page 5 & 6) */}
         <div className="mt-12 bg-gradient-to-b from-[#151824] to-[#10121A] border-2 border-orange-500/30 rounded-2xl p-6 sm:p-8 shadow-xl">
           <div className="flex items-center gap-3 mb-4">
-            <UserCheck className="w-6 h-6 text-[#FF5D00]" />
+            <UserCheck className="w-6 h-6 text-[#00a6c7]" />
             <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-wide">
               {lang === 'hi' ? 'ड्राइवर पार्टनर पावती (DRIVER PARTNER ACKNOWLEDGEMENT)' : 'DRIVER PARTNER ACKNOWLEDGEMENT'}
             </h3>

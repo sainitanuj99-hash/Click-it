@@ -247,9 +247,9 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#FF5D00] transition-colors py-1 px-2 -ml-2 rounded-lg hover:bg-zinc-900"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#00a6c7] transition-colors py-1 px-2 -ml-2 rounded-lg hover:bg-zinc-900"
           >
-            <ArrowLeft className="w-4 h-4 text-[#FF5D00]" /> Back to Main App
+            <ArrowLeft className="w-4 h-4 text-[#00a6c7]" /> Back to Main App
           </button>
           <div className="inline-flex items-center gap-2 text-xs text-orange-400 font-semibold bg-orange-500/10 px-3.5 py-1.5 rounded-full border border-orange-500/20 shadow-sm">
             <Headphones className="w-3.5 h-3.5 text-orange-400" /> 24/7 Priority Logistics Helpdesk
@@ -261,7 +261,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
         {/* Hero Header */}
         <header className="text-center max-w-3xl mx-auto space-y-4 pt-2">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300">
-            <HelpCircle className="w-4 h-4 text-[#FF5D00]" />
+            <HelpCircle className="w-4 h-4 text-[#00a6c7]" />
             Official ClickIt Help Center &amp; FAQs
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -303,7 +303,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all border ${
                   isSelected
-                    ? "bg-[#FF5D00] text-white border-[#FF5D00] shadow-md shadow-orange-500/20"
+                    ? "bg-[#00a6c7] text-white border-[#00a6c7] shadow-md shadow-orange-500/20"
                     : "bg-zinc-900/80 text-zinc-400 border-zinc-800 hover:text-white hover:border-zinc-700"
                 }`}
               >
@@ -318,7 +318,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
         <section className="space-y-4">
           <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <FileText className="w-5 h-5 text-[#FF5D00]" />
+              <FileText className="w-5 h-5 text-[#00a6c7]" />
               Frequently Answered Questions
               <span className="text-xs text-zinc-500 font-normal ml-2">({filteredFaqs.length} results)</span>
             </h2>
@@ -403,7 +403,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
                           <ul className="space-y-2 pl-2 pt-1">
                             {faq.bulletPoints.map((bullet, idx) => (
                               <li key={idx} className="flex items-start gap-2.5 text-zinc-300">
-                                <span className="text-[#FF5D00] font-bold mt-1 text-xs shrink-0">•</span>
+                                <span className="text-[#00a6c7] font-bold mt-1 text-xs shrink-0">•</span>
                                 <span className="leading-relaxed">{bullet}</span>
                               </li>
                             ))}
@@ -423,7 +423,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800 pb-5">
             <div>
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                <Headphones className="w-5 h-5 text-[#FF5D00]" /> Still have questions? Contact Support
+                <Headphones className="w-5 h-5 text-[#00a6c7]" /> Still have questions? Contact Support
               </h2>
               <p className="text-xs text-zinc-400 mt-1">
                 Our logistics coordinators and support specialists are active 24 hours a day, 7 days a week.
@@ -496,7 +496,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs font-bold text-white transition-all shadow-sm shrink-0"
             >
               <span>View on Google Maps</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#FF5D00]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#00a6c7]" />
             </a>
           </div>
         </section>

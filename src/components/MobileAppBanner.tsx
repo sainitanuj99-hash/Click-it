@@ -48,14 +48,14 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
           <div className="lg:col-span-7 space-y-6">
             
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200 text-[#FF5D00] text-xs font-black uppercase tracking-wider shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200 text-[#00a6c7] text-xs font-black uppercase tracking-wider shadow-xs">
                 <ClickitLogoMark className="w-3.5 h-4" animated={true} pulse={false} />
                 The Clickit Mobile App
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 leading-tight">
                 Instant Logistics in Your Pocket <br />
-                <span className="text-[#FF5D00]">Available on Android &amp; iOS</span>
+                <span className="text-[#00a6c7]">Available on Android &amp; iOS</span>
               </h2>
 
               <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed max-w-xl">
@@ -66,19 +66,19 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
             {/* Feature Checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-800 pt-1">
               <div className="flex items-center gap-2.5 bg-white/95 p-3.5 rounded-xl border border-orange-100 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0" />
                 <span className="font-bold">Live GPS Map Telemetry</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/95 p-3.5 rounded-xl border border-orange-100 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0" />
                 <span className="font-bold">Digital e-POD Signature &amp; OTP</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/95 p-3.5 rounded-xl border border-orange-100 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0" />
                 <span className="font-bold">Instant UPI &amp; Wallet Payments</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/95 p-3.5 rounded-xl border border-orange-100 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0" />
                 <span className="font-bold">24/7 Dedicated Logistics Helpdesk</span>
               </div>
             </div>
@@ -94,11 +94,11 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
                   placeholder="Enter 10-digit mobile number..."
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="bg-white text-xs text-zinc-900 placeholder-zinc-400 rounded-xl px-4 py-3 border border-zinc-300 flex-1 focus:border-[#FF5D00] focus:ring-1 focus:ring-[#FF5D00] focus:outline-none shadow-xs"
+                  className="bg-white text-xs text-zinc-900 placeholder-zinc-400 rounded-xl px-4 py-3 border border-zinc-300 flex-1 focus:border-[#00a6c7] focus:ring-1 focus:ring-[#00a6c7] focus:outline-none shadow-xs"
                 />
                 <button
                   type="submit"
-                  className="bg-[#FF5D00] hover:bg-[#E05200] text-white font-black text-xs px-6 py-3 rounded-xl transition-all shadow-md shadow-orange-500/25 whitespace-nowrap cursor-pointer active:scale-95"
+                  className="bg-[#00a6c7] hover:bg-[#008fae] text-white font-black text-xs px-6 py-3 rounded-xl transition-all shadow-md shadow-orange-500/25 whitespace-nowrap cursor-pointer active:scale-95"
                 >
                   Send App Link
                 </button>
@@ -122,7 +122,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
                 <div className="bg-zinc-900 col-span-1"></div>
                 <div className="bg-zinc-900 col-span-2 row-span-2 rounded-sm"></div>
                 <div className="bg-zinc-900 col-span-1"></div>
-                <div className="bg-[#FF5D00] col-span-2"></div>
+                <div className="bg-[#00a6c7] col-span-2"></div>
                 <div className="bg-zinc-900 col-span-3"></div>
                 <div className="bg-zinc-900 col-span-2 row-span-2 rounded-sm"></div>
                 <div className="bg-zinc-900 col-span-1"></div>
@@ -139,7 +139,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
 
             <div className="space-y-1">
               <p className="text-sm font-black text-zinc-900 flex items-center justify-center gap-1.5">
-                <QrCode className="w-4 h-4 text-[#FF5D00]" /> Scan to Install Clickit App
+                <QrCode className="w-4 h-4 text-[#00a6c7]" /> Scan to Install Clickit App
               </p>
               <p className="text-xs text-zinc-500 font-medium">
                 Compatible with iOS 14.0+ &amp; Android 8.0+

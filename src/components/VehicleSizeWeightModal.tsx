@@ -47,14 +47,14 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
         {/* Modal Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4 pr-10 min-w-0">
           <div className="min-w-0">
-            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-[#FF5D00] text-xs font-bold mb-1 shrink-0">
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-[#00a6c7] text-xs font-bold mb-1 shrink-0">
               <Box className="w-3.5 h-3.5" /> Porter-Style Vehicle Spec Guide
             </div>
             <h2 className="text-lg sm:text-2xl font-black text-white flex items-center gap-2 truncate">
               {currentVehicle.name} Specifications
             </h2>
           </div>
-          <span className="text-xs font-extrabold bg-[#FF5D00] text-white px-3 py-1 rounded-full w-fit shrink-0 self-start sm:self-auto">
+          <span className="text-xs font-extrabold bg-[#00a6c7] text-white px-3 py-1 rounded-full w-fit shrink-0 self-start sm:self-auto">
             {currentVehicle.badge || currentVehicle.sizeCategoryTag}
           </span>
         </div>
@@ -67,7 +67,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
               onClick={() => setActiveVehicleId(v.id)}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
                 v.id === activeVehicleId
-                  ? 'bg-[#FF5D00] border-[#FF5D00] text-white shadow-lg shadow-orange-500/20'
+                  ? 'bg-[#00a6c7] border-[#00a6c7] text-white shadow-lg shadow-orange-500/20'
                   : 'bg-zinc-950 border-zinc-800 text-zinc-400 hover:text-white'
               }`}
             >
@@ -110,14 +110,14 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
           <div className="bg-zinc-950 border border-zinc-800/90 rounded-2xl p-5 space-y-4">
             <div className="flex items-center justify-between border-b border-zinc-800/80 pb-2">
               <span className="text-xs font-extrabold text-zinc-300 uppercase tracking-wider flex items-center gap-1.5">
-                <Box className="w-4 h-4 text-[#FF5D00]" /> Cargo Bed Dimensions (L x W x H)
+                <Box className="w-4 h-4 text-[#00a6c7]" /> Cargo Bed Dimensions (L x W x H)
               </span>
               <span className="text-xs font-mono font-bold text-emerald-400">{currentVehicle.dimensions}</span>
             </div>
 
             {/* Vehicle Illustration Graphic */}
             <div className="bg-[#181A24] rounded-2xl p-4 border border-zinc-800/60 flex flex-col items-center justify-center space-y-3 relative overflow-hidden">
-              <div className="absolute top-2 right-2 bg-orange-500/10 border border-orange-500/20 text-[#FF5D00] text-[10px] font-bold px-2 py-0.5 rounded">
+              <div className="absolute top-2 right-2 bg-orange-500/10 border border-orange-500/20 text-[#00a6c7] text-[10px] font-bold px-2 py-0.5 rounded">
                 Volume: {currentVehicle.volumeCuFt} cu.ft
               </div>
 
@@ -144,7 +144,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
             <div className="space-y-2 pt-1">
               <div className="flex justify-between text-xs">
                 <span className="text-zinc-400 flex items-center gap-1">
-                  <Weight className="w-3.5 h-3.5 text-[#FF5D00]" /> Payload Weight Capacity
+                  <Weight className="w-3.5 h-3.5 text-[#00a6c7]" /> Payload Weight Capacity
                 </span>
                 <span className={`font-extrabold ${isOverweight ? 'text-amber-400' : 'text-emerald-400'}`}>
                   {userWeightKg} kg / {currentVehicle.capacityKg} kg ({weightPercent}%)
@@ -155,7 +155,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
               <div className="w-full bg-zinc-900 h-3 rounded-full overflow-hidden border border-zinc-800 relative">
                 <div 
                   className={`h-full transition-all duration-300 rounded-full ${
-                    isOverweight ? 'bg-gradient-to-r from-amber-500 to-red-500' : 'bg-gradient-to-r from-emerald-500 to-[#FF5D00]'
+                    isOverweight ? 'bg-gradient-to-r from-amber-500 to-red-500' : 'bg-gradient-to-r from-emerald-500 to-[#00a6c7]'
                   }`}
                   style={{ width: `${Math.min(weightPercent, 100)}%` }}
                 />
@@ -175,7 +175,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
             <div>
               <div className="flex items-center justify-between border-b border-zinc-800/80 pb-2 mb-3">
                 <span className="text-xs font-extrabold text-zinc-300 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-[#FF5D00]" /> What Fits Inside ({currentVehicle.name})
+                  <Layers className="w-4 h-4 text-[#00a6c7]" /> What Fits Inside ({currentVehicle.name})
                 </span>
                 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/20">
                   Size Guide
@@ -185,7 +185,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
               <div className="space-y-2">
                 {currentVehicle.whatFitsInside.map((item, idx) => (
                   <div key={idx} className="bg-[#12141C] p-2.5 rounded-xl border border-zinc-800/80 flex items-start gap-2.5 text-xs text-zinc-200">
-                    <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0 mt-0.5" />
                     <span className="font-medium">{item}</span>
                   </div>
                 ))}
@@ -222,7 +222,7 @@ export const VehicleSizeWeightModal: React.FC<VehicleSizeWeightModalProps> = ({
                   onSelectVehicle(currentVehicle.id);
                   onClose();
                 }}
-                className="w-full bg-[#FF5D00] hover:bg-orange-600 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-1.5"
+                className="w-full bg-[#00a6c7] hover:bg-orange-600 text-white font-extrabold text-xs py-3 rounded-xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-1.5"
               >
                 Select {currentVehicle.name} for Booking <ArrowRight className="w-4 h-4" />
               </button>

@@ -235,7 +235,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
       {/* =========================================================================
           LIGHT BACKGROUND AMBIENCE & WARM MESH LIGHTING
           ========================================================================= */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#FF5D00]/8 via-[#FF5D00]/0 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#00a6c7]/8 via-[#00a6c7]/0 to-transparent pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -245,14 +245,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             HEADER
             ========================================================================= */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5D00] shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5D00]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#00a6c7] shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#00a6c7]" />
             <span>Help &amp; Knowledge Base</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
             Frequently Asked{' '}
-            <span className="text-[#FF5D00]">
+            <span className="text-[#00a6c7]">
               Questions
             </span>
           </h2>
@@ -285,7 +285,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="e.g. fare, GST, Tata Ace, OTP..."
-                  className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-9 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-[#FF5D00] focus:ring-1 focus:ring-[#FF5D00] focus:bg-white transition-all"
+                  className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-9 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-[#00a6c7] focus:ring-1 focus:ring-[#00a6c7] focus:bg-white transition-all"
                 />
                 {searchQuery && (
                   <button
@@ -318,7 +318,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                     onClick={() => setActiveCategory(cat.id)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                       isActive
-                        ? 'bg-[#FF5D00] text-white shadow-md shadow-[#FF5D00]/25'
+                        ? 'bg-[#00a6c7] text-white shadow-md shadow-[#00a6c7]/25'
                         : 'text-zinc-600 hover:text-zinc-900 hover:bg-orange-50/50'
                     }`}
                   >
@@ -342,7 +342,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             {/* Concierge Support Mini-Card */}
             <div className="bg-gradient-to-br from-orange-50/80 to-amber-50/50 border border-orange-200 rounded-2xl p-5 shadow-sm space-y-3.5">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#FF5D00] text-white flex items-center justify-center shadow-md shadow-orange-500/20">
+                <div className="w-9 h-9 rounded-xl bg-[#00a6c7] text-white flex items-center justify-center shadow-md shadow-orange-500/20">
                   <Headphones className="w-4 h-4" />
                 </div>
                 <div>
@@ -356,7 +356,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                   <button
                     type="button"
                     onClick={onOpenQuoteModal}
-                    className="w-full py-2.5 px-3.5 rounded-xl bg-[#FF5D00] hover:bg-[#E05200] text-white text-xs font-bold transition-all shadow-md shadow-[#FF5D00]/25 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2.5 px-3.5 rounded-xl bg-[#00a6c7] hover:bg-[#008fae] text-white text-xs font-bold transition-all shadow-md shadow-[#00a6c7]/25 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>Request B2B Rate Card</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -386,7 +386,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             {/* Header Control Row (Count + Expand/Collapse) */}
             <div className="flex items-center justify-between px-1 text-xs text-zinc-600 pb-1">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#FF5D00]" />
+                <span className="w-2 h-2 rounded-full bg-[#00a6c7]" />
                 <span>
                   Showing <strong className="text-zinc-900 font-bold">{visibleFaqs.length}</strong> of{' '}
                   <strong className="text-zinc-900 font-bold">{filteredFaqs.length}</strong> questions
@@ -401,12 +401,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                 >
                   {areAllOpen ? (
                     <>
-                      <ChevronUp className="w-3.5 h-3.5 text-[#FF5D00]" />
+                      <ChevronUp className="w-3.5 h-3.5 text-[#00a6c7]" />
                       <span>Collapse All Answers</span>
                     </>
                   ) : (
                     <>
-                      <ChevronDown className="w-3.5 h-3.5 text-[#FF5D00]" />
+                      <ChevronDown className="w-3.5 h-3.5 text-[#00a6c7]" />
                       <span>Expand All Answers</span>
                     </>
                   )}
@@ -431,7 +431,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                       transition={{ duration: 0.2 }}
                       className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                         isOpen 
-                          ? 'bg-white border-orange-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.25)] ring-1 ring-[#FF5D00]/20' 
+                          ? 'bg-white border-orange-300 shadow-[0_12px_32px_-8px_rgba(0,0,0,0.25)] ring-1 ring-[#00a6c7]/20' 
                           : 'bg-white hover:bg-zinc-50/90 border-zinc-200/90 hover:border-zinc-300 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.08)]'
                       }`}
                     >
@@ -446,8 +446,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                           {/* Category Icon Badge */}
                           <div className={`shrink-0 w-8 h-8 rounded-xl flex items-center justify-center border mt-0.5 transition-colors ${
                             isOpen
-                              ? 'bg-[#FFF2EA] border-[#FF5D00]/30 text-[#FF5D00]'
-                              : 'bg-zinc-100 border-zinc-200 text-zinc-600 group-hover:bg-[#FFF2EA] group-hover:text-[#FF5D00] group-hover:border-[#FF5D00]/20'
+                              ? 'bg-[#FFF2EA] border-[#00a6c7]/30 text-[#00a6c7]'
+                              : 'bg-zinc-100 border-zinc-200 text-zinc-600 group-hover:bg-[#FFF2EA] group-hover:text-[#00a6c7] group-hover:border-[#00a6c7]/20'
                           }`}>
                             <Icon className="w-4 h-4" />
                           </div>
@@ -459,7 +459,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                                 {faq.question}
                               </span>
                               {faq.highlight && (
-                                <span className="text-[11px] font-bold bg-[#FFF2EA] text-[#FF5D00] px-2.5 py-0.5 rounded-md border border-[#FF5D00]/30 shadow-xs whitespace-nowrap">
+                                <span className="text-[11px] font-bold bg-[#FFF2EA] text-[#00a6c7] px-2.5 py-0.5 rounded-md border border-[#00a6c7]/30 shadow-xs whitespace-nowrap">
                                   {faq.highlight}
                                 </span>
                               )}
@@ -473,7 +473,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                         {/* Animated Chevron Indicator */}
                         <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300 ${
                           isOpen 
-                            ? 'bg-[#FF5D00] text-white border-[#FF5D00] shadow-sm shadow-[#FF5D00]/30 rotate-180' 
+                            ? 'bg-[#00a6c7] text-white border-[#00a6c7] shadow-sm shadow-[#00a6c7]/30 rotate-180' 
                             : 'bg-zinc-100 text-zinc-600 border-zinc-200 group-hover:bg-zinc-200 rotate-0'
                         }`}>
                           <ChevronDown className="w-4 h-4 stroke-[2.5]" />
@@ -501,7 +501,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                                 <div className="bg-zinc-50/90 rounded-xl p-4 border border-zinc-200/80 space-y-2.5">
                                   {faq.points.map((pt, idx) => (
                                     <div key={idx} className="flex items-start gap-2.5 text-zinc-700 text-xs sm:text-sm font-medium">
-                                      <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0 mt-0.5" />
+                                      <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0 mt-0.5" />
                                       <span className="leading-snug break-words">{pt}</span>
                                     </div>
                                   ))}
@@ -513,7 +513,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                                 <span className="font-medium">Was this information helpful?</span>
                                 
                                 {feedback ? (
-                                  <span className="text-[#FF5D00] font-semibold flex items-center gap-1">
+                                  <span className="text-[#00a6c7] font-semibold flex items-center gap-1">
                                     <CheckCircle2 className="w-3.5 h-3.5" /> Thanks for your feedback!
                                   </span>
                                 ) : (
@@ -554,7 +554,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsExpanded(!isExpanded)}
-                      className="relative z-10 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-orange-500 to-[#FF5D00] hover:from-orange-600 hover:to-orange-500 text-white font-bold text-sm shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                      className="relative z-10 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-orange-500 to-[#00a6c7] hover:from-orange-600 hover:to-orange-500 text-white font-bold text-sm shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                     >
                       {isExpanded ? (
                         <>
@@ -579,7 +579,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               </div>
             ) : (
               <div className="text-center py-16 px-6 rounded-3xl bg-white border border-zinc-200 shadow-xl space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 text-[#FF5D00] flex items-center justify-center mx-auto border border-orange-200">
+                <div className="w-12 h-12 rounded-2xl bg-orange-50 text-[#00a6c7] flex items-center justify-center mx-auto border border-orange-200">
                   <Search className="w-6 h-6" />
                 </div>
                 <h4 className="text-lg font-bold text-zinc-900">No matching questions found</h4>

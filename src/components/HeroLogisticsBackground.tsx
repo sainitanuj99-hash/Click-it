@@ -11,9 +11,9 @@ export const HeroLogisticsBackground: React.FC = () => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: `
-            radial-gradient(ellipse 60% 40% at 50% 10%, rgba(255, 93, 0, 0.08) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 40% at 50% 10%, rgba(0, 166, 199, 0.08) 0%, transparent 70%),
             radial-gradient(circle 350px at 15% 35%, rgba(245, 158, 11, 0.06) 0%, transparent 80%),
-            radial-gradient(circle 350px at 85% 45%, rgba(255, 93, 0, 0.06) 0%, transparent 80%)
+            radial-gradient(circle 350px at 85% 45%, rgba(0, 166, 199, 0.06) 0%, transparent 80%)
           `
         }}
       />
@@ -27,14 +27,14 @@ export const HeroLogisticsBackground: React.FC = () => {
       >
         <defs>
           <linearGradient id="routeOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FF5D00" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="#00a6c7" stopOpacity="0.8" />
             <stop offset="50%" stopColor="#FF7A29" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#FF5D00" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#00a6c7" stopOpacity="0.4" />
           </linearGradient>
 
           <linearGradient id="routeAmber" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.75" />
-            <stop offset="70%" stopColor="#FF5D00" stopOpacity="0.8" />
+            <stop offset="70%" stopColor="#00a6c7" stopOpacity="0.8" />
             <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.3" />
           </linearGradient>
 
@@ -44,8 +44,8 @@ export const HeroLogisticsBackground: React.FC = () => {
           </linearGradient>
 
           <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#FF5D00" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#FF5D00" stopOpacity="0" />
+            <stop offset="0%" stopColor="#00a6c7" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#00a6c7" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -71,7 +71,7 @@ export const HeroLogisticsBackground: React.FC = () => {
         <path
           d="M 280,310 Q 520,180 820,240 T 1320,190"
           fill="none"
-          stroke="#FF5D00"
+          stroke="#00a6c7"
           strokeOpacity="0.35"
           strokeWidth="1.5"
           strokeDasharray="5 5"
@@ -87,7 +87,7 @@ export const HeroLogisticsBackground: React.FC = () => {
         />
 
         {/* Dynamic Moving Delivery Pulses (Smooth, hardware-accelerated) */}
-        <circle r="5" fill="#FF5D00" stroke="#FFFFFF" strokeWidth="1.5">
+        <circle r="5" fill="#00a6c7" stroke="#FFFFFF" strokeWidth="1.5">
           <animateMotion
             path="M 180,60 C 320,160 420,290 540,430 C 660,570 820,720 1120,830"
             dur="14s"
@@ -106,11 +106,11 @@ export const HeroLogisticsBackground: React.FC = () => {
         {/* Key Logistics Hub Nodes */}
         <g transform="translate(240, 105)">
           <circle r="12" fill="url(#hubGlow)" opacity="0.4" />
-          <circle r="5" fill="#FF5D00" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle r="5" fill="#00a6c7" stroke="#FFFFFF" strokeWidth="1.5" />
         </g>
         <g transform="translate(540, 430)">
           <circle r="14" fill="url(#hubGlow)" opacity="0.4" />
-          <circle r="6" fill="#FF5D00" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle r="6" fill="#00a6c7" stroke="#FFFFFF" strokeWidth="1.5" />
         </g>
         <g transform="translate(840, 490)">
           <circle r="12" fill="url(#hubGlow)" opacity="0.4" />
@@ -118,7 +118,7 @@ export const HeroLogisticsBackground: React.FC = () => {
         </g>
         <g transform="translate(1080, 810)">
           <circle r="14" fill="url(#hubGlow)" opacity="0.4" />
-          <circle r="6" fill="#FF5D00" stroke="#FFFFFF" strokeWidth="1.5" />
+          <circle r="6" fill="#00a6c7" stroke="#FFFFFF" strokeWidth="1.5" />
         </g>
       </svg>
 

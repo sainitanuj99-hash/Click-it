@@ -100,11 +100,11 @@ export const CustomerTestimonials: React.FC = () => {
         {/* Section Header with Stats & Filter Tabs */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF5D00] bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/25 inline-flex items-center gap-2 shadow-sm">
-              <ThumbsUp className="w-3.5 h-3.5 text-[#FF5D00]" /> Verified Customer Stories
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00a6c7] bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/25 inline-flex items-center gap-2 shadow-sm">
+              <ThumbsUp className="w-3.5 h-3.5 text-[#00a6c7]" /> Verified Customer Stories
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-              Trusted by <span className="text-[#FF5D00] relative inline-block">
+              Trusted by <span className="text-[#00a6c7] relative inline-block">
                 1 Lakh+
                 <span className="absolute -bottom-1 left-0 w-full h-1.5 bg-orange-500/20 rounded-full"></span>
               </span> Shippers &amp; Businesses
@@ -119,14 +119,14 @@ export const CustomerTestimonials: React.FC = () => {
             <button
               onClick={prevSlide}
               aria-label="Previous testimonial"
-              className="p-3.5 rounded-2xl bg-white/90 border border-slate-300/80 text-slate-700 hover:text-slate-900 hover:border-[#FF5D00] hover:shadow-lg transition-all"
+              className="p-3.5 rounded-2xl bg-white/90 border border-slate-300/80 text-slate-700 hover:text-slate-900 hover:border-[#00a6c7] hover:shadow-lg transition-all"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next testimonial"
-              className="p-3.5 rounded-2xl bg-white/90 border border-slate-300/80 text-slate-700 hover:text-slate-900 hover:border-[#FF5D00] hover:shadow-lg transition-all"
+              className="p-3.5 rounded-2xl bg-white/90 border border-slate-300/80 text-slate-700 hover:text-slate-900 hover:border-[#00a6c7] hover:shadow-lg transition-all"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -149,7 +149,7 @@ export const CustomerTestimonials: React.FC = () => {
                 onClick={() => { setActiveCategory(tab.id); setCurrentIndex(0); }}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
                   isSelected
-                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                 }`}
               >
@@ -202,7 +202,7 @@ export const CustomerTestimonials: React.FC = () => {
                 <div className="min-w-0">
                   <h4 className="text-sm font-bold text-slate-900 truncate">{item.name}</h4>
                   <p className="text-[11px] font-medium text-slate-500 truncate">{item.role} • {item.city}</p>
-                  <p className="text-[10px] font-bold text-[#FF5D00] flex items-center gap-1 mt-0.5">
+                  <p className="text-[10px] font-bold text-[#00a6c7] flex items-center gap-1 mt-0.5">
                     <Sparkles className="w-3 h-3" /> {item.tripsDone}
                   </p>
                 </div>

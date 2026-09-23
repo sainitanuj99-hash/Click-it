@@ -116,7 +116,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07080C] text-zinc-900 flex flex-col font-sans selection:bg-[#FF5D00] selection:text-white w-full relative">
+    <div className="min-h-screen bg-[#07080C] text-zinc-900 flex flex-col font-sans selection:bg-[#00a6c7] selection:text-white w-full relative">
       
       {/* 
         SCHBANG FIXED NAVBAR:
@@ -224,7 +224,7 @@ export default function App() {
         */}
         <div className="w-full bg-white border-t border-zinc-200/80 px-6 sm:px-12 lg:px-16 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-b-[40px] sm:rounded-b-[50px] lg:rounded-b-[60px]">
           <div className="flex items-center gap-3">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#FF5D00] animate-pulse" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#00a6c7] animate-pulse" />
             <span className="text-xs font-black tracking-wider uppercase text-zinc-900">
               Clickit Express Fleet
             </span>
@@ -237,7 +237,7 @@ export default function App() {
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={handleDownloadAppRedirect}
-              className="bg-[#FF5D00] hover:bg-[#E05200] text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer"
+              className="bg-[#00a6c7] hover:bg-[#008fae] text-white text-xs font-bold px-4 py-2 rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer"
             >
               Get App
             </button>

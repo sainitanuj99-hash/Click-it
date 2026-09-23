@@ -390,7 +390,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#FF5D00] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#00a6c7] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Home'}
           </button>
@@ -402,7 +402,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'en'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -412,7 +412,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'hi'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -446,7 +446,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
         {/* Developer Deep Link Helper Banner */}
         <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
+            <Globe className="w-4 h-4 text-[#00a6c7] shrink-0" />
             <span>{current.developerNote}</span>
             <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
               /driver-faqs?lang={lang}
@@ -478,7 +478,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={current.searchPlaceholder}
-            className="w-full bg-[#12141C] border border-zinc-800 rounded-xl pl-12 pr-4 py-3.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-[#FF5D00] transition-colors"
+            className="w-full bg-[#12141C] border border-zinc-800 rounded-xl pl-12 pr-4 py-3.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-[#00a6c7] transition-colors"
           />
         </div>
 
@@ -488,7 +488,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
             onClick={() => setSelectedCat('all')}
             className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               selectedCat === 'all'
-                ? 'bg-[#FF5D00] text-white shadow-sm'
+                ? 'bg-[#00a6c7] text-white shadow-sm'
                 : 'bg-[#12141C] text-zinc-400 border border-zinc-800 hover:text-white'
             }`}
           >
@@ -500,7 +500,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
               onClick={() => setSelectedCat(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                 selectedCat === cat.id
-                  ? 'bg-[#FF5D00] text-white shadow-sm'
+                  ? 'bg-[#00a6c7] text-white shadow-sm'
                   : 'bg-[#12141C] text-zinc-400 border border-zinc-800 hover:text-white'
               }`}
             >
@@ -536,7 +536,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
                       </h2>
                     </div>
                     <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0 mt-1">
-                      {isOpen ? <ChevronUp className="w-4 h-4 text-[#FF5D00]" /> : <ChevronDown className="w-4 h-4" />}
+                      {isOpen ? <ChevronUp className="w-4 h-4 text-[#00a6c7]" /> : <ChevronDown className="w-4 h-4" />}
                     </div>
                   </button>
 
@@ -547,7 +547,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
                         <div className="space-y-2 pt-1 pl-1">
                           {faq.bullets.map((b, bIdx) => (
                             <div key={bIdx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-300">
-                              <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0 mt-0.5" />
                               <span>{b}</span>
                             </div>
                           ))}
@@ -564,7 +564,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
         {/* 24/7 Helpline Support Box */}
         <div className="mt-12 p-6 sm:p-7 bg-[#12141C] border border-zinc-800 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-[#FF5D00] shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-[#00a6c7] shrink-0">
               <Phone className="w-6 h-6" />
             </div>
             <div>
@@ -579,7 +579,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
 
           <a
             href="tel:18002034567"
-            className="w-full sm:w-auto text-center bg-[#FF5D00] hover:bg-[#E05200] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl transition-all shadow-sm active:scale-95"
+            className="w-full sm:w-auto text-center bg-[#00a6c7] hover:bg-[#008fae] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl transition-all shadow-sm active:scale-95"
           >
             1800 203 4567 (Toll Free)
           </a>

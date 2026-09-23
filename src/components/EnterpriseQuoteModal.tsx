@@ -62,7 +62,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
         {/* Header */}
         <div className="flex items-center justify-between border-b border-zinc-800 pb-4 min-w-0">
           <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 text-[#FF5D00] border border-orange-500/30 flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 text-[#00a6c7] border border-orange-500/30 flex items-center justify-center shrink-0">
               <Building2 className="w-5 h-5" />
             </div>
             <div className="min-w-0">
@@ -86,7 +86,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
             </p>
             <button
               onClick={() => { setQuoteSubmitted(false); onClose(); }}
-              className="bg-[#FF5D00] hover:bg-orange-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl"
+              className="bg-[#00a6c7] hover:bg-orange-600 text-white font-bold text-xs px-6 py-2.5 rounded-xl"
             >
               Back to Clickit App
             </button>
@@ -102,7 +102,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
                   required
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
                 />
               </div>
               <div>
@@ -112,7 +112,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
                   required
                   value={gstin}
                   onChange={(e) => setGstin(e.target.value)}
-                  className="w-full bg-zinc-950 text-white font-mono rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                  className="w-full bg-zinc-950 text-white font-mono rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
                 />
               </div>
             </div>
@@ -125,7 +125,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
                   required
                   value={contactPerson}
                   onChange={(e) => setContactPerson(e.target.value)}
-                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
                 />
               </div>
               <div>
@@ -135,7 +135,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                  className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
                 />
               </div>
             </div>
@@ -145,7 +145,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
               <select
                 value={monthlyVolumeTons}
                 onChange={(e) => setMonthlyVolumeTons(e.target.value)}
-                className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                className="w-full bg-zinc-950 text-white rounded-xl px-3.5 py-2.5 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
               >
                 <option value="10">10 to 25 Tons / Month (Standard Business)</option>
                 <option value="50">25 to 100 Tons / Month (Gold Partner)</option>
@@ -159,21 +159,21 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
                 rows={3}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full bg-zinc-950 text-white rounded-xl p-3 border border-zinc-800 focus:border-[#FF5D00] focus:outline-none"
+                className="w-full bg-zinc-950 text-white rounded-xl p-3 border border-zinc-800 focus:border-[#00a6c7] focus:outline-none"
               />
             </div>
 
             {/* Gemini AI Advisor Output Area */}
             <div className="bg-zinc-950 p-4 rounded-2xl border border-orange-500/20 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#FF5D00] flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-[#FF5D00]" /> Gemini AI Route & Cargo Advisor
+                <span className="text-xs font-bold text-[#00a6c7] flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-[#00a6c7]" /> Gemini AI Route & Cargo Advisor
                 </span>
                 <button
                   type="button"
                   onClick={handleFetchAiAdvisor}
                   disabled={isAiLoading}
-                  className="bg-[#FF5D00]/20 hover:bg-[#FF5D00]/40 text-[#FF5D00] text-[11px] font-bold px-3 py-1 rounded-lg border border-orange-500/30 transition-colors"
+                  className="bg-[#00a6c7]/20 hover:bg-[#00a6c7]/40 text-[#00a6c7] text-[11px] font-bold px-3 py-1 rounded-lg border border-orange-500/30 transition-colors"
                 >
                   {isAiLoading ? 'Analyzing...' : 'Run AI Analysis'}
                 </button>
@@ -201,7 +201,7 @@ export const EnterpriseQuoteModal: React.FC<EnterpriseQuoteModalProps> = ({ isOp
               </button>
               <button
                 type="submit"
-                className="w-2/3 bg-[#FF5D00] hover:bg-orange-600 text-white font-extrabold py-3 rounded-xl shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2"
+                className="w-2/3 bg-[#00a6c7] hover:bg-orange-600 text-white font-extrabold py-3 rounded-xl shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2"
               >
                 Submit Quote Request <Send className="w-4 h-4" />
               </button>

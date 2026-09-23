@@ -114,7 +114,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#FF5D00] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-[#00a6c7] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" /> {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Home'}
           </button>
@@ -126,7 +126,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'en'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -136,7 +136,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${
                   lang === 'hi'
-                    ? 'bg-[#FF5D00] text-white shadow-sm'
+                    ? 'bg-[#00a6c7] text-white shadow-sm'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -170,7 +170,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
         {/* Developer Deep Link Helper Banner */}
         <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
+            <Globe className="w-4 h-4 text-[#00a6c7] shrink-0" />
             <span>{current.developerNote}</span>
             <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
               /about-us?lang={lang}
@@ -207,7 +207,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
         {/* What We Do */}
         <section className="mb-10 bg-[#12141C] border border-zinc-800 rounded-2xl p-6 sm:p-7 shadow-sm">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-3 flex items-center gap-2">
-            <span className="text-[#FF5D00]">{current.whatWeDoTitle}</span>
+            <span className="text-[#00a6c7]">{current.whatWeDoTitle}</span>
           </h2>
           <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
             {current.whatWeDoDesc}
@@ -217,7 +217,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
         {/* Why ClickIt */}
         <section className="mb-10">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-5 flex items-center gap-2">
-            <span className="text-[#FF5D00]">{current.whyTitle}</span>
+            <span className="text-[#00a6c7]">{current.whyTitle}</span>
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {current.features.map((f, i) => (
@@ -226,7 +226,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
                 className="bg-[#12141C] border border-zinc-800 hover:border-orange-500/40 transition-all rounded-2xl p-5 shadow-sm space-y-2"
               >
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0" />
                   <h3 className="font-bold text-white text-base">{f.title}</h3>
                 </div>
                 <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed pl-6">
@@ -240,13 +240,13 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
         {/* Our Vision */}
         <section className="bg-gradient-to-r from-[#12141C] to-zinc-900 border border-zinc-800 rounded-2xl p-6 sm:p-7 shadow-sm mb-10">
           <h2 className="text-lg sm:text-xl font-bold text-white mb-3 flex items-center gap-2">
-            <Eye className="w-5 h-5 text-[#FF5D00]" />
-            <span className="text-[#FF5D00]">{current.visionTitle}</span>
+            <Eye className="w-5 h-5 text-[#00a6c7]" />
+            <span className="text-[#00a6c7]">{current.visionTitle}</span>
           </h2>
           <p className="text-zinc-300 leading-relaxed text-sm sm:text-base mb-4">
             {current.visionDesc}
           </p>
-          <div className="inline-block bg-orange-500/10 border border-orange-500/20 px-4 py-2 rounded-xl text-[#FF5D00] font-bold text-sm tracking-wide">
+          <div className="inline-block bg-orange-500/10 border border-orange-500/20 px-4 py-2 rounded-xl text-[#00a6c7] font-bold text-sm tracking-wide">
             "{current.motto}"
           </div>
         </section>

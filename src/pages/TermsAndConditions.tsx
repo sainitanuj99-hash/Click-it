@@ -255,9 +255,9 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#FF5D00] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#00a6c7] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
           >
-            <ArrowLeft className="w-4 h-4 text-[#FF5D00]" />
+            <ArrowLeft className="w-4 h-4 text-[#00a6c7]" />
             {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Main App'}
           </button>
 
@@ -269,7 +269,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === 'en'
-                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -280,7 +280,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
                   lang === 'hi'
-                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -317,7 +317,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
         <header className="mb-8 border-b border-zinc-800 pb-6 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-xs font-semibold text-orange-400">
-              <Scale className="w-3.5 h-3.5 text-[#FF5D00]" />
+              <Scale className="w-3.5 h-3.5 text-[#00a6c7]" />
               {t.badge}
             </div>
             <div className="text-xs text-zinc-400 font-medium">
@@ -342,7 +342,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
             </div>
             <button
               onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-              className="text-[#FF5D00] hover:underline font-semibold text-left sm:text-right"
+              className="text-[#00a6c7] hover:underline font-semibold text-left sm:text-right"
             >
               {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
             </button>
@@ -376,7 +376,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
                 <div className="pt-2 space-y-2.5">
                   {section.points.map((pt, pIdx) => (
                     <div key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300 bg-zinc-900/60 p-3 rounded-xl border border-zinc-800/50">
-                      <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#00a6c7] shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{pt}</span>
                     </div>
                   ))}
@@ -420,9 +420,9 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
         <div className="mt-12 pt-8 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={() => onNavigate ? onNavigate('/privacy-policy') : null}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#FF5D00] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#00a6c7] transition-colors"
           >
-            <Shield className="w-4 h-4 text-[#FF5D00]" />
+            <Shield className="w-4 h-4 text-[#00a6c7]" />
             {lang === 'hi' ? 'गोपनीयता नीति (Privacy Policy) देखें' : 'View Privacy Policy'}
           </button>
           <div className="text-xs text-zinc-500">
