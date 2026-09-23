@@ -11,6 +11,7 @@ import { WhyChooseClickit } from './components/WhyChooseClickit';
 import { FAQSection } from './components/FAQSection';
 import { CustomerTestimonials } from './components/CustomerTestimonials';
 import { Footer } from './components/Footer';
+import { usePageSeo } from './hooks/usePageSeo';
 
 // Lazy-loaded secondary pages & modals for optimal initial page-load performance
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -59,6 +60,9 @@ export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isPartnerModalOpen, setIsPartnerModalOpen] = useState(false);
   const [aiAdvisorCargo, setAiAdvisorCargo] = useState<any>(null);
+
+  // Sync document title, canonical link, and OpenGraph metadata per route
+  usePageSeo(activeTab);
 
   // Sync state and push browser history URL
   const setActiveTab = (tab: string) => {

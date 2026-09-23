@@ -117,6 +117,73 @@ Format your response cleanly with bullet points:
     }
   });
 
+  // Route metadata for server-rendered SEO
+  const ROUTE_SEO: Record<string, { title: string; description: string; canonical: string }> = {
+    '/': {
+      title: 'Clickit Jaipur – On-Demand Intracity Logistics & Delivery Network',
+      description: 'Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute pickup guaranteed.',
+      canonical: 'https://www.justclickit.in/'
+    },
+    '/about-us': {
+      title: 'About Clickit Jaipur – Moving Jaipur & India Forward',
+      description: 'Learn about Clickit Jaipur, our verified driver partner network, intracity freight innovation, and headquarters in Bani Park, Jaipur. On-demand logistics with zero surge.',
+      canonical: 'https://www.justclickit.in/about-us'
+    },
+    '/help-support': {
+      title: '24/7 Help & Support – Clickit Jaipur Helpline & Dispatch Office',
+      description: 'Contact Clickit Jaipur 24/7 support at +91 141 498 2200 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',
+      canonical: 'https://www.justclickit.in/help-support'
+    },
+    '/driver-faqs': {
+      title: 'Driver FAQs & Earnings – Join Clickit Jaipur Fleet',
+      description: 'Frequently asked questions for delivery drivers and vehicle owners in Jaipur. Learn about daily payouts, commercial vehicle requirements, fuel perks, and joining Clickit.',
+      canonical: 'https://www.justclickit.in/driver-faqs'
+    },
+    '/driver-agreement': {
+      title: 'Driver Partner Agreement – Clickit Logistics Jaipur',
+      description: 'Statutory onboarding terms, delivery partner code of conduct, payment settlement cycles, and terms of service for Clickit Logistics driver partners.',
+      canonical: 'https://www.justclickit.in/driver-agreement'
+    },
+    '/terms-and-conditions': {
+      title: 'Terms & Conditions – Clickit Logistics Private Limited',
+      description: 'Official user terms, cargo booking rules, pricing policies, cancellation terms, and dispute jurisdiction under competent courts in Jaipur, Rajasthan.',
+      canonical: 'https://www.justclickit.in/terms-and-conditions'
+    },
+    '/privacy-policy': {
+      title: 'Privacy Policy – Clickit Logistics Data Protection',
+      description: 'Clickit Logistics privacy policy: how we collect, safeguard, and use GPS coordinates, booking records, and contact information under Indian IT Act regulations.',
+      canonical: 'https://www.justclickit.in/privacy-policy'
+    },
+    '/app': {
+      title: 'Download Clickit App – Jaipur’s Fastest Mini-Truck & Courier App',
+      description: 'Download the Clickit app for Android & iOS. Book instant Tata Ace, 3-wheeler loaders, and bike deliveries anywhere in Jaipur with live GPS tracking.',
+      canonical: 'https://www.justclickit.in/app'
+    }
+  };
+
+  // Explicit XML & robots headers
+  app.get('/sitemap.xml', (req, res) => {
+    const sitemapPath = path.join(process.cwd(), process.env.NODE_ENV === 'production' ? 'dist' : 'public', 'sitemap.xml');
+    if (fs.existsSync(sitemapPath)) {
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+      return res.sendFile(sitemapPath);
+    }
+    const publicSitemap = path.join(process.cwd(), 'public', 'sitemap.xml');
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.sendFile(publicSitemap);
+  });
+
+  app.get('/robots.txt', (req, res) => {
+    const robotsPath = path.join(process.cwd(), process.env.NODE_ENV === 'production' ? 'dist' : 'public', 'robots.txt');
+    if (fs.existsSync(robotsPath)) {
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+      return res.sendFile(robotsPath);
+    }
+    const publicRobots = path.join(process.cwd(), 'public', 'robots.txt');
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.sendFile(publicRobots);
+  });
+
   // Vite middleware for development vs production static handler
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
@@ -128,7 +195,31 @@ Format your response cleanly with bullet points:
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+      const indexPath = path.join(distPath, 'index.html');
+      if (!fs.existsSync(indexPath)) {
+        return res.status(404).send('Not Found');
+      }
+
+      const reqPath = req.path.replace(/\/$/, '') || '/';
+      const seo = ROUTE_SEO[reqPath] || ROUTE_SEO['/'];
+
+      try {
+        let html = fs.readFileSync(indexPath, 'utf-8');
+        // Pre-render exact route title, description, and canonical for crawlers
+        html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${seo.title}</title>`);
+        html = html.replace(/<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="description" content="${seo.description}" />`);
+        html = html.replace(/<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:title" content="${seo.title}" />`);
+        html = html.replace(/<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:description" content="${seo.description}" />`);
+        html = html.replace(/<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:url" content="${seo.canonical}" />`);
+        html = html.replace(/<meta\s+name="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:title" content="${seo.title}" />`);
+        html = html.replace(/<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:description" content="${seo.description}" />`);
+        html = html.replace(/<link\s+rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link rel="canonical" href="${seo.canonical}" />`);
+
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.send(html);
+      } catch (err) {
+        res.sendFile(indexPath);
+      }
     });
   }
 
