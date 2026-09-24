@@ -1,6 +1,6 @@
 {
   "name": "Clickit Jaipur - Intracity Logistics & Delivery Network",
-  "description": "Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute pickup guaranteed.",
+  "description": "Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute express pickup.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

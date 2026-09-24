@@ -144,7 +144,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           category: 'trips',
           categoryName: 'Orders & Trips',
           q: "Why is OTP verification mandatory at pickup and delivery?",
-          a: "OTP (One-Time Password) guarantees that you are handing over goods to the authorized person and protects your earnings. Always verify the 4-digit Pickup OTP before loading, and collect the 4-digit Delivery OTP from the receiver before marking the order completed.",
+          a: "OTP (One-Time Password) ensures that you are handing over goods to the authorized person and protects your earnings. Always verify the 4-digit Pickup OTP before loading, and collect the 4-digit Delivery OTP from the receiver before marking the order completed.",
         },
         {
           id: 'trips-3',

@@ -11,7 +11,7 @@ export interface PageSeoConfig {
 export const SEO_PAGES: Record<string, PageSeoConfig> = {
   home: {
     title: 'Clickit Jaipur – On-Demand Intracity Logistics & Delivery Network',
-    description: 'Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute pickup guaranteed.',
+    description: 'Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute express pickup.',
     canonicalPath: '/',
     keywords: 'Clickit, Clickit Jaipur, Click It, Click It Jaipur, Clickit Logistics, Tata Ace Jaipur, mini truck rent Jaipur, intracity delivery Jaipur, bike courier Jaipur',
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',

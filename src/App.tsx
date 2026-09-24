@@ -230,7 +230,7 @@ export default function App() {
             </span>
             <span className="hidden md:inline text-zinc-300">•</span>
             <span className="hidden md:inline text-xs font-medium text-zinc-500">
-              India's On-Demand Logistics Network • 10–15 Min Pickup Guarantee
+              India's On-Demand Logistics Network • 10–15 Min Express Pickup
             </span>
           </div>
 

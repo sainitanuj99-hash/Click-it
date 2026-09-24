@@ -400,7 +400,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     </motion.div>
                   </AnimatePresence>
 
-                  {/* Guaranteed Safe Tag */}
+                  {/* Verified Safe Tag */}
                   <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-900/90 border border-white/20 text-[11px] font-semibold text-zinc-200 shrink-0">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#00a6c7]" />
                     <span>OTP &amp; GPS Verified</span>

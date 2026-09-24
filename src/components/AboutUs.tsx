@@ -104,7 +104,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               Founded with a mission to eliminate empty return trips, unpredictable pricing, and long loading wait times, Clickit Logistics transformed Jaipur's local freight industry.
             </p>
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-              Whether it's a small parcel moved by a 2-wheeler express bike or a 10-ton commercial container transported across intercity industrial highways, Clickit provides end-to-end live tracking, digital proof of delivery, and guaranteed driver assignment within 3 minutes.
+              Whether it's a small parcel moved by a 2-wheeler express bike or a 10-ton commercial container transported across intercity industrial highways, Clickit provides end-to-end live tracking, digital proof of delivery, and reliable driver assignment within 3 minutes.
             </p>
 
             <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300 font-medium">
@@ -182,7 +182,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white">Guaranteed Punctuality</h3>
+              <h3 className="text-lg font-bold text-white">Reliable Punctuality</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
                 Time is revenue for businesses. Our route optimizer factors in real-time Jaipur traffic and industrial zone rush hours to ensure accurate ETA commitments.
               </p>
