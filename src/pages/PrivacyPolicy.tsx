@@ -1,9 +1,44 @@
 import React, { useState } from "react";
-import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Copy, Check } from "lucide-react";
+import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Copy, Check, Trash2, AlertCircle, Share2, EyeOff, Smartphone, Server } from "lucide-react";
 
 interface PrivacyPolicyProps {
   onNavigate?: (path: string) => void;
   initialLang?: 'en' | 'hi';
+}
+
+interface ShareRow {
+  who: string;
+  what: string;
+  why: string;
+}
+
+interface SectionItem {
+  subtitle?: string;
+  text?: string;
+  bullets?: string[];
+}
+
+interface PrivacySection {
+  number: string;
+  title: string;
+  intro?: string;
+  subsections?: {
+    title: string;
+    description: string;
+    bullets?: string[];
+    note?: string;
+  }[];
+  bullets?: string[];
+  table?: ShareRow[];
+  extraNote?: string;
+  contactBox?: {
+    title: string;
+    subtitle: string;
+    email: string;
+    supportEmail: string;
+    phone: string;
+    statutoryNote: string;
+  };
 }
 
 export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicyProps) {
@@ -40,149 +75,431 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
 
   const content = {
     en: {
-      badge: "Data Protection & Security",
-      officialBadge: "Official Policy",
-      title: "Privacy Policy",
-      lastUpdated: "Last Updated: 15th Sept 2026",
-      effectiveDate: "Effective Date: 15th Sept 2026",
-      deepLinkNote: "In-App URL for developers:",
-      intro: "This Privacy Policy explains how ClickIt (\"Company,\" \"we,\" \"us,\" or \"our\") collects, uses, discloses, and protects your information when you use our website and mobile application (collectively, the \"ClickIt Platform\"), whether as a Customer or a Delivery Partner.",
+      badge: "Clickit Data Protection & Privacy",
+      officialBadge: "Official Policy Document",
+      title: "Clickit - Privacy Policy",
+      lastUpdated: "Last Updated: 24th Sept 2026",
+      effectiveDate: "Effective Date: 24th Sept 2026",
+      deepLinkNote: "In-App URL for mobile integration:",
+      intro1: 'This Privacy Policy explains how ClickIt (“Company,” “we,” “us,” or “our”), operated by Clickit Delivery Network Pvt. Ltd., collects, uses, shares, and protects your information when you use our website (justclickit.in) and our mobile apps Clickit (Customer) and Clickit Partner (Delivery Partner) (together, the “ClickIt Platform”).',
+      intro2: 'By creating an account or using the Platform, you agree to this Policy.',
+      callout: 'We do not sell your personal information. We do not use your data for third-party advertising, and we do not collect advertising IDs for ads.',
+      tableHeaders: {
+        who: "Who",
+        what: "What",
+        why: "Why"
+      },
       sections: [
         {
+          number: "1",
           title: "1. Information We Collect",
-          items: [
-            ["Account Information", "Name, phone number, email address, and password."],
-            ["Delivery Partner Information", "Government ID proof, address proof, vehicle registration and documents, bank/UPI details, and profile photo (for KYC and verification)."],
-            ["Location Data", "Real-time GPS location while using the app, to enable pickup, delivery, and tracking."],
-            ["Transaction Information", "Booking history, payment details, invoices, and order status."],
-            ["Device & Usage Information", "Device type, IP address, app version, and interaction data collected automatically for performance and security purposes."],
-          ],
+          intro: "We collect the following. Some items apply only if you use that feature or that app.",
+          subsections: [
+            {
+              title: "Account and profile",
+              description: "Name, phone number, email address, profile photo, language (English or Hindi), operating state/city, and GSTIN if you provide it.\nYou sign in with a one-time password (OTP) sent to your phone. We do not collect a password.\nCustomers may also sign in with Google or Apple. In that case we receive the name, email, and account identifier those services share with us."
+            },
+            {
+              title: "WhatsApp and SMS",
+              description: "If you choose, we may send the login OTP or service updates on WhatsApp. On Android we may use Google Play SMS User Consent so you can approve autofill of the login OTP. We do not request SMS inbox permission and we do not read your other messages."
+            },
+            {
+              title: "Delivery Partner verification (Clickit Partner)",
+              description: "Driving licence, vehicle RC, Aadhaar (front and back), PAN, profile photo, vehicle type, fuel type, and vehicle registration number. Vehicle and GST numbers may be checked through our payment/KYC partner (Cashfree). These documents are used only to verify you can operate on the Platform."
+            },
+            {
+              title: "Addresses and booking details",
+              description: "Saved places (for example Home or Work), pickup and drop addresses and coordinates, receiver name and phone, parcel/item description, and booking notes."
+            },
+            {
+              title: "Location",
+              description: "We collect precise location:",
+              bullets: [
+                "Customers: to set pickup/drop on the map and to follow the Delivery Partner during an active booking.",
+                "Delivery Partners: while you are online or on an active delivery, including when the app is not on screen (a persistent notification is shown on Android). We share this live location with the Customer for that booking so they can track the delivery."
+              ],
+              note: "You can stop Partner location sharing by going offline or finishing the delivery, and you can revoke location permission in device Settings."
+            },
+            {
+              title: "Photos",
+              description: "Profile photo; Partner KYC documents; pickup and delivery proof photos taken with the camera or chosen from the gallery."
+            },
+            {
+              title: "Payments and wallet",
+              description: "Booking payments, invoices, wallet recharges, deductions, refunds, and ride-package purchases. Card, UPI, and net-banking are processed by Cashfree. We do not store your full card number or UPI PIN."
+            },
+            {
+              title: "Ratings, support, and communications",
+              description: "Star ratings and review text; support tickets and messages; cancellation reason and remarks."
+            },
+            {
+              title: "Device and technical data",
+              description: "Device type, OS, app version, IP address, crash/performance logs, network status, and a push notification identifier (OneSignal) so we can send booking and account alerts.\nLogin tokens are stored on your device so you stay signed in."
+            },
+            {
+              title: "Website",
+              description: "On justclickit.in we may use cookies or similar tools for session, language, and security.\nWe do not collect contacts, microphone audio, or your SMS inbox."
+            }
+          ]
         },
         {
+          number: "2",
           title: "2. How We Use Your Information",
-          list: [
-            "To create and manage your account",
-            "To process bookings, match Delivery Partners, and complete deliveries",
-            "To process payments and generate invoices",
-            "To verify Delivery Partner identity and eligibility",
-            "To provide customer support and resolve disputes",
-            "To send booking updates, offers, and service notifications",
-            "To improve app performance and prevent fraud or misuse",
+          bullets: [
+            "Create and manage your account, including language",
+            "Send and verify OTP (SMS and, if you choose, WhatsApp)",
+            "Process bookings, match Delivery Partners, and complete deliveries",
+            "Share live location between the Customer and the assigned Partner during an active booking",
+            "Verify Partner identity, vehicle, and eligibility (KYC)",
+            "Store delivery proof",
+            "Process payments, invoices, refunds, and wallet credits",
+            "Let parties contact each other about a booking (for example a call to the number on that booking)",
+            "Provide support and handle disputes, ratings, and cancellations",
+            "Send transactional alerts (push, SMS, or WhatsApp)",
+            "Send offers only if you have opted in; you can opt out anytime",
+            "Improve reliability, prevent fraud, and meet legal duties"
           ],
+          extraNote: "We use your information only for these purposes, or a closely related purpose we tell you about."
         },
         {
-          title: "3. Sharing of Information",
-          paragraph: "We do not sell your personal information. We may share information with:",
-          list: [
-            "Delivery Partners/Customers as needed to complete a booking",
-            "Payment gateway providers to process transactions",
-            "Law enforcement or regulators when required by law",
-            "Service providers who support our operations (e.g., cloud hosting, SMS/notification services), bound by confidentiality obligations",
+          number: "3",
+          title: "3. How We Share Information",
+          intro: "We do not sell personal information. We share information only as needed to run the Platform:",
+          table: [
+            {
+              who: "The other party on a booking (Customer or Delivery Partner)",
+              what: "Name, phone, addresses, live location during the trip, vehicle details as needed",
+              why: "Complete and track the delivery"
+            },
+            {
+              who: "Cashfree",
+              what: "Payment, refund, GSTIN / vehicle checks",
+              why: "Payments and verification"
+            },
+            {
+              who: "OneSignal",
+              what: "Push identifier and alert content",
+              why: "Booking and account notifications"
+            },
+            {
+              who: "Mapbox",
+              what: "Coordinates and map requests",
+              why: "Maps, routes, and addresses"
+            },
+            {
+              who: "Microsoft Azure",
+              what: "Documents and proof photos",
+              why: "Secure file storage"
+            },
+            {
+              who: "Google / Apple",
+              what: "Only if you sign in with them",
+              why: "Account sign-in"
+            },
+            {
+              who: "SMS / WhatsApp providers",
+              what: "Phone number and message content",
+              why: "OTP and service messages"
+            },
+            {
+              who: "Hosting and security providers",
+              what: "Technical logs",
+              why: "Operate and protect the Platform"
+            },
+            {
+              who: "Regulators or law enforcement",
+              what: "What the law requires",
+              why: "Legal compliance"
+            }
           ],
+          extraNote: "Realtime tracking uses our servers (including a live connection) to pass location between the assigned Partner and the Customer for that booking only."
         },
         {
+          number: "4",
           title: "4. Data Retention",
-          paragraph: "We retain your information for as long as your account is active or as needed to comply with legal, tax, or regulatory obligations.",
+          intro: "We keep information while your account is active, and longer when the law, tax rules, fraud prevention, or a dispute requires it.",
+          subsections: [
+            {
+              title: "When you delete your account we remove:",
+              description: "login access; email; profile photo; saved addresses; KYC documents and GST details (if any); notification identifiers.\nYour mobile number is released so it can be registered again."
+            },
+            {
+              title: "We may retain:",
+              description: "your name on past bookings; your phone number in masked form (for example 914XXXXX60); booking, payment, invoice, and support records."
+            }
+          ],
+          bullets: [
+            "This leftover data is not a live account. You cannot sign in.",
+            "Unused wallet or package balance is not refunded after deletion. If a refund is available, request it before you delete the account."
+          ]
         },
         {
+          number: "5",
           title: "5. Data Security",
-          paragraph: "We use reasonable technical and organizational measures (including SSL encryption and access controls) to protect your data from unauthorized access, alteration, or disclosure.",
+          intro: "We use reasonable technical and organisational measures, including encryption in transit, restricted staff access, and secure cloud storage. No method of transmission or storage is 100% secure."
         },
         {
-          title: "6. Your Rights",
-          paragraph: "You may access, update, or request deletion of your personal information by contacting us at support@justclickit.in. You may also opt out of promotional communications at any time.",
+          number: "6",
+          title: "6. Your Rights, Choices, and Account Deletion",
+          bullets: [
+            "You may access or update your profile in the app: Settings → Edit Profile.",
+            "You may turn location, camera, photos, or notifications off in device Settings. Some features will not work without them.",
+            "You may opt out of promotional messages in the app or by emailing support@justclickit.in. Transactional messages about bookings, OTP, or your account may still be sent."
+          ],
+          subsections: [
+            {
+              title: "Delete your account (Google Play and App Store requirement)",
+              description: "You have the permanent right to delete your account through either of these methods:",
+              bullets: [
+                "In the app: Settings → Edit Profile → Delete Account → confirm.",
+                "Without the app: Email support@justclickit.in from your registered phone or email. Subject: Delete my Clickit account. Include your full name and registered mobile number."
+              ],
+              note: "In-app deletion is processed immediately. Email requests are completed within 30 days.\nYou cannot delete an account while a delivery is in progress. Finish or cancel it first.\nDeletion is permanent."
+            }
+          ]
         },
         {
+          number: "7",
           title: "7. Children's Privacy",
-          paragraph: "ClickIt is not intended for use by individuals under the age of 18.",
+          intro: "The Platform is only for users aged 18 or over. We do not knowingly collect information from children. If you believe we have, contact us and we will delete it."
         },
         {
-          title: "8. Changes to This Policy",
-          paragraph: "We may update this Policy periodically. Continued use of the Platform after changes are posted constitutes acceptance of the revised Policy.",
+          number: "8",
+          title: "8. International Processing",
+          intro: "Our servers are used to provide the service in India. Some partners (including Cashfree, OneSignal, Mapbox, Azure, Google, and Apple) may process data on servers outside India. They may do so only to provide their service to us, under their terms and applicable law."
         },
         {
-          title: "9. Grievance Officer & Contact Details",
-          paragraph: "Pursuant to the Information Technology Act, 2000, for privacy questions or escalations contact:",
-          contactInfo: {
-            officer: "Grievance Officer, Clickit Delivery Network Pvt. Ltd.",
+          number: "9",
+          title: "9. Changes to This Policy",
+          intro: "We may update this Policy. The “Last Updated” date will change. Continued use after an update means you accept the revised Policy. Material changes will be posted on this page."
+        },
+        {
+          number: "10",
+          title: "10. Grievance Officer and Contact",
+          intro: "For privacy questions, deletion help, or escalations:",
+          contactBox: {
+            title: "Grievance Officer, Clickit Delivery Network Pvt. Ltd.",
+            subtitle: "Clickit Legal & Grievance Department",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200 / 1800-CLICKIT"
+            phone: "+91 141 498 2200",
+            statutoryNote: "Pursuant to the Information Technology Act, 2000, and applicable Indian data-protection law."
           }
-        },
+        }
       ]
     },
     hi: {
-      badge: "डेटा सुरक्षा एवं गोपनीयता संरक्षण",
-      officialBadge: "आधिकारिक नीति",
-      title: "गोपनीयता नीति (Privacy Policy)",
-      lastUpdated: "अंतिम संशोधन: 15 सितंबर 2026",
-      effectiveDate: "लागू तिथि: 15 सितंबर 2026",
+      badge: "क्लिकइट डेटा सुरक्षा एवं गोपनीयता संरक्षण",
+      officialBadge: "आधिकारिक नीति दस्तावेज़",
+      title: "Clickit - प्राइवेसी नीति (Privacy Policy)",
+      lastUpdated: "अंतिम अपडेट: 24 सितंबर 2026",
+      effectiveDate: "प्रभावी तिथि: 24 सितंबर 2026",
       deepLinkNote: "मोबाइल ऐप में हिंदी में लिंक करने हेतु यूआरएल:",
-      intro: "यह गोपनीयता नीति स्पष्ट करती है कि ClickIt (\"कंपनी\", \"हम\" या \"हमारा\") आपकी व्यक्तिगत जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है जब आप हमारी वेबसाइट या मोबाइल ऐप (सामूहिक रूप से \"क्लिकइट प्लेटफॉर्म\") का उपयोग एक ग्राहक या डिलीवरी पार्टनर के रूप में करते हैं।",
+      intro1: 'यह प्राइवेसी नीति बताती है कि ClickIt (“कंपनी,” “हम”), जिसका संचालन Clickit Delivery Network Pvt. Ltd. करता है, आपकी जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है — जब आप हमारी वेबसाइट (justclickit.in) और मोबाइल ऐप Clickit (Customer) तथा Clickit Partner (Delivery Partner) का उपयोग करते हैं (एक साथ, “ClickIt Platform”)।',
+      intro2: 'खाता बनाने या प्लेटफ़ॉर्म का उपयोग करने पर आप इस नीति से सहमत होते हैं।',
+      callout: 'हम आपकी व्यक्तिगत जानकारी बेचते नहीं हैं। हम आपके डेटा का उपयोग तीसरे पक्ष के विज्ञापन के लिए नहीं करते, और विज्ञापन के लिए Advertising ID नहीं लेते।',
+      tableHeaders: {
+        who: "किससे",
+        what: "क्या",
+        why: "क्यों"
+      },
       sections: [
         {
-          title: "1. हम कौन-सी जानकारी एकत्र करते हैं (Information We Collect)",
-          items: [
-            ["खाता संबंधी जानकारी (Account Information)", "आपका नाम, मोबाइल फोन नंबर, ईमेल आईडी एवं सुरक्षित पासवर्ड।"],
-            ["डिलीवरी पार्टनर दस्तावेज (KYC Data)", "पहचान पत्र (आधार/पैन), ड्राइविंग लाइसेंस, वाहन का आरसी व बीमा दस्तावेज, बैंक/यूपीआई विवरण एवं प्रोफाइल फोटो (केवाईसी सत्यापन हेतु)।"],
-            ["स्थान / जीपीएस डेटा (Real-time GPS Location)", "ऐप के उपयोग के दौरान वास्तविक समय (Live) जीपीएस लोकेशन, जिससे पिकअप, सुरक्षित पार्सल डिलीवरी और लाइव ट्रैकिंग संभव हो सके।"],
-            ["लेन-देन एवं बुकिंग रिकॉर्ड (Transaction Data)", "बुकिंग का इतिहास, भुगतान का प्रकार, इनवॉइस (बिल) और ऑर्डर की स्थिति।"],
-            ["डिवाइस एवं तकनीकी जानकारी (Device & App Usage)", "डिवाइस का मॉडल, आईपी पता (IP Address), ऑपरेटिंग सिस्टम और सुरक्षा व धोखाधड़ी रोकथाम हेतु विश्लेषणात्मक डेटा।"],
+          number: "1",
+          title: "1. हम कौन-सी जानकारी एकत्र करते हैं",
+          intro: "नीचे दी गई जानकारी एकत्र होती है। कुछ चीजें केवल उसी ऐप या फीचर पर लागू होती हैं जिसका आप उपयोग करते हैं।",
+          subsections: [
+            {
+              title: "खाता और प्रोफ़ाइल",
+              description: "नाम, मोबाइल नंबर, ईमेल पता, प्रोफ़ाइल फोटो, भाषा (अंग्रेज़ी या हिन्दी), राज्य/शहर, और GSTIN (यदि आप दें)।\nआप मोबाइल पर भेजे गए वन-टाइम पासवर्ड (OTP) से साइन इन करते हैं। हम पासवर्ड नहीं लेते।\nCustomer Google या Apple से भी साइन इन कर सकते हैं। उस स्थिति में हमें वह नाम, ईमेल और अकाउंट पहचानकर्ता मिल सकता है जो ये सेवाएँ हमारे साथ साझा करती हैं।"
+            },
+            {
+              title: "WhatsApp और SMS",
+              description: "यदि आप चुनें, तो हम लॉगिन OTP या सेवा अपडेट WhatsApp पर भेज सकते हैं। Android पर हम Google Play SMS User Consent का उपयोग कर सकते हैं, ताकि आप लॉगिन OTP ऑटोफ़िल को मंज़ूर कर सकें। हम SMS इनबॉक्स की अनुमति नहीं माँगते और आपके अन्य संदेश नहीं पढ़ते।"
+            },
+            {
+              title: "Delivery Partner वेरिफिकेशन (Clickit Partner)",
+              description: "ड्राइविंग लाइसेंस, वाहन RC, आधार (आगे और पीछे), PAN, प्रोफ़ाइल फोटो, वाहन प्रकार, ईंधन प्रकार, और वाहन रजिस्ट्रेशन नंबर। वाहन और GST नंबर की जाँच हमारे पेमेंट/KYC पार्टनर (Cashfree) से हो सकती है। ये दस्तावेज़ केवल यह सत्यापित करने के लिए हैं कि आप प्लेटफ़ॉर्म पर काम कर सकते हैं।"
+            },
+            {
+              title: "पते और बुकिंग विवरण",
+              description: "सेव किए गए स्थान (जैसे होम या वर्क), पिकअप और ड्रॉप पते तथा कोऑर्डिनेट्स, रिसीवर का नाम और फ़ोन, पार्सल/आइटम विवरण, और बुकिंग नोट्स।"
+            },
+            {
+              title: "लोकेशन",
+              description: "हम सटीक लोकेशन एकत्र करते हैं:",
+              bullets: [
+                "Customer: मैप पर पिकअप/ड्रॉप सेट करने और एक्टिव बुकिंग के दौरान Delivery Partner को फ़ॉलो करने के लिए।",
+                "Delivery Partner: जब आप ऑनलाइन हों या एक्टिव डिलीवरी पर हों — ऐप स्क्रीन पर न होने पर भी (Android पर एक स्थायी नोटिफिकेशन दिखता है)। हम यह लाइव लोकेशन उस बुकिंग के Customer के साथ शेयर करते हैं, ताकि वे डिलीवरी ट्रैक कर सकें।"
+              ],
+              note: "Partner लोकेशन शेयरिंग रोकने के लिए ऑफ़लाइन हों या डिलीवरी पूरी करें। डिवाइस Settings में लोकेशन अनुमति भी वापस ले सकते हैं।"
+            },
+            {
+              title: "फोटो",
+              description: "प्रोफ़ाइल फोटो; Partner के KYC दस्तावेज़; कैमरा से ली गई या गैलरी से चुनी गई पिकअप और डिलीवरी प्रूफ़ फोटो।"
+            },
+            {
+              title: "पेमेंट और वॉलेट",
+              description: "बुकिंग पेमेंट, इनवॉइस, वॉलेट रिचार्ज, कटौती, रिफ़ंड, और राइड-पैकेज खरीदारी। कार्ड, UPI और नेट-बैंकिंग Cashfree से प्रोसेस होते हैं। हम आपका पूरा कार्ड नंबर या UPI PIN स्टोर नहीं करते।"
+            },
+            {
+              title: "रेटिंग, सपोर्ट और संचार",
+              description: "स्टार रेटिंग और रिव्यू टेक्स्ट; सपोर्ट टिकट और संदेश; रद्द करने का कारण और टिप्पणी।"
+            },
+            {
+              title: "डिवाइस और तकनीकी डेटा",
+              description: "डिवाइस प्रकार, OS, ऐप वर्शन, IP पता, क्रैश/परफ़ॉर्मेंस लॉग, नेटवर्क स्थिति, और पुश-नोटिफिकेशन पहचानकर्ता (OneSignal), ताकि हम बुकिंग और खाता अलर्ट भेज सकें।\nसाइन इन बनाए रखने के लिए लॉगिन टोकन आपके डिवाइस पर स्टोर होते हैं।"
+            },
+            {
+              title: "वेबसाइट",
+              description: "justclickit.in पर हम सेशन, भाषा और सुरक्षा के लिए कुकीज़ या ऐसी ही तकनीक इस्तेमाल कर सकते हैं।\nहम संपर्क सूची, माइक्रोफ़ोन ऑडियो, या आपका SMS इनबॉक्स एकत्र नहीं करते।"
+            }
+          ]
+        },
+        {
+          number: "2",
+          title: "2. हम जानकारी का उपयोग कैसे करते हैं",
+          bullets: [
+            "आपका खाता बनाना और प्रबंधित करना, भाषा सहित",
+            "OTP भेजना और सत्यापित करना (SMS और, यदि आप चुनें, WhatsApp)",
+            "बुकिंग प्रोसेस करना, Delivery Partner मैच करना, और डिलीवरी पूरी करना",
+            "एक्टिव बुकिंग के दौरान Customer और नियुक्त Partner के बीच लाइव लोकेशन शेयर करना",
+            "Partner की पहचान, वाहन और पात्रता सत्यापित करना (KYC)",
+            "डिलीवरी प्रूफ़ स्टोर करना",
+            "पेमेंट, इनवॉइस, रिफ़ंड और वॉलेट क्रेडिट प्रोसेस करना",
+            "बुकिंग के बारे में एक-दूसरे से संपर्क कराना (उदाहरण: उस बुकिंग पर दिए नंबर पर कॉल)",
+            "सपोर्ट देना तथा विवाद, रेटिंग और रद्दीकरण संभालना",
+            "ट्रांजैक्शनल अलर्ट भेजना (पुश, SMS, या WhatsApp)",
+            "ऑफ़र केवल तभी भेजना जब आपने सहमति दी हो; आप कभी भी ऑप्ट आउट कर सकते हैं",
+            "विश्वसनीयता सुधारना, धोखाधड़ी रोकना, और कानूनी दायित्व पूरे करना"
           ],
+          extraNote: "हम आपकी जानकारी केवल इन उद्देश्यों के लिए उपयोग करते हैं, या किसी निकट संबंधी उद्देश्य के लिए जिसके बारे में हम आपको बताएँगे।"
         },
         {
-          title: "2. आपकी जानकारी का उपयोग (How We Use Your Information)",
-          list: [
-            "आपका सुरक्षित उपयोगकर्ता खाता बनाने व प्रबंधित करने के लिए",
-            "लॉजिस्टिक्स बुकिंग स्वीकार करने, निकटतम डिलीवरी पार्टनर से मिलान करने और पार्सल पहुंचाने के लिए",
-            "डिजिटल भुगतान संसाधित करने और जीएसटी इनवॉइस जारी करने के लिए",
-            "डिलीवरी पार्टनर्स की पहचान व पृष्ठभूमि (KYC) सत्यापित करने के लिए",
-            "24x7 ग्राहक सहायता प्रदान करने और विवादों का समाधान करने के लिए",
-            "लाइव डिलीवरी स्टेटस, सुरक्षा अलर्ट व आवश्यक सूचनाएं भेजने के लिए",
-            "ऐप के प्रदर्शन को बेहतर बनाने और किसी भी प्रकार की धोखाधड़ी या दुरुपयोग को रोकने के लिए",
+          number: "3",
+          title: "3. हम जानकारी कैसे साझा करते हैं",
+          intro: "हम व्यक्तिगत जानकारी नहीं बेचते। प्लेटफ़ॉर्म चलाने के लिए केवल ज़रूरत के अनुसार शेयर करते हैं:",
+          table: [
+            {
+              who: "उसी बुकिंग का दूसरा पक्ष (Customer या Delivery Partner)",
+              what: "नाम, फ़ोन, पते, यात्रा के दौरान लाइव लोकेशन, ज़रूरत अनुसार वाहन विवरण",
+              why: "डिलीवरी पूरी और ट्रैक करना"
+            },
+            {
+              who: "Cashfree",
+              what: "पेमेंट, रिफ़ंड, GSTIN / वाहन जाँच",
+              why: "पेमेंट और वेरिफिकेशन"
+            },
+            {
+              who: "OneSignal",
+              what: "पुश पहचानकर्ता और अलर्ट सामग्री",
+              why: "बुकिंग और खाता सूचनाएँ"
+            },
+            {
+              who: "Mapbox",
+              what: "कोऑर्डिनेट्स और मैप अनुरोध",
+              why: "मैप, रूट और पते"
+            },
+            {
+              who: "Microsoft Azure",
+              what: "दस्तावेज़ और प्रूफ़ फ़ोटो",
+              why: "सुरक्षित फ़ाइल स्टोरेज"
+            },
+            {
+              who: "Google / Apple",
+              what: "केवल यदि आप उन्हीं से साइन इन करें",
+              why: "खाता साइन-इन"
+            },
+            {
+              who: "SMS / WhatsApp प्रदाता",
+              what: "फ़ोन नंबर और संदेश सामग्री",
+              why: "OTP और सेवा संदेश"
+            },
+            {
+              who: "होस्टिंग और सुरक्षा प्रदाता",
+              what: "तकनीकी लॉग",
+              why: "प्लेटफ़ॉर्म चलाना और सुरक्षित रखना"
+            },
+            {
+              who: "नियामक या कानून प्रवर्तन",
+              what: "जो कानून माँगे",
+              why: "कानूनी अनुपालन"
+            }
           ],
+          extraNote: "रियलटाइम ट्रैकिंग हमारे सर्वर (लाइव कनेक्शन सहित) से होती है, ताकि लोकेशन केवल उसी बुकिंग के नियुक्त Partner और Customer के बीच जाए।"
         },
         {
-          title: "3. जानकारी साझा करना (Sharing of Information)",
-          paragraph: "हम आपकी व्यक्तिगत जानकारी को किसी भी तीसरे पक्ष को बेचते नहीं हैं। आपकी जानकारी केवल निम्नलिखित आवश्यक परिस्थितियों में ही साझा की जाती है:",
-          list: [
-            "संबंधित डिलीवरी पार्टनर अथवा ग्राहक के साथ, जो उस विशिष्ट ऑर्डर को पूरा करने के लिए आवश्यक हो (जैसे पिकअप/डिलीवरी पता व फोन नंबर)",
-            "सुरक्षित ऑनलाइन लेन-देन के लिए आरबीआई द्वारा अधिकृत पेमेंट गेटवे प्रदाताओं के साथ",
-            "कानूनी आवश्यकता, अदालती आदेश या सरकारी विनियामक एजेंसियों के अनुरोध पर",
-            "विश्वसनीय तकनीकी क्लाउड इंफ्रास्ट्रक्चर एवं एसएमएस सेवा प्रदाताओं के साथ, जो कड़े गोपनीयता अनुबंधों से बंधे हैं",
+          number: "4",
+          title: "4. डेटा कितने समय तक रखा जाता है",
+          intro: "हम जानकारी खाता सक्रिय रहने तक रखते हैं, और उससे अधिक तब रखते हैं जब कानून, कर नियम, धोखाधड़ी रोकथाम, या कोई विवाद हो।",
+          subsections: [
+            {
+              title: "जब आप खाता हटाते हैं, हम हटाते हैं:",
+              description: "लॉगिन एक्सेस; ईमेल; प्रोफ़ाइल फोटो; सेव किए गए पते; KYC दस्तावेज़ और GST विवरण (यदि हों); नोटिफिकेशन पहचानकर्ता।\nआपका मोबाइल नंबर मुक्त हो जाता है, ताकि उसे दोबारा रजिस्टर किया जा सके।"
+            },
+            {
+              title: "हम रख सकते हैं:",
+              description: "पिछली बुकिंग पर आपका नाम; मास्क्ड रूप में आपका फ़ोन नंबर (जैसे 914XXXXX60); बुकिंग, पेमेंट, इनवॉइस और सपोर्ट रिकॉर्ड।"
+            }
           ],
+          bullets: [
+            "यह बचा डेटा लाइव खाता नहीं है। आप इसमें साइन इन नहीं कर सकते।",
+            "हटाने के बाद बचा वॉलेट या पैकेज बैलेंस रिफ़ंड नहीं होता। यदि रिफ़ंड उपलब्ध हो, तो खाता हटाने से पहले लें।"
+          ]
         },
         {
-          title: "4. डेटा का संरक्षण एवं प्रतिधारण (Data Retention)",
-          paragraph: "हम आपकी व्यक्तिगत जानकारी को तब तक सुरक्षित रखते हैं जब तक आपका खाता सक्रिय रहता है अथवा भारतीय कर, लॉजिस्टिक्स और कानूनी नियमों के अनुपालन के लिए आवश्यक होता है।",
+          number: "5",
+          title: "5. डेटा सुरक्षा",
+          intro: "हम उचित तकनीकी और संगठनात्मक उपाय इस्तेमाल करते हैं, जिनमें ट्रांजिट में एन्क्रिप्शन, सीमित स्टाफ एक्सेस, और सुरक्षित क्लाउड स्टोरेज शामिल हैं। ट्रांसमिशन या स्टोरेज का कोई तरीका 100% सुरक्षित नहीं होता।"
         },
         {
-          title: "5. डेटा सुरक्षा (Data Security & Encryption)",
-          paragraph: "आपकी जानकारी को अनधिकृत पहुंच, दुरुपयोग या चोरी से सुरक्षित रखने के लिए हम अत्याधुनिक एन्क्रिप्शन (SSL/TLS), सुरक्षित सर्वर और सख्त प्रमाणीकरण प्रक्रियाओं का उपयोग करते हैं।",
+          number: "6",
+          title: "6. आपके अधिकार, विकल्प और खाता हटाना",
+          bullets: [
+            "आप अपनी जानकारी ऐप में देख या अपडेट कर सकते हैं: सेटिंग्स → प्रोफ़ाइल संपादित करें।",
+            "आप डिवाइस Settings में लोकेशन, कैमरा, फोटो या सूचनाएँ बंद कर सकते हैं। इनके बिना कुछ सुविधाएँ काम नहीं करेंगी।",
+            "प्रमोशनल संदेश बंद करने के लिए ऐप का उपयोग करें या support@justclickit.in पर लिखें। बुकिंग, OTP या खाते से जुड़े ट्रांजैक्शनल संदेश फिर भी आ सकते हैं।"
+          ],
+          subsections: [
+            {
+              title: "अपना खाता हटाएँ (Google Play और App Store आवश्यकता)",
+              description: "आपको अपना खाता स्थायी रूप से हटाने का पूर्ण अधिकार है:",
+              bullets: [
+                "ऐप में: सेटिंग्स → प्रोफ़ाइल संपादित करें → खाता हटाएँ → पुष्टि करें।",
+                "ऐप के बिना: अपने रजिस्टर्ड फ़ोन या ईमेल से support@justclickit.in पर लिखें। विषय: Delete my Clickit account। अपना पूरा नाम और रजिस्टर्ड मोबाइल नंबर लिखें।"
+              ],
+              note: "ऐप में हटाना तुरंत प्रोसेस होता है। ईमेल अनुरोध 30 दिनों में पूरे होते हैं।\nयदि कोई डिलीवरी चल रही हो, तो खाता नहीं हटेगा। पहले उसे पूरा करें या रद्द करें।\nहटाना स्थायी है।"
+            }
+          ]
         },
         {
-          title: "6. उपयोगकर्ता के अधिकार (Your Privacy Rights)",
-          paragraph: "आपको अपनी प्रोफ़ाइल जानकारी देखने, सुधारने अथवा खाता हटाने (Delete Account) का पूरा अधिकार है। इसके लिए आप सीधे ऐप सेटिंग्स या support@justclickit.in पर ईमेल करके अनुरोध कर सकते हैं।",
+          number: "7",
+          title: "7. बच्चों की गोपनीयता",
+          intro: "यह प्लेटफ़ॉर्म केवल 18 वर्ष या उससे अधिक आयु के उपयोगकर्ताओं के लिए है। हम जानबूझकर बच्चों से जानकारी एकत्र नहीं करते। यदि आपको लगे कि हमने ली है, तो संपर्क करें — हम उसे हटा देंगे।"
         },
         {
-          title: "7. बच्चों व नाबालिगों की गोपनीयता (Children's Privacy)",
-          paragraph: "क्लिकइट प्लेटफॉर्म 18 वर्ष से कम आयु के नाबालिगों के स्वतंत्र उपयोग के लिए निर्देशित नहीं है।",
+          number: "8",
+          title: "8. अंतर्राष्ट्रीय प्रोसेसिंग",
+          intro: "हमारे सर्वर भारत में सेवा देने के लिए उपयोग होते हैं। कुछ पार्टनर (जिनमें Cashfree, OneSignal, Mapbox, Azure, Google और Apple शामिल हैं) डेटा भारत के बाहर के सर्वर पर प्रोसेस कर सकते हैं। वे ऐसा केवल हमें अपनी सेवा देने के लिए, अपनी शर्तों और लागू कानून के अंतर्गत कर सकते हैं।"
         },
         {
-          title: "8. गोपनीयता नीति में बदलाव (Policy Updates)",
-          paragraph: "हम सेवाओं में सुधार या सरकारी नियमों के अनुसार समय-समय पर इस नीति को संशोधित कर सकते हैं। नीति में किए गए बदलाव ऐप और वेबसाइट पर प्रकाशित होने के तुरंत बाद प्रभावी माने जाएंगे।",
+          number: "9",
+          title: "9. इस नीति में बदलाव",
+          intro: "हम इस नीति को अपडेट कर सकते हैं। “अंतिम अपडेट” की तारीख बदल जाएगी। अपडेट के बाद प्लेटफ़ॉर्म का उपयोग जारी रखना संशोधित नीति की स्वीकृति माना जाएगा। महत्वपूर्ण बदलाव इस पेज पर पोस्ट किए जाएँगे।"
         },
         {
-          title: "9. शिकायत निवारण अधिकारी एवं संपर्क (Grievance Officer)",
-          paragraph: "सूचना प्रौद्योगिकी (आईटी) अधिनियम के तहत किसी भी गोपनीयता संबंधी प्रश्न या शिकायत के लिए हमारे नोडल अधिकारी से संपर्क करें:",
-          contactInfo: {
-            officer: "शिकायत निवारण अधिकारी, क्लिकइट डिलीवरी नेटवर्क प्राइवेट लिमिटेड",
+          number: "10",
+          title: "10. शिकायत अधिकारी और संपर्क",
+          intro: "गोपनीयता संबंधी सवाल, खाता हटाने में मदद, या शिकायत के लिए:",
+          contactBox: {
+            title: "शिकायत अधिकारी, Clickit Delivery Network Pvt. Ltd.",
+            subtitle: "Clickit विधिक एवं शिकायत निवारण विभाग",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200 / 1800-CLICKIT"
+            phone: "+91 141 498 2200",
+            statutoryNote: "सूचना प्रौद्योगिकी अधिनियम, 2000, और लागू भारतीय डेटा-संरक्षण कानून के अंतर्गत।"
           }
-        },
+        }
       ]
     }
   };
@@ -190,7 +507,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-zinc-100 font-sans pb-24 selection:bg-orange-500/30 selection:text-orange-200">
+    <div className="min-h-screen bg-[#0B0C0E] text-zinc-100 font-sans pb-24 selection:bg-[#00a6c7]/30 selection:text-[#00a6c7]">
       {/* Top Banner / Breadcrumb */}
       <div className="border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md sticky top-0 z-30 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
@@ -208,9 +525,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
               <button
                 type="button"
                 onClick={() => handleLangChange('en')}
-                className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-[#00a6c7]/25'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -219,9 +536,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
               <button
                 type="button"
                 onClick={() => handleLangChange('hi')}
-                className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 cursor-pointer ${
                   lang === 'hi'
-                    ? 'bg-[#00a6c7] text-white shadow-md shadow-orange-500/20'
+                    ? 'bg-[#00a6c7] text-white shadow-md shadow-[#00a6c7]/25'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -234,7 +551,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             <button
               onClick={copyInAppLink}
               title="Copy URL to link in App"
-              className="inline-flex items-center gap-1.5 text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors cursor-pointer"
             >
               {copiedUrl ? (
                 <>
@@ -259,7 +576,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
               <Shield className="w-3.5 h-3.5 text-[#00a6c7]" />
               {t.badge}
             </div>
-            <div className="inline-flex items-center gap-1.5 text-xs text-orange-400 font-semibold bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">
+            <div className="inline-flex items-center gap-1.5 text-xs text-[#00a6c7] font-semibold bg-[#00a6c7]/10 px-3 py-1 rounded-full border border-[#00a6c7]/20">
               <Lock className="w-3.5 h-3.5" /> {t.officialBadge}
             </div>
           </div>
@@ -270,16 +587,16 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
           <p className="text-sm text-zinc-400">{t.lastUpdated} • {t.effectiveDate}</p>
 
           {/* In-app linking banner */}
-          <div className="mt-4 p-3 bg-[#12141C] border border-zinc-800/80 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-zinc-400">
+          <div className="mt-4 p-3.5 bg-[#12141C] border border-zinc-800/80 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-zinc-400">
             <div>
               <span className="text-zinc-300 font-semibold">{t.deepLinkNote} </span>
-              <code className="bg-zinc-900 px-2 py-0.5 rounded text-orange-400 font-mono">
+              <code className="bg-zinc-900 px-2 py-0.5 rounded text-[#00a6c7] font-mono">
                 /privacy-policy?lang={lang}
               </code>
             </div>
             <button
               onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-              className="text-[#00a6c7] hover:underline font-semibold text-left sm:text-right"
+              className="text-[#00a6c7] hover:underline font-semibold text-left sm:text-right cursor-pointer"
             >
               {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
             </button>
@@ -287,8 +604,13 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         </header>
 
         {/* Intro Card */}
-        <div className="bg-[#12141C] border border-zinc-800/90 rounded-2xl p-6 mb-8 shadow-lg text-zinc-300 leading-relaxed text-sm sm:text-base">
-          {t.intro}
+        <div className="bg-[#12141C] border border-zinc-800/90 rounded-2xl p-6 sm:p-7 mb-8 shadow-lg text-zinc-300 leading-relaxed text-sm sm:text-base space-y-4">
+          <p>{t.intro1}</p>
+          <p className="font-medium text-white">{t.intro2}</p>
+          <div className="p-4 rounded-xl bg-[#00a6c7]/10 border border-[#00a6c7]/25 text-[#00a6c7] font-semibold flex items-start gap-3">
+            <EyeOff className="w-5 h-5 shrink-0 mt-0.5" />
+            <span className="text-xs sm:text-sm leading-relaxed">{t.callout}</span>
+          </div>
         </div>
 
         {/* Sections */}
@@ -302,26 +624,49 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 <span className="text-[#00a6c7]">{section.title}</span>
               </h2>
 
-              {section.paragraph && (
+              {section.intro && (
                 <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
-                  {section.paragraph}
+                  {section.intro}
                 </p>
               )}
 
-              {section.items && (
-                <dl className="space-y-3 pt-1">
-                  {section.items.map(([label, desc], j) => (
-                    <div key={j} className="bg-zinc-950/60 p-4 rounded-xl border border-zinc-800/60">
-                      <dt className="font-semibold text-orange-400 text-sm mb-1">{label}</dt>
-                      <dd className="text-zinc-300 leading-relaxed text-xs sm:text-sm">{desc}</dd>
+              {/* Subsections (e.g., Account & Profile, WhatsApp, Location, etc.) */}
+              {section.subsections && (
+                <div className="space-y-4 pt-1">
+                  {section.subsections.map((sub, j) => (
+                    <div key={j} className="bg-zinc-950/60 p-4 sm:p-5 rounded-xl border border-zinc-800/60 space-y-2">
+                      <h3 className="font-bold text-[#00a6c7] text-sm sm:text-base">
+                        {sub.title}
+                      </h3>
+                      {sub.description && (
+                        <p className="text-zinc-300 leading-relaxed text-xs sm:text-sm whitespace-pre-line">
+                          {sub.description}
+                        </p>
+                      )}
+                      {sub.bullets && sub.bullets.length > 0 && (
+                        <ul className="space-y-2 text-zinc-300 text-xs sm:text-sm pt-1 pl-1">
+                          {sub.bullets.map((b, k) => (
+                            <li key={k} className="flex items-start gap-2.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#00a6c7] mt-1.5 shrink-0"></span>
+                              <span className="leading-relaxed">{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {sub.note && (
+                        <div className="pt-2 text-xs text-zinc-400 italic border-t border-zinc-800/50 whitespace-pre-line">
+                          {sub.note}
+                        </div>
+                      )}
                     </div>
                   ))}
-                </dl>
+                </div>
               )}
 
-              {section.list && (
+              {/* General Bullet Lists */}
+              {section.bullets && (
                 <ul className="space-y-2.5 text-zinc-300 text-sm sm:text-base pt-1">
-                  {section.list.map((item, j) => (
+                  {section.bullets.map((item, j) => (
                     <li key={j} className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#00a6c7] mt-2 shrink-0"></span>
                       <span className="leading-relaxed">{item}</span>
@@ -330,26 +675,87 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 </ul>
               )}
 
-              {section.contactInfo && (
-                <div className="mt-4 p-5 bg-zinc-950/80 border border-zinc-800 rounded-xl space-y-2 text-xs sm:text-sm">
-                  <div className="font-bold text-white text-base">
-                    {section.contactInfo.officer}
+              {/* Sharing Table for Section 3 */}
+              {section.table && (
+                <div className="overflow-x-auto pt-2 -mx-2 sm:mx-0">
+                  <table className="w-full text-left border-collapse border border-zinc-800 rounded-xl overflow-hidden text-xs sm:text-sm">
+                    <thead>
+                      <tr className="bg-zinc-900/90 text-zinc-200 border-b border-zinc-800 font-bold">
+                        <th className="p-3 sm:p-3.5 border-r border-zinc-800 w-1/4 sm:w-1/4">
+                          {t.tableHeaders.who}
+                        </th>
+                        <th className="p-3 sm:p-3.5 border-r border-zinc-800 w-2/5 sm:w-2/5">
+                          {t.tableHeaders.what}
+                        </th>
+                        <th className="p-3 sm:p-3.5">
+                          {t.tableHeaders.why}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-zinc-800/80 bg-zinc-950/40 text-zinc-300">
+                      {section.table.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-zinc-900/40 transition-colors">
+                          <td className="p-3 sm:p-3.5 font-semibold text-white border-r border-zinc-800 align-top">
+                            {row.who}
+                          </td>
+                          <td className="p-3 sm:p-3.5 text-zinc-300 border-r border-zinc-800 align-top leading-relaxed">
+                            {row.what}
+                          </td>
+                          <td className="p-3 sm:p-3.5 text-zinc-300 align-top leading-relaxed font-medium">
+                            {row.why}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* Extra note / closing remark */}
+              {section.extraNote && (
+                <p className="text-zinc-300 text-xs sm:text-sm pt-1 leading-relaxed bg-zinc-950/40 p-3.5 rounded-xl border border-zinc-800/50">
+                  {section.extraNote}
+                </p>
+              )}
+
+              {/* Section 10 Grievance Officer & Contact Box */}
+              {section.contactBox && (
+                <div className="mt-4 p-5 sm:p-6 bg-zinc-950/90 border border-zinc-800 rounded-xl space-y-3 text-xs sm:text-sm shadow-inner">
+                  <div>
+                    <div className="font-bold text-white text-base sm:text-lg">
+                      {section.contactBox.title}
+                    </div>
+                    <div className="text-xs text-zinc-400 mt-0.5">
+                      {section.contactBox.subtitle}
+                    </div>
                   </div>
-                  <div className="pt-2 flex flex-wrap gap-4 text-xs">
+
+                  <div className="pt-2 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
                     <a
-                      href={`mailto:${section.contactInfo.email}`}
-                      className="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 font-semibold"
+                      href={`mailto:${section.contactBox.email}`}
+                      className="inline-flex items-center gap-2 text-[#00a6c7] hover:underline font-semibold"
                     >
-                      <Mail className="w-3.5 h-3.5" />
-                      {section.contactInfo.email}
+                      <Mail className="w-4 h-4" />
+                      Email: {section.contactBox.email}
                     </a>
                     <a
-                      href={`tel:${section.contactInfo.phone}`}
-                      className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white font-semibold"
+                      href={`mailto:${section.contactBox.supportEmail}`}
+                      className="inline-flex items-center gap-2 text-zinc-300 hover:text-white font-semibold"
                     >
-                      <Phone className="w-3.5 h-3.5" />
-                      {section.contactInfo.phone}
+                      <Mail className="w-4 h-4 text-zinc-400" />
+                      Support: {section.contactBox.supportEmail}
                     </a>
+                    <a
+                      href={`tel:${section.contactBox.phone.replace(/[^0-9+]/g, '')}`}
+                      className="inline-flex items-center gap-2 text-zinc-300 hover:text-white font-semibold"
+                    >
+                      <Phone className="w-4 h-4 text-zinc-400" />
+                      Phone: {section.contactBox.phone}
+                    </a>
+                  </div>
+
+                  <div className="pt-3 border-t border-zinc-800 text-xs text-zinc-400 leading-relaxed">
+                    {section.contactBox.statutoryNote}
                   </div>
                 </div>
               )}
@@ -361,13 +767,13 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <div className="mt-12 pt-8 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={() => onNavigate ? onNavigate('/terms-and-conditions') : null}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#00a6c7] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             <FileText className="w-4 h-4 text-[#00a6c7]" />
-            {lang === 'hi' ? 'नियम एवं शर्तें (Terms and Conditions) देखें' : 'View Terms and Conditions'}
+            {lang === 'hi' ? 'नियम एवं शर्तें (Terms & Conditions) देखें' : 'View Terms and Conditions'}
           </button>
           <div className="text-xs text-zinc-500">
-            © 2026 Clickit Delivery Network Pvt. Ltd.
+            © 2026 Clickit Delivery Network Pvt. Ltd. All rights reserved.
           </div>
         </div>
       </div>

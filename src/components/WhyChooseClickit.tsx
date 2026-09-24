@@ -50,7 +50,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             SECTION HEADER
             ========================================================================= */}
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#00a6c7] shadow-sm mb-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5D00] shadow-sm mb-1">
             <span>Tailored for Every Need</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 tracking-tight">
@@ -77,7 +77,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Retailers &amp; Wholesalers
                 </h3>
-                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#00a6c7] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
+                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#FF5D00] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
                   BUSINESS USE
                 </span>
               </div>
@@ -106,7 +106,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
 
               {/* Brand Watermark Overlay */}
               <div className="absolute bottom-3 right-3 bg-black/85 px-3 py-1 rounded-md border border-white/20 text-[10px] font-bold text-white tracking-wider uppercase flex items-center gap-1 shadow-md">
-                <span className="text-[#00a6c7] font-black">Click</span>it Logistics • B2B Freight
+                <span className="text-[#FF5D00] font-black">Click</span>it Logistics • B2B Freight
               </div>
             </div>
 
@@ -124,7 +124,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                     }}
                     className={`text-xs sm:text-[13px] font-bold px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                       isSelected 
-                        ? 'bg-[#00a6c7] text-white border-[#00a6c7] shadow-md shadow-orange-500/25' 
+                        ? 'bg-[#FF5D00] text-white border-[#FF5D00] shadow-md shadow-orange-500/25' 
                         : 'bg-white text-zinc-700 border-zinc-200 hover:bg-orange-50 hover:text-zinc-900 hover:border-orange-200'
                     }`}
                   >
@@ -147,7 +147,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Individuals
                 </h3>
-                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#00a6c7] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
+                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#FF5D00] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
                   PERSONAL USE
                 </span>
               </div>
@@ -176,13 +176,13 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
 
               {/* Instant Delivery Badge */}
               <div className="absolute top-3 left-3 bg-black/85 px-3 py-1.5 rounded-lg border border-white/20 text-[11px] font-bold text-white flex items-center gap-1.5 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#00a6c7] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#FF5D00] animate-pulse" />
                 <span>Express Doorstep Delivery</span>
               </div>
 
               {/* Brand Watermark Overlay */}
               <div className="absolute bottom-3 right-3 bg-black/85 px-3 py-1 rounded-md border border-white/20 text-[10px] font-bold text-white tracking-wider uppercase flex items-center gap-1 shadow-md">
-                <span className="text-[#00a6c7] font-black">Click</span>it Express • Instant
+                <span className="text-[#FF5D00] font-black">Click</span>it Express • Instant
               </div>
             </div>
 
@@ -200,7 +200,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                     }}
                     className={`text-xs sm:text-[13px] font-bold px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                       isSelected 
-                        ? 'bg-[#00a6c7] text-white border-[#00a6c7] shadow-md shadow-orange-500/25' 
+                        ? 'bg-[#FF5D00] text-white border-[#FF5D00] shadow-md shadow-orange-500/25' 
                         : 'bg-white text-zinc-700 border-zinc-200 hover:bg-orange-50 hover:text-zinc-900 hover:border-orange-200'
                     }`}
                   >
