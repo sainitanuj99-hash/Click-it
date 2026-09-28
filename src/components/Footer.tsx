@@ -170,10 +170,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
           </button>
         </div>
 
-        {/* Right: Signature Tagline matching Schbang screenshot */}
-        <div className="text-center lg:text-right text-[11px] leading-snug text-zinc-500 font-medium">
-          <p className="text-zinc-300">Proudly created in India.</p>
-          <p>All Right Reserved, All Wrong Reversed.</p>
+        {/* Right: Official Copyright */}
+        <div className="text-center lg:text-right text-[11px] text-zinc-500 font-medium">
+          <p>© {new Date().getFullYear()} Clickit Delivery Network Pvt. Ltd. All rights reserved.</p>
         </div>
 
       </div>
