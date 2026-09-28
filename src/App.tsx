@@ -9,7 +9,6 @@ import { HeroBooking } from './components/HeroBooking';
 import { MobileAppBanner } from './components/MobileAppBanner';
 import { WhyChooseClickit } from './components/WhyChooseClickit';
 import { FAQSection } from './components/FAQSection';
-import { CustomerTestimonials } from './components/CustomerTestimonials';
 import { Footer } from './components/Footer';
 import { usePageSeo } from './hooks/usePageSeo';
 
@@ -167,9 +166,6 @@ export default function App() {
                 onOpenQuoteModal={() => { setAiAdvisorCargo(null); setIsQuoteModalOpen(true); }}
                 onOpenPartnerModal={() => setIsPartnerModalOpen(true)}
               />
-              
-              {/* Verified Customer & Business Testimonials */}
-              <CustomerTestimonials />
 
               {/* Mobile App Download */}
               <div id="mobile-app-download">

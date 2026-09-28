@@ -16,8 +16,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Building2,
-  ThumbsUp,
-  ThumbsDown,
   FileText,
   MapPin,
   Layers,
@@ -51,7 +49,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [openIds, setOpenIds] = useState<string[]>([]);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [feedbackGiven, setFeedbackGiven] = useState<Record<string, 'yes' | 'no'>>({});
 
   const categories = useMemo(() => [
     { id: 'all', label: 'All Questions', icon: Layers },
@@ -189,10 +186,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
 
   const collapseAll = () => {
     setOpenIds([]);
-  };
-
-  const handleFeedback = (id: string, type: 'yes' | 'no') => {
-    setFeedbackGiven(prev => ({ ...prev, [id]: type }));
   };
 
   const filteredFaqs = useMemo(() => {
@@ -420,7 +413,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                 {visibleFaqs.map((faq) => {
                   const isOpen = openIds.includes(faq.id);
                   const Icon = faq.categoryIcon;
-                  const feedback = feedbackGiven[faq.id];
 
                   return (
                     <motion.div
@@ -507,34 +499,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
                                   ))}
                                 </div>
                               )}
-
-                              {/* Feedback Sub-widget */}
-                              <div className="pt-2 flex items-center justify-between border-t border-zinc-100 text-xs text-zinc-500">
-                                <span className="font-medium">Was this information helpful?</span>
-                                
-                                {feedback ? (
-                                  <span className="text-[#FF5D00] font-semibold flex items-center gap-1">
-                                    <CheckCircle2 className="w-3.5 h-3.5" /> Thanks for your feedback!
-                                  </span>
-                                ) : (
-                                  <div className="flex items-center gap-2">
-                                    <button
-                                      type="button"
-                                      onClick={() => handleFeedback(faq.id, 'yes')}
-                                      className="px-2.5 py-1 rounded-md border border-zinc-200 hover:bg-zinc-100 hover:text-zinc-800 text-zinc-600 font-medium transition-colors flex items-center gap-1 cursor-pointer"
-                                    >
-                                      <ThumbsUp className="w-3 h-3" /> Yes
-                                    </button>
-                                    <button
-                                      type="button"
-                                      onClick={() => handleFeedback(faq.id, 'no')}
-                                      className="px-2.5 py-1 rounded-md border border-zinc-200 hover:bg-zinc-100 hover:text-zinc-800 text-zinc-600 font-medium transition-colors flex items-center gap-1 cursor-pointer"
-                                    >
-                                      <ThumbsDown className="w-3 h-3" /> No
-                                    </button>
-                                  </div>
-                                )}
-                              </div>
 
                             </div>
                           </motion.div>
