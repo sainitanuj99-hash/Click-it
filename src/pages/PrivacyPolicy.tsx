@@ -541,15 +541,15 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-[#0B0C0E] text-zinc-100 font-sans pb-24 selection:bg-[#00a6c7]/30 selection:text-[#00a6c7]">
+    <div className="min-h-screen bg-[#0B0C0E] text-zinc-100 font-sans pb-24 selection:bg-[#FF5D00]/30 selection:text-[#FF5D00]">
       {/* Top Banner / Breadcrumb */}
       <div className="border-b border-zinc-800/80 bg-zinc-950/70 backdrop-blur-md sticky top-0 z-30 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => onNavigate ? onNavigate('/') : window.history.back()}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#00a6c7] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-[#FF5D00] transition-colors py-1.5 px-2.5 -ml-2 rounded-lg hover:bg-zinc-900"
           >
-            <ArrowLeft className="w-4 h-4 text-[#00a6c7]" />
+            <ArrowLeft className="w-4 h-4 text-[#FF5D00]" />
             {lang === 'hi' ? 'मुख्य पृष्ठ पर लौटें' : 'Back to Home'}
           </button>
 
@@ -561,7 +561,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 onClick={() => handleLangChange('en')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-[#00a6c7] text-white shadow-md shadow-[#00a6c7]/25'
+                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -572,7 +572,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 onClick={() => handleLangChange('hi')}
                 className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex items-center gap-1.5 cursor-pointer ${
                   lang === 'hi'
-                    ? 'bg-[#00a6c7] text-white shadow-md shadow-[#00a6c7]/25'
+                    ? 'bg-[#FF5D00] text-white shadow-md shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -607,10 +607,10 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <header className="mb-8 border-b border-zinc-800 pb-6 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400">
-              <Shield className="w-3.5 h-3.5 text-[#00a6c7]" />
+              <Shield className="w-3.5 h-3.5 text-[#FF5D00]" />
               {t.badge}
             </div>
-            <div className="inline-flex items-center gap-1.5 text-xs text-[#00a6c7] font-semibold bg-[#00a6c7]/10 px-3 py-1 rounded-full border border-[#00a6c7]/20">
+            <div className="inline-flex items-center gap-1.5 text-xs text-[#FF5D00] font-semibold bg-[#FF5D00]/10 px-3 py-1 rounded-full border border-[#FF5D00]/20">
               <Lock className="w-3.5 h-3.5" /> {t.officialBadge}
             </div>
           </div>
@@ -625,13 +625,13 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
               <div className="flex items-center gap-2">
                 <span className="text-zinc-300 font-semibold">{t.deepLinkNote}</span>
-                <code className="bg-zinc-900 px-2 py-0.5 rounded text-[#00a6c7] font-mono font-medium">
+                <code className="bg-zinc-900 px-2 py-0.5 rounded text-[#FF5D00] font-mono font-medium">
                   {getBaseOrigin()}/privacy-policy?lang={lang}
                 </code>
               </div>
               <button
                 onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-                className="text-[#00a6c7] hover:underline font-semibold text-left sm:text-right cursor-pointer"
+                className="text-[#FF5D00] hover:underline font-semibold text-left sm:text-right cursor-pointer"
               >
                 {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
               </button>
@@ -651,7 +651,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                     : 'bg-zinc-900 hover:bg-zinc-800 border-zinc-700/80 text-zinc-200'
                 }`}
               >
-                {copiedEn ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5 text-[#00a6c7]" />}
+                {copiedEn ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5 text-[#FF5D00]" />}
                 <span>{copiedEn ? 'English URL Copied!' : 'Copy English URL'}</span>
               </button>
 
@@ -665,7 +665,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                     : 'bg-zinc-900 hover:bg-zinc-800 border-zinc-700/80 text-zinc-200'
                 }`}
               >
-                {copiedHi ? <Check className="w-3.5 h-3.5" /> : <Globe className="w-3.5 h-3.5 text-[#00a6c7]" />}
+                {copiedHi ? <Check className="w-3.5 h-3.5" /> : <Globe className="w-3.5 h-3.5 text-[#FF5D00]" />}
                 <span>{copiedHi ? 'Hindi URL Copied!' : 'Copy Hindi URL'}</span>
               </button>
 
@@ -690,7 +690,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <div className="bg-[#12141C] border border-zinc-800/90 rounded-2xl p-6 sm:p-7 mb-8 shadow-lg text-zinc-300 leading-relaxed text-sm sm:text-base space-y-4">
           <p>{t.intro1}</p>
           <p className="font-medium text-white">{t.intro2}</p>
-          <div className="p-4 rounded-xl bg-[#00a6c7]/10 border border-[#00a6c7]/25 text-[#00a6c7] font-semibold flex items-start gap-3">
+          <div className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/25 text-[#FF5D00] font-semibold flex items-start gap-3">
             <EyeOff className="w-5 h-5 shrink-0 mt-0.5" />
             <span className="text-xs sm:text-sm leading-relaxed">{t.callout}</span>
           </div>
@@ -704,7 +704,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
               className="bg-[#12141C] border border-zinc-800/80 hover:border-zinc-700/80 transition-all rounded-2xl p-6 sm:p-7 shadow-sm space-y-4"
             >
               <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                <span className="text-[#00a6c7]">{section.title}</span>
+                <span className="text-[#FF5D00]">{section.title}</span>
               </h2>
 
               {section.intro && (
@@ -718,7 +718,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 <div className="space-y-4 pt-1">
                   {section.subsections.map((sub, j) => (
                     <div key={j} className="bg-zinc-950/60 p-4 sm:p-5 rounded-xl border border-zinc-800/60 space-y-2">
-                      <h3 className="font-bold text-[#00a6c7] text-sm sm:text-base">
+                      <h3 className="font-bold text-[#FF5D00] text-sm sm:text-base">
                         {sub.title}
                       </h3>
                       {sub.description && (
@@ -730,7 +730,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                         <ul className="space-y-2 text-zinc-300 text-xs sm:text-sm pt-1 pl-1">
                           {sub.bullets.map((b, k) => (
                             <li key={k} className="flex items-start gap-2.5">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#00a6c7] mt-1.5 shrink-0"></span>
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5D00] mt-1.5 shrink-0"></span>
                               <span className="leading-relaxed">{b}</span>
                             </li>
                           ))}
@@ -751,7 +751,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 <ul className="space-y-2.5 text-zinc-300 text-sm sm:text-base pt-1">
                   {section.bullets.map((item, j) => (
                     <li key={j} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00a6c7] mt-2 shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF5D00] mt-2 shrink-0"></span>
                       <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -816,7 +816,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                   <div className="pt-2 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
                     <a
                       href={`mailto:${section.contactBox.email}`}
-                      className="inline-flex items-center gap-2 text-[#00a6c7] hover:underline font-semibold"
+                      className="inline-flex items-center gap-2 text-[#FF5D00] hover:underline font-semibold"
                     >
                       <Mail className="w-4 h-4" />
                       Email: {section.contactBox.email}
@@ -850,9 +850,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         <div className="mt-12 pt-8 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={() => onNavigate ? onNavigate('/terms-and-conditions') : null}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#00a6c7] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-[#FF5D00] transition-colors cursor-pointer"
           >
-            <FileText className="w-4 h-4 text-[#00a6c7]" />
+            <FileText className="w-4 h-4 text-[#FF5D00]" />
             {lang === 'hi' ? 'नियम एवं शर्तें (Terms & Conditions) देखें' : 'View Terms and Conditions'}
           </button>
           <div className="text-xs text-zinc-500">

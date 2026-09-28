@@ -16,7 +16,7 @@ export interface LogoMarkProps {
 export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
   className = 'w-12 h-13',
   animated = false,
-  color = '#00a6c7',
+  color = '#FF5D00',
   pulse = true,
 }) => {
   const content = (
@@ -26,7 +26,7 @@ export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
         <motion.span
           animate={{ scale: [0.85, 1.35, 0.85], opacity: [0.6, 0.15, 0.6] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-1 w-2/3 h-1.5 bg-[#00a6c7]/40 rounded-full blur-[2px] pointer-events-none"
+          className="absolute -bottom-1 w-2/3 h-1.5 bg-[#FF5D00]/40 rounded-full blur-[2px] pointer-events-none"
         />
       )}
 
@@ -35,7 +35,7 @@ export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
         viewBox="0 0 100 115"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-[0_2px_8px_rgba(0, 166, 199,0.3)] select-none"
+        className="w-full h-full drop-shadow-[0_2px_8px_rgba(255,93,0,0.3)] select-none"
       >
         {/* Refined White Center Core of C */}
         <circle cx="50" cy="40" r="11" fill="#FFFFFF" />
@@ -77,9 +77,8 @@ export interface WordmarkProps {
 
 /**
  * Clickit Official Default Wordmark:
- * - "Click" in solid brand cyan (#00a6c7), white, or dark
- * - "it" in white, dark, or cyan with signature hollow ring dot on 'i'
- * - Optionally enclosed in a crisp white badge box (boxedIt)
+ * - "Click" in solid brand orange (#FF5D00) with solid circular dot on 'i'
+ * - "it" in white (or dark) with signature hollow ring dot on 'i'
  * - Perfectly matches user's official default logo.png
  */
 export const ClickitWordmark: React.FC<WordmarkProps> = ({
@@ -104,96 +103,69 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
     <span
       className={`font-['Poppins',sans-serif] font-bold tracking-[-0.025em] leading-none inline-flex items-baseline select-none ${className}`}
     >
-      {/* "Click" Section: Solid Cyan (#00a6c7), White, or Dark */}
+      {/* "Click" Section: Solid Orange (#FF5D00) or White or Dark */}
       <span
         className={`inline-flex items-baseline ${
           textColorClick === 'white'
             ? 'text-white'
             : textColorClick === 'dark'
             ? 'text-zinc-900'
-            : 'text-[#00a6c7]'
+            : 'text-[#FF5D00]'
         }`}
       >
         Click
       </span>
 
-      {/* "it" Section: Either inside a white box with teal text or inline */}
-      {boxedIt ? (
-        <span className="inline-flex items-baseline bg-white text-[#00a6c7] px-[0.14em] pt-[0.06em] pb-[0.04em] rounded-[0.15em] shadow-[0_8px_24px_rgba(0,0,0,0.18)] ml-[0.04em] self-baseline">
-          {/* Custom 'i' in "it" with hollow ring dot in teal */}
-          <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
-            <span
-              className="absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] border-[#00a6c7] bg-transparent"
-              style={{
-                width: '0.155em',
-                height: '0.155em',
-              }}
-            />
-            <span
-              className="inline-block rounded-[0.015em] bg-[#00a6c7]"
-              style={{
-                width: '0.135em',
-                height: '0.52em',
-              }}
-            />
-          </span>
-          <span className="text-[#00a6c7]">t</span>
+      {/* "it" Section: White, Dark, or Orange with hollow ring dot on 'i' */}
+      <span
+        className={`inline-flex items-baseline ${
+          textColorIt === 'white'
+            ? 'text-white'
+            : textColorIt === 'orange'
+            ? 'text-[#FF5D00]'
+            : textColorIt === 'black'
+            ? 'text-black'
+            : 'text-zinc-900'
+        }`}
+      >
+        {/* Custom 'i' in "it" with hollow ring dot */}
+        <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
+          {/* Hollow ring dot: circular ring with transparent center */}
+          <span
+            className={`absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] ${
+              textColorIt === 'white'
+                ? 'border-white bg-transparent'
+                : textColorIt === 'orange'
+                ? 'border-[#FF5D00] bg-transparent'
+                : 'border-zinc-900 bg-transparent'
+            }`}
+            style={{
+              width: '0.155em',
+              height: '0.155em',
+            }}
+          />
+          {/* Stem of 'i' */}
+          <span
+            className={`inline-block rounded-[0.015em] ${
+              textColorIt === 'white'
+                ? 'bg-white'
+                : textColorIt === 'orange'
+                ? 'bg-[#FF5D00]'
+                : 'bg-zinc-900'
+            }`}
+            style={{
+              width: '0.135em',
+              height: '0.52em',
+            }}
+          />
         </span>
-      ) : (
-        <span
-          className={`inline-flex items-baseline ${
-            textColorIt === 'white'
-              ? 'text-white'
-              : textColorIt === 'orange'
-              ? 'text-[#00a6c7]'
-              : textColorIt === 'black'
-              ? 'text-black'
-              : 'text-zinc-900'
-          }`}
-        >
-          {/* Custom 'i' in "it" with hollow ring dot */}
-          <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
-            {/* Hollow ring dot: circular ring with transparent center */}
-            <span
-              className={`absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] ${
-                textColorIt === 'white'
-                  ? 'border-white bg-transparent'
-                  : textColorIt === 'orange'
-                  ? 'border-[#00a6c7] bg-transparent'
-                  : textColorIt === 'black'
-                  ? 'border-black bg-transparent'
-                  : 'border-zinc-900 bg-transparent'
-              }`}
-              style={{
-                width: '0.155em',
-                height: '0.155em',
-              }}
-            />
-            {/* Stem of 'i' */}
-            <span
-              className={`inline-block rounded-[0.015em] ${
-                textColorIt === 'white'
-                  ? 'bg-white'
-                  : textColorIt === 'orange'
-                  ? 'bg-[#00a6c7]'
-                  : textColorIt === 'black'
-                  ? 'bg-black'
-                  : 'bg-zinc-900'
-              }`}
-              style={{
-                width: '0.135em',
-                height: '0.52em',
-              }}
-            />
-          </span>
-          <span>t</span>
-        </span>
-      )}
+        <span>t</span>
+      </span>
 
       {/* Optional Trailing Brand Dot (defaults to false to match logo.png) */}
       {showTrailingDot && (
         <span
-          className="inline-block rounded-full bg-[#00a6c7] align-baseline shrink-0"
+          className="inline-block rounded-full bg-[#FF5D00] align-baseline shrink-0"
           style={{
             width: '0.15em',
             height: '0.15em',
@@ -254,7 +226,7 @@ export const ClickitLogo: React.FC<LogoProps> = ({
         <ClickitLogoMark
           className={iconSizeMap[size]}
           animated={animated}
-          color="#00a6c7"
+          color="#FF5D00"
           pulse={animated}
         />
       )}
@@ -269,12 +241,12 @@ export const ClickitLogo: React.FC<LogoProps> = ({
           />
         ) : (
           <span className={`font-['Poppins',sans-serif] font-bold leading-none ${textSizeMap[size]} transition-all`}>
-            {textColor === 'orange' && <span className="text-[#00a6c7]">{brandText}</span>}
+            {textColor === 'orange' && <span className="text-[#FF5D00]">{brandText}</span>}
             {textColor === 'white' && <span className="text-white">{brandText}</span>}
             {textColor === 'dark' && <span className="text-zinc-900">{brandText}</span>}
             {(textColor === 'mixed' || textColor === 'mixed-dark') && (
               <>
-                <span className="text-[#00a6c7]">Click</span>
+                <span className="text-[#FF5D00]">Click</span>
                 {brandText === 'Clickit' && (
                   <span className={textColor === 'mixed' ? 'text-white' : 'text-zinc-900'}>it</span>
                 )}
