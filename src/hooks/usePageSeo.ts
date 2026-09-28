@@ -23,6 +23,13 @@ export const SEO_PAGES: Record<string, PageSeoConfig> = {
     keywords: 'About Clickit Jaipur, Clickit Logistics founder, transport network Jaipur, delivery partners Jaipur, Bani Park logistics company',
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
+  careers: {
+    title: 'Hiring: Content Planner Intern – Clickit Logistics Jaipur | Apply Now',
+    description: 'Clickit Logistics is hiring a Content Planner Intern in Jaipur! Plan creative reels, viral social media campaigns, and brand storytelling. Apply online or on WhatsApp (+91450 91460).',
+    canonicalPath: '/careers',
+    keywords: 'Content Planner Intern Jaipur, social media internship Jaipur, creative intern Clickit, digital marketing jobs Jaipur, Clickit careers',
+    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+  },
   'help-support': {
     title: '24/7 Help & Support – Clickit Jaipur Helpline & Dispatch Office',
     description: 'Contact Clickit Jaipur 24/7 support at +91 141 498 2200 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',

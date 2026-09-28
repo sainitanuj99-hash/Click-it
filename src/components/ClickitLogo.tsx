@@ -67,23 +67,28 @@ export const ClickitLogoMark: React.FC<LogoMarkProps> = ({
 
 export interface WordmarkProps {
   className?: string;
-  textColorIt?: 'white' | 'dark' | 'orange';
+  textColorClick?: 'orange' | 'white' | 'dark';
+  textColorIt?: 'white' | 'dark' | 'orange' | 'black';
   showTrailingDot?: boolean;
   animatedPin?: boolean;
   useImage?: boolean;
+  boxedIt?: boolean;
 }
 
 /**
  * Clickit Official Default Wordmark:
- * - "Click" in solid brand orange (#00a6c7) with solid circular dot on 'i'
- * - "it" in white (or dark) with signature hollow ring dot on 'i'
+ * - "Click" in solid brand cyan (#00a6c7), white, or dark
+ * - "it" in white, dark, or cyan with signature hollow ring dot on 'i'
+ * - Optionally enclosed in a crisp white badge box (boxedIt)
  * - Perfectly matches user's official default logo.png
  */
 export const ClickitWordmark: React.FC<WordmarkProps> = ({
   className = '',
+  textColorClick = 'orange',
   textColorIt = 'white',
   showTrailingDot = false,
   useImage = false,
+  boxedIt = false,
 }) => {
   if (useImage) {
     return (
@@ -99,54 +104,91 @@ export const ClickitWordmark: React.FC<WordmarkProps> = ({
     <span
       className={`font-['Poppins',sans-serif] font-bold tracking-[-0.025em] leading-none inline-flex items-baseline select-none ${className}`}
     >
-      {/* "Click" Section: Solid Orange with solid circular dot on 'i' */}
-      <span className="text-[#00a6c7] inline-flex items-baseline">
+      {/* "Click" Section: Solid Cyan (#00a6c7), White, or Dark */}
+      <span
+        className={`inline-flex items-baseline ${
+          textColorClick === 'white'
+            ? 'text-white'
+            : textColorClick === 'dark'
+            ? 'text-zinc-900'
+            : 'text-[#00a6c7]'
+        }`}
+      >
         Click
       </span>
 
-      {/* "it" Section: White (or dark) with hollow ring dot on 'i' */}
-      <span
-        className={`inline-flex items-baseline ${
-          textColorIt === 'white'
-            ? 'text-white'
-            : textColorIt === 'orange'
-            ? 'text-[#00a6c7]'
-            : 'text-zinc-900'
-        }`}
-      >
-        {/* Custom 'i' in "it" with hollow ring dot */}
-        <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
-          {/* Hollow ring dot: circular ring with transparent center */}
-          <span
-            className={`absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] ${
-              textColorIt === 'white'
-                ? 'border-white bg-transparent'
-                : textColorIt === 'orange'
-                ? 'border-[#00a6c7] bg-transparent'
-                : 'border-zinc-900 bg-transparent'
-            }`}
-            style={{
-              width: '0.155em',
-              height: '0.155em',
-            }}
-          />
-          {/* Stem of 'i' */}
-          <span
-            className={`inline-block rounded-[0.015em] ${
-              textColorIt === 'white'
-                ? 'bg-white'
-                : textColorIt === 'orange'
-                ? 'bg-[#00a6c7]'
-                : 'bg-zinc-900'
-            }`}
-            style={{
-              width: '0.135em',
-              height: '0.52em',
-            }}
-          />
+      {/* "it" Section: Either inside a white box with teal text or inline */}
+      {boxedIt ? (
+        <span className="inline-flex items-baseline bg-white text-[#00a6c7] px-[0.14em] pt-[0.06em] pb-[0.04em] rounded-[0.15em] shadow-[0_8px_24px_rgba(0,0,0,0.18)] ml-[0.04em] self-baseline">
+          {/* Custom 'i' in "it" with hollow ring dot in teal */}
+          <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
+            <span
+              className="absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] border-[#00a6c7] bg-transparent"
+              style={{
+                width: '0.155em',
+                height: '0.155em',
+              }}
+            />
+            <span
+              className="inline-block rounded-[0.015em] bg-[#00a6c7]"
+              style={{
+                width: '0.135em',
+                height: '0.52em',
+              }}
+            />
+          </span>
+          <span className="text-[#00a6c7]">t</span>
         </span>
-        <span>t</span>
-      </span>
+      ) : (
+        <span
+          className={`inline-flex items-baseline ${
+            textColorIt === 'white'
+              ? 'text-white'
+              : textColorIt === 'orange'
+              ? 'text-[#00a6c7]'
+              : textColorIt === 'black'
+              ? 'text-black'
+              : 'text-zinc-900'
+          }`}
+        >
+          {/* Custom 'i' in "it" with hollow ring dot */}
+          <span className="relative inline-flex flex-col items-center justify-end align-baseline mx-[0.015em]">
+            {/* Hollow ring dot: circular ring with transparent center */}
+            <span
+              className={`absolute bottom-[0.54em] left-1/2 -translate-x-1/2 rounded-full border-[0.038em] ${
+                textColorIt === 'white'
+                  ? 'border-white bg-transparent'
+                  : textColorIt === 'orange'
+                  ? 'border-[#00a6c7] bg-transparent'
+                  : textColorIt === 'black'
+                  ? 'border-black bg-transparent'
+                  : 'border-zinc-900 bg-transparent'
+              }`}
+              style={{
+                width: '0.155em',
+                height: '0.155em',
+              }}
+            />
+            {/* Stem of 'i' */}
+            <span
+              className={`inline-block rounded-[0.015em] ${
+                textColorIt === 'white'
+                  ? 'bg-white'
+                  : textColorIt === 'orange'
+                  ? 'bg-[#00a6c7]'
+                  : textColorIt === 'black'
+                  ? 'bg-black'
+                  : 'bg-zinc-900'
+              }`}
+              style={{
+                width: '0.135em',
+                height: '0.52em',
+              }}
+            />
+          </span>
+          <span>t</span>
+        </span>
+      )}
 
       {/* Optional Trailing Brand Dot (defaults to false to match logo.png) */}
       {showTrailingDot && (

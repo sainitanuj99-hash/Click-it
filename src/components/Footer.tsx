@@ -32,6 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
           <h1 className="text-[16vw] sm:text-[17.5vw] md:text-[18.5vw] lg:text-[19.5vw] leading-[0.9] select-none inline-flex items-baseline group cursor-default whitespace-nowrap">
             <ClickitWordmark 
               className="group-hover:scale-[1.01] transition-transform duration-300"
+              textColorClick="orange"
               textColorIt="white"
               showTrailingDot={false}
             />
@@ -129,6 +130,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
             className="hover:text-[#00a6c7] transition-colors cursor-pointer"
           >
             About Us
+          </button>
+          <button 
+            onClick={() => setActiveTab('careers')} 
+            className="hover:text-[#00a6c7] transition-colors cursor-pointer flex items-center gap-1 font-bold text-white"
+          >
+            <span>Careers</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           </button>
           <button 
             onClick={() => setActiveTab('driver-faqs')} 

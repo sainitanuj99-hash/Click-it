@@ -145,6 +145,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
+            onClick={() => setActiveTab('careers')}
+            className={`px-3.5 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'careers' || activeTab === 'hiring' || activeTab === 'apply'
+                ? 'text-[#00a6c7] bg-teal-500/10 border border-teal-500/25 font-black shadow-xs'
+                : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100'
+            }`}
+          >
+            <span>Careers</span>
+            <span className="px-1.5 py-0.5 rounded-md bg-emerald-500 text-white text-[9px] font-black tracking-wider uppercase leading-none">
+              Hiring
+            </span>
+          </button>
+
+          <button
             onClick={openPartnerModal}
             className="px-3.5 py-2 rounded-xl text-zinc-700 hover:text-[#00a6c7] hover:bg-orange-500/10 transition-all cursor-pointer flex items-center gap-1.5"
           >
@@ -196,6 +210,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             About Us
+          </button>
+          <button
+            onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false); }}
+            className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold flex items-center justify-between ${
+              activeTab === 'careers' || activeTab === 'hiring' || activeTab === 'apply'
+                ? 'bg-teal-500/10 border border-teal-500/25 text-[#00a6c7]'
+                : 'text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50'
+            }`}
+          >
+            <span>Careers & Hiring</span>
+            <span className="px-2 py-0.5 rounded-md bg-emerald-500 text-white text-[10px] font-black uppercase">
+              We're Hiring
+            </span>
           </button>
           <button
             onClick={() => { if (openPartnerModal) openPartnerModal(); setMobileMenuOpen(false); }}
