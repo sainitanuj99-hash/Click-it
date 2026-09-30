@@ -28,14 +28,15 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
   const businessPills = [
     { label: 'Multiple pickups and drops', icon: Truck },
     { label: 'Urgent restocking', icon: Store },
-    { label: 'Planned delivery', icon: Package }
+    { label: 'Planned delivery', icon: Package },
+    { label: 'GST invoice billing', icon: FileText }
   ];
 
   const personalPills = [
-    { label: 'Lunch delivery', icon: Utensils },
+    { label: 'Gift delivery', icon: Gift },
     { label: 'Document delivery', icon: FileText },
-    { label: 'Home shifting', icon: Home },
-    { label: 'Gift delivery', icon: Gift }
+    { label: 'Lunch & tiffin delivery', icon: Utensils },
+    { label: 'Home shifting', icon: Home }
   ];
 
   return (
@@ -62,18 +63,18 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
         </div>
 
         {/* =========================================================================
-            2-COLUMN SHOWCASE CARDS
+            2-COLUMN SHOWCASE CARDS (BALANCED FOR 15" LAPTOPS & WIDE SCREENS)
             ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
           
           {/* -----------------------------------------------------------------------
               CARD 1: Retailers & Wholesalers (BUSINESS USE)
               ----------------------------------------------------------------------- */}
-          <div className="bg-[#FAFBFD] border border-zinc-200/90 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl shadow-zinc-200/50 hover:shadow-2xl hover:border-orange-200/90 transition-all duration-300 group">
+          <div className="bg-[#FAFBFD] border border-zinc-200/90 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl shadow-zinc-200/50 hover:shadow-2xl hover:border-orange-200/90 transition-all duration-300 group h-full">
             
-            {/* Card Header */}
+            {/* Card Header (Matched Height & Alignment) */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center justify-between gap-3 min-h-[36px]">
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Retailers &amp; Wholesalers
                 </h3>
@@ -81,13 +82,13 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                   BUSINESS USE
                 </span>
               </div>
-              <p className="text-sm sm:text-[15px] text-zinc-600 font-medium leading-relaxed">
-                Move bulk loads or single orders - pickups, drops, all in one booking.
+              <p className="text-sm sm:text-[15px] text-zinc-600 font-medium leading-relaxed min-h-[44px] flex items-center">
+                Move bulk loads or single orders — pickups, drops, all in one booking.
               </p>
             </div>
 
             {/* Photo Container */}
-            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
               <img 
                 src="/images/retailers-wholesalers.jpg" 
                 onError={(e) => {
@@ -104,14 +105,20 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
               {/* Subtle vignette gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
 
+              {/* Service Feature Badge */}
+              <div className="absolute top-3 left-3 bg-black/85 px-3 py-1.5 rounded-lg border border-white/20 text-[11px] font-bold text-white flex items-center gap-1.5 shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#FF5D00] animate-pulse" />
+                <span>Multi-Drop Commercial Route</span>
+              </div>
+
               {/* Brand Watermark Overlay */}
               <div className="absolute bottom-3 right-3 bg-black/85 px-3 py-1 rounded-md border border-white/20 text-[10px] font-bold text-white tracking-wider uppercase flex items-center gap-1 shadow-md">
                 <span className="text-[#FF5D00] font-black">Click</span>it Logistics • B2B Freight
               </div>
             </div>
 
-            {/* Bottom Pill Tags */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            {/* Bottom Pill Tags (Matched Container Min-Height) */}
+            <div className="min-h-[84px] flex flex-wrap items-center content-start gap-2.5 pt-1">
               {businessPills.map((pill) => {
                 const isSelected = activeBusinessTag === pill.label;
                 return (
@@ -122,7 +129,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                       setActiveBusinessTag(pill.label);
                       if (onBookClick) onBookClick();
                     }}
-                    className={`text-xs sm:text-[13px] font-bold px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
+                    className={`text-xs sm:text-[13px] font-bold px-3.5 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                       isSelected 
                         ? 'bg-[#FF5D00] text-white border-[#FF5D00] shadow-md shadow-orange-500/25' 
                         : 'bg-white text-zinc-700 border-zinc-200 hover:bg-orange-50 hover:text-zinc-900 hover:border-orange-200'
@@ -139,11 +146,11 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
           {/* -----------------------------------------------------------------------
               CARD 2: Individuals (PERSONAL USE)
               ----------------------------------------------------------------------- */}
-          <div className="bg-[#FAFBFD] border border-zinc-200/90 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl shadow-zinc-200/50 hover:shadow-2xl hover:border-orange-200/90 transition-all duration-300 group">
+          <div className="bg-[#FAFBFD] border border-zinc-200/90 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl shadow-zinc-200/50 hover:shadow-2xl hover:border-orange-200/90 transition-all duration-300 group h-full">
             
-            {/* Card Header */}
+            {/* Card Header (Matched Height & Alignment) */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center justify-between gap-3 min-h-[36px]">
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Individuals
                 </h3>
@@ -151,13 +158,13 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                   PERSONAL USE
                 </span>
               </div>
-              <p className="text-sm sm:text-[15px] text-zinc-600 font-medium leading-relaxed">
-                Send parcels to anybody in minutes
+              <p className="text-sm sm:text-[15px] text-zinc-600 font-medium leading-relaxed min-h-[44px] flex items-center">
+                Send parcels, gifts, and essentials to anybody across Jaipur in minutes.
               </p>
             </div>
 
             {/* Photo Container */}
-            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
               <img 
                 src="/images/individuals.jpg" 
                 onError={(e) => {
@@ -186,8 +193,8 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
               </div>
             </div>
 
-            {/* Bottom Pill Tags */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            {/* Bottom Pill Tags (Matched Container Min-Height) */}
+            <div className="min-h-[84px] flex flex-wrap items-center content-start gap-2.5 pt-1">
               {personalPills.map((pill) => {
                 const isSelected = activePersonalTag === pill.label;
                 return (
@@ -198,7 +205,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                       setActivePersonalTag(pill.label);
                       if (onBookClick) onBookClick();
                     }}
-                    className={`text-xs sm:text-[13px] font-bold px-4 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
+                    className={`text-xs sm:text-[13px] font-bold px-3.5 py-2 rounded-full border transition-all duration-200 cursor-pointer ${
                       isSelected 
                         ? 'bg-[#FF5D00] text-white border-[#FF5D00] shadow-md shadow-orange-500/25' 
                         : 'bg-white text-zinc-700 border-zinc-200 hover:bg-orange-50 hover:text-zinc-900 hover:border-orange-200'

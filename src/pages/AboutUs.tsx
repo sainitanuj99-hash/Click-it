@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowLeft, CheckCircle2, Award, Zap, Eye, Globe, Copy, Check, ShieldCheck, HeartHandshake } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Award, Zap, Eye, ShieldCheck, HeartHandshake } from "lucide-react";
 
 interface AboutUsProps {
   onNavigate?: (path: string) => void;
@@ -18,23 +18,12 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
     return 'en';
   });
 
-  const [copiedUrl, setCopiedUrl] = useState(false);
-
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('lang', newLang);
       window.history.replaceState({}, '', url.toString());
-    }
-  };
-
-  const copyInAppLink = () => {
-    if (typeof window !== 'undefined') {
-      const url = `${window.location.origin}/about-us?lang=${lang}`;
-      navigator.clipboard.writeText(url);
-      setCopiedUrl(true);
-      setTimeout(() => setCopiedUrl(false), 2500);
     }
   };
 
@@ -143,44 +132,11 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
                 हिन्दी (Hindi)
               </button>
             </div>
-
-            {/* Copy In-App Link Button */}
-            <button
-              onClick={copyInAppLink}
-              className="inline-flex items-center gap-1.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 px-3 py-1 rounded-lg text-xs font-medium transition-all"
-              title="Copy URL for Driver App WebView"
-            >
-              {copiedUrl ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-semibold">{lang === 'hi' ? 'लिंक कॉपी हो गया!' : 'Copied!'}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>{lang === 'hi' ? 'यूआरएल कॉपी करें' : 'Copy URL'}</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
-        {/* Developer Deep Link Helper Banner */}
-        <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
-            <span>{current.developerNote}</span>
-            <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
-              /about-us?lang={lang}
-            </code>
-          </div>
-          <span className="text-zinc-500 text-[11px]">
-            {lang === 'hi' ? 'ड्राइवर ऐप वेबव्यू के लिए उपयुक्त' : 'Ready for Driver App WebView'}
-          </span>
-        </div>
-
         <header className="mb-10 border-b border-zinc-800 pb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-semibold">
             <Zap className="w-3.5 h-3.5" /> {current.badge}
@@ -250,6 +206,19 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
             "{current.motto}"
           </div>
         </section>
+
+        {/* Document Version & Corporate Footer */}
+        <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="font-semibold text-zinc-200">
+              {lang === 'hi' ? 'क्लिकइट लॉजिस्टिक्स नेटवर्क' : 'Clickit Logistics Network'} • Version 1.0
+            </span>
+          </div>
+          <div className="text-zinc-500 font-medium">
+            Clickit Delivery Network Pvt. Ltd. • Jaipur, Rajasthan • All rights reserved.
+          </div>
+        </div>
       </div>
     </div>
   );

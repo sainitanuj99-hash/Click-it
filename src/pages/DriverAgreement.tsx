@@ -8,9 +8,6 @@ import {
   Scale, 
   Phone, 
   Mail, 
-  Globe, 
-  Copy, 
-  Check, 
   Truck, 
   Building2,
   Calendar,
@@ -36,23 +33,12 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
     return 'en';
   });
 
-  const [copiedUrl, setCopiedUrl] = useState(false);
-
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('lang', newLang);
       window.history.replaceState({}, '', url.toString());
-    }
-  };
-
-  const copyInAppLink = () => {
-    if (typeof window !== 'undefined') {
-      const url = `${window.location.origin}/driver-agreement?lang=${lang}`;
-      navigator.clipboard.writeText(url);
-      setCopiedUrl(true);
-      setTimeout(() => setCopiedUrl(false), 2500);
     }
   };
 
@@ -638,44 +624,11 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
                 हिन्दी (Hindi)
               </button>
             </div>
-
-            {/* Copy In-App Link Button */}
-            <button
-              onClick={copyInAppLink}
-              className="inline-flex items-center gap-1.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 px-3 py-1 rounded-lg text-xs font-medium transition-all"
-              title="Copy URL for Driver App WebView"
-            >
-              {copiedUrl ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-semibold">{lang === 'hi' ? 'लिंक कॉपी हो गया!' : 'Copied!'}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>{lang === 'hi' ? 'यूआरएल कॉपी करें' : 'Copy URL'}</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
-        {/* Developer Deep Link Helper Banner */}
-        <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
-            <span>{lang === 'hi' ? 'मोबाइल ऐप डेवलपर्स के लिए इन-ऐप यूआरएल:' : 'In-App URL for mobile app developers:'}</span>
-            <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
-              /driver-agreement?lang={lang}
-            </code>
-          </div>
-          <span className="text-zinc-500 text-[11px]">
-            {companyDetails.version}
-          </span>
-        </div>
-
         {/* Page Title & Corporate Header */}
         <header className="mb-10 border-b border-zinc-800 pb-8 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-semibold">
@@ -684,9 +637,6 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
           <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
             {lang === 'hi' ? 'ड्राइवर पार्टनर अनुबंध' : 'Driver Partner Agreement'}
           </h1>
-          <p className="text-zinc-400 text-sm">
-            {companyDetails.version}
-          </p>
 
           {/* Official Corporate Entity Table */}
           <div className="mt-6 bg-[#12141C] border border-zinc-800 rounded-xl overflow-hidden text-xs sm:text-sm">
@@ -839,6 +789,19 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
           <p className="leading-relaxed">
             This is a production-oriented commercial agreement for Clickit’s Driver App. The Ministry of Road Transport and Highways published the Motor Vehicle Aggregator Guidelines 2025, which expressly contemplate an agreement between an aggregator and driver specifying rights and obligations.
           </p>
+        </div>
+
+        {/* Official Policy Version & Document Management Footer */}
+        <div className="mt-10 pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="font-semibold text-zinc-200">
+              {lang === 'hi' ? 'ड्राइवर पार्टनर अनुबंध' : 'Driver Partner Agreement'} • {companyDetails.version}
+            </span>
+          </div>
+          <div className="text-zinc-500 font-medium">
+            Effective Date: 15 Sept 2026 • © 2026 Clickit Delivery Network Pvt. Ltd.
+          </div>
         </div>
       </div>
     </div>

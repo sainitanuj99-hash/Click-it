@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Copy, Check, Trash2, AlertCircle, Share2, EyeOff, Smartphone, Server } from "lucide-react";
+import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Trash2, AlertCircle, EyeOff, Smartphone, Server } from "lucide-react";
 
 interface PrivacyPolicyProps {
   onNavigate?: (path: string) => void;
@@ -53,22 +53,6 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
     return 'en';
   });
 
-  const [copiedUrl, setCopiedUrl] = useState(false);
-  const [copiedEn, setCopiedEn] = useState(false);
-  const [copiedHi, setCopiedHi] = useState(false);
-  const [copiedBundle, setCopiedBundle] = useState(false);
-
-  const getBaseOrigin = () => {
-    if (typeof window !== 'undefined') {
-      const hostname = window.location.hostname;
-      if (hostname.includes('justclickit.in')) {
-        return 'https://justclickit.in';
-      }
-      return window.location.origin;
-    }
-    return 'https://justclickit.in';
-  };
-
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
     if (typeof window !== 'undefined') {
@@ -76,35 +60,6 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
       url.searchParams.set('lang', newLang);
       window.history.replaceState({}, '', url.toString());
     }
-  };
-
-  const copyInAppLink = () => {
-    if (typeof window !== 'undefined') {
-      const url = `${getBaseOrigin()}/privacy-policy?lang=${lang}`;
-      navigator.clipboard.writeText(url);
-      setCopiedUrl(true);
-      setTimeout(() => setCopiedUrl(false), 2500);
-    }
-  };
-
-  const copySpecificLangUrl = (targetLang: 'en' | 'hi') => {
-    const url = `${getBaseOrigin()}/privacy-policy?lang=${targetLang}`;
-    navigator.clipboard.writeText(url);
-    if (targetLang === 'en') {
-      setCopiedEn(true);
-      setTimeout(() => setCopiedEn(false), 2500);
-    } else {
-      setCopiedHi(true);
-      setTimeout(() => setCopiedHi(false), 2500);
-    }
-  };
-
-  const copyDeveloperBundle = () => {
-    const base = getBaseOrigin();
-    const bundleText = `Clickit Privacy Policy URLs (for Mobile App & Play Store/App Store):\n• English: ${base}/privacy-policy?lang=en\n• Hindi: ${base}/privacy-policy?lang=hi\n• Default (Auto-detect): ${base}/privacy-policy`;
-    navigator.clipboard.writeText(bundleText);
-    setCopiedBundle(true);
-    setTimeout(() => setCopiedBundle(false), 2500);
   };
 
   const content = {
@@ -580,25 +535,6 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                 <span>हिन्दी (Hindi)</span>
               </button>
             </div>
-
-            {/* Copy In-App Link */}
-            <button
-              onClick={copyInAppLink}
-              title="Copy URL to link in App"
-              className="inline-flex items-center gap-1.5 text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors cursor-pointer"
-            >
-              {copiedUrl ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-medium">{lang === 'hi' ? 'लिंक कॉपी हो गया' : 'Copied!'}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span className="hidden sm:inline">{lang === 'hi' ? 'ऐप लिंक कॉपी करें' : 'Copy App Link'}</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>
@@ -619,71 +555,6 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             {t.title}
           </h1>
           <p className="text-sm text-zinc-400">{t.lastUpdated} • {t.effectiveDate}</p>
-
-          {/* In-app linking banner */}
-          <div className="mt-4 p-4 bg-[#12141C] border border-zinc-800 rounded-xl space-y-3">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-              <div className="flex items-center gap-2">
-                <span className="text-zinc-300 font-semibold">{t.deepLinkNote}</span>
-                <code className="bg-zinc-900 px-2 py-0.5 rounded text-[#FF5D00] font-mono font-medium">
-                  {getBaseOrigin()}/privacy-policy?lang={lang}
-                </code>
-              </div>
-              <button
-                onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-                className="text-[#FF5D00] hover:underline font-semibold text-left sm:text-right cursor-pointer"
-              >
-                {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
-              </button>
-            </div>
-
-            {/* Quick Action Copy Buttons for Developers */}
-            <div className="pt-2 border-t border-zinc-800/80 flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-zinc-400 text-[11px] font-medium mr-1">Share with Developers:</span>
-              
-              {/* Copy English Link */}
-              <button
-                type="button"
-                onClick={() => copySpecificLangUrl('en')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer font-medium ${
-                  copiedEn
-                    ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
-                    : 'bg-zinc-900 hover:bg-zinc-800 border-zinc-700/80 text-zinc-200'
-                }`}
-              >
-                {copiedEn ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5 text-[#FF5D00]" />}
-                <span>{copiedEn ? 'English URL Copied!' : 'Copy English URL'}</span>
-              </button>
-
-              {/* Copy Hindi Link */}
-              <button
-                type="button"
-                onClick={() => copySpecificLangUrl('hi')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer font-medium ${
-                  copiedHi
-                    ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
-                    : 'bg-zinc-900 hover:bg-zinc-800 border-zinc-700/80 text-zinc-200'
-                }`}
-              >
-                {copiedHi ? <Check className="w-3.5 h-3.5" /> : <Globe className="w-3.5 h-3.5 text-[#FF5D00]" />}
-                <span>{copiedHi ? 'Hindi URL Copied!' : 'Copy Hindi URL'}</span>
-              </button>
-
-              {/* Copy Complete Bundle */}
-              <button
-                type="button"
-                onClick={copyDeveloperBundle}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer font-medium ml-auto ${
-                  copiedBundle
-                    ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
-                    : 'bg-zinc-900/60 hover:bg-zinc-800 border-zinc-800 text-zinc-400 hover:text-zinc-200'
-                }`}
-              >
-                {copiedBundle ? <Check className="w-3.5 h-3.5" /> : <Share2 className="w-3.5 h-3.5 text-zinc-400" />}
-                <span>{copiedBundle ? 'Bundle Copied!' : 'Copy Both Links'}</span>
-              </button>
-            </div>
-          </div>
         </header>
 
         {/* Intro Card */}
@@ -855,9 +726,13 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             <FileText className="w-4 h-4 text-[#FF5D00]" />
             {lang === 'hi' ? 'नियम एवं शर्तें (Terms & Conditions) देखें' : 'View Terms and Conditions'}
           </button>
-          <div className="text-xs text-zinc-500">
-            © 2026 Clickit Delivery Network Pvt. Ltd. All rights reserved.
+          <div className="text-xs text-zinc-400 font-medium">
+            Privacy Policy • Version 1.0 • Effective: 24 Sept 2026
           </div>
+        </div>
+
+        <div className="mt-4 text-center text-xs text-zinc-500">
+          © 2026 Clickit Delivery Network Pvt. Ltd. All rights reserved.
         </div>
       </div>
     </div>

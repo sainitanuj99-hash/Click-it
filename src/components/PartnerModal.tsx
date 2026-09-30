@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Truck, Smartphone, ShieldCheck, DollarSign, Clock, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Truck, Smartphone, ShieldCheck, Wallet, Clock, ArrowRight } from 'lucide-react';
 
 interface PartnerModalProps {
   isOpen: boolean;
@@ -41,7 +41,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
                 Become a <span className="text-[#FF5D00]">Clickit</span> Delivery Partner
               </h2>
               <p className="text-xs text-zinc-400">
-                Earn up to ₹45,000/month with daily & weekly payouts, flexible hours, and bonus incentives.
+                Earn up to ₹45,000/month with flexible hours, trip-by-trip earnings, and attractive bonus incentives.
               </p>
             </div>
 
@@ -56,10 +56,10 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({ isOpen, onClose }) =
               </div>
 
               <div className="bg-zinc-900/80 p-2.5 rounded-xl border border-zinc-800 flex items-center gap-2">
-                <DollarSign className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Wallet className="w-4 h-4 text-emerald-400 shrink-0" />
                 <div>
-                  <p className="font-bold text-white">Weekly Payouts</p>
-                  <p className="text-[10px] text-zinc-400">Direct to bank account</p>
+                  <p className="font-bold text-white">Daily Earnings</p>
+                  <p className="text-[10px] text-zinc-400">Instant trip-by-trip wallet settlement</p>
                 </div>
               </div>
 

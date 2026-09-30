@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Shield, ArrowLeft, FileText, CheckCircle2, AlertTriangle, Scale, Phone, Mail, Globe, Copy, Check } from "lucide-react";
+import React, { useState } from "react";
+import { Shield, ArrowLeft, FileText, CheckCircle2, AlertTriangle, Scale, Phone, Mail, Globe } from "lucide-react";
 
 interface TermsAndConditionsProps {
   onNavigate?: (path: string) => void;
@@ -19,24 +19,13 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
     return 'en';
   });
 
-  const [copiedUrl, setCopiedUrl] = useState(false);
-
-  // Sync lang state with URL parameter for easy in-app sharing
+  // Sync lang state with URL parameter for easy sharing
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('lang', newLang);
       window.history.replaceState({}, '', url.toString());
-    }
-  };
-
-  const copyInAppLink = () => {
-    if (typeof window !== 'undefined') {
-      const url = `${window.location.origin}/terms-and-conditions?lang=${lang}`;
-      navigator.clipboard.writeText(url);
-      setCopiedUrl(true);
-      setTimeout(() => setCopiedUrl(false), 2500);
     }
   };
 
@@ -288,25 +277,6 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
                 <span>हिन्दी (Hindi)</span>
               </button>
             </div>
-
-            {/* Copy Link Button for App Linking */}
-            <button
-              onClick={copyInAppLink}
-              title="Copy URL to embed in App"
-              className="inline-flex items-center gap-1.5 text-xs bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors"
-            >
-              {copiedUrl ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-medium">{lang === 'hi' ? 'लिंक कॉपी हो गया' : 'Copied!'}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span className="hidden sm:inline">{lang === 'hi' ? 'ऐप लिंक कॉपी करें' : 'Copy App Link'}</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>
@@ -331,22 +301,6 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           <p className="text-sm text-zinc-400 font-medium">
             {t.subtitle} • {t.effectiveDate}
           </p>
-
-          {/* In-app linking banner */}
-          <div className="mt-4 p-3 bg-[#12141C] border border-zinc-800/80 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-zinc-400">
-            <div>
-              <span className="text-zinc-300 font-semibold">{t.deepLinkNote} </span>
-              <code className="bg-zinc-900 px-2 py-0.5 rounded text-orange-400 font-mono">
-                /terms-and-conditions?lang={lang}
-              </code>
-            </div>
-            <button
-              onClick={() => handleLangChange(lang === 'en' ? 'hi' : 'en')}
-              className="text-[#FF5D00] hover:underline font-semibold text-left sm:text-right"
-            >
-              {lang === 'en' ? 'हिन्दी में पढ़ें (Switch to Hindi)' : 'Read in English'}
-            </button>
-          </div>
         </header>
 
         {/* Intro Box */}
@@ -425,9 +379,13 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
             <Shield className="w-4 h-4 text-[#FF5D00]" />
             {lang === 'hi' ? 'गोपनीयता नीति (Privacy Policy) देखें' : 'View Privacy Policy'}
           </button>
-          <div className="text-xs text-zinc-500">
-            © 2026 Clickit Delivery Network Pvt. Ltd.
+          <div className="text-xs text-zinc-400 font-medium">
+            Terms & Conditions • Version 1.0 • Effective: 15 Sept 2026
           </div>
+        </div>
+
+        <div className="mt-4 text-center text-xs text-zinc-500">
+          © 2026 Clickit Delivery Network Pvt. Ltd. All rights reserved.
         </div>
       </div>
     </div>

@@ -12,9 +12,6 @@ import {
   AlertTriangle, 
   Phone, 
   Mail, 
-  Globe, 
-  Copy, 
-  Check, 
   ShieldCheck,
   Zap,
   MapPin,
@@ -50,7 +47,6 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
   const [openIds, setOpenIds] = useState<string[]>(['onboarding-1', 'earnings-1']);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCat, setSelectedCat] = useState('all');
-  const [copiedUrl, setCopiedUrl] = useState(false);
 
   const toggleFAQ = (id: string) => {
     setOpenIds(prev => 
@@ -64,15 +60,6 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
       const url = new URL(window.location.href);
       url.searchParams.set('lang', newLang);
       window.history.replaceState({}, '', url.toString());
-    }
-  };
-
-  const copyInAppLink = () => {
-    if (typeof window !== 'undefined') {
-      const url = `${window.location.origin}/driver-faqs?lang=${lang}`;
-      navigator.clipboard.writeText(url);
-      setCopiedUrl(true);
-      setTimeout(() => setCopiedUrl(false), 2500);
     }
   };
 
@@ -170,8 +157,8 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           id: 'earnings-2',
           category: 'earnings',
           categoryName: 'Earnings & Payouts',
-          q: "When and how will my earnings be transferred to my bank account?",
-          a: "ClickIt provides automated Daily and Weekly payout settlements directly to your registered bank account or UPI ID. Digital payments made by customers (Online / Wallet) are processed within 24 hours without any transfer charges.",
+          q: "How are my delivery earnings settled to my wallet or UPI?",
+          a: "ClickIt provides instant, automated digital settlements directly to your driver wallet and verified UPI ID. Digital fares paid by customers are credited immediately after trip completion without any transfer deduction.",
         },
         {
           id: 'earnings-3',
@@ -317,8 +304,8 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           id: 'earnings-2',
           category: 'earnings',
           categoryName: 'कमाई व भुगतान',
-          q: "मेरी कमाई मेरे बैंक खाते में कब और कैसे आएगी?",
-          a: "क्लिकइट दैनिक (Daily) और साप्ताहिक (Weekly) बैंक ट्रांसफर सुविधा देता है। ऑनलाइन पेमेंट वाले ऑर्डर्स की कमाई 24 घंटे के भीतर बिना किसी ट्रांसफर चार्ज के सीधे आपके बैंक खाते या यूपीआई में भेज दी जाती है।",
+          q: "मेरी ट्रिप की कमाई वॉलेट या यूपीआई में कैसे आती है?",
+          a: "क्लिकइट आपके पंजीकृत यूपीआई (UPI) और ड्राइवर वॉलेट में त्वरित व पारदर्शी भुगतान सुविधा देता है। ट्रिप पूरी होते ही बिना किसी कटौती के राशि तुरंत आपके वॉलेट में जमा हो जाती है।",
         },
         {
           id: 'earnings-3',
@@ -419,44 +406,11 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
                 हिन्दी (Hindi)
               </button>
             </div>
-
-            {/* Copy In-App Link Button */}
-            <button
-              onClick={copyInAppLink}
-              className="inline-flex items-center gap-1.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 px-3 py-1 rounded-lg text-xs font-medium transition-all"
-              title="Copy URL for Driver App WebView"
-            >
-              {copiedUrl ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-semibold">{lang === 'hi' ? 'लिंक कॉपी हो गया!' : 'Copied!'}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>{lang === 'hi' ? 'यूआरएल कॉपी करें' : 'Copy URL'}</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-5 sm:px-6 py-10 sm:py-12">
-        {/* Developer Deep Link Helper Banner */}
-        <div className="mb-8 p-3.5 bg-zinc-900/90 border border-zinc-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 text-zinc-400">
-            <Globe className="w-4 h-4 text-[#FF5D00] shrink-0" />
-            <span>{current.developerNote}</span>
-            <code className="bg-black px-2 py-0.5 rounded text-orange-400 font-mono text-[11px] select-all">
-              /driver-faqs?lang={lang}
-            </code>
-          </div>
-          <span className="text-zinc-500 text-[11px]">
-            {lang === 'hi' ? 'ड्राइवर ऐप सहायता वेबव्यू के लिए उपयुक्त' : 'Optimized for Driver Mobile WebView'}
-          </span>
-        </div>
-
         {/* Page Title & Intro */}
         <header className="mb-8 border-b border-zinc-800 pb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-semibold">
@@ -583,6 +537,19 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           >
             1800 203 4567 (Toll Free)
           </a>
+        </div>
+
+        {/* FAQ Version & Knowledge Base Footer */}
+        <div className="mt-10 pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="font-semibold text-zinc-200">
+              {lang === 'hi' ? 'ड्राइवर पार्टनर सहायता गाइड' : 'Driver Partner FAQ & Guide'} • Version 1.0
+            </span>
+          </div>
+          <div className="text-zinc-500 font-medium">
+            Updated: September 2026 • Promovers Logistics Solutions Private Limited
+          </div>
         </div>
       </div>
     </div>
