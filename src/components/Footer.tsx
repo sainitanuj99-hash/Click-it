@@ -10,6 +10,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { ClickitWordmark } from './ClickitLogo';
+import { PLAY_STORE_URL } from '../data/mockData';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -83,8 +84,24 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
       {/* Bottom Row: Socials (Left), Navigation (Center), Copyright (Right) */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-5 text-xs text-zinc-400">
         
-        {/* Left: Social Media Icon Blocks */}
-        <div className="flex items-center gap-2.5">
+        {/* Left: Social Media Icon Blocks & Google Play Badge */}
+        <div className="flex items-center gap-2.5 flex-wrap justify-center lg:justify-start">
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white text-[11px] font-bold transition-all hover:scale-105 hover:border-zinc-700"
+            title="Download Clickit on Google Play"
+          >
+            <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 512 512">
+              <path fill="#4285F4" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z"/>
+              <path fill="#34A853" d="M47 38.6c-4.4 7.7-6.9 17.5-6.9 29v376.8c0 11.5 2.5 21.3 6.9 29l212.9-213.7L47 38.6z"/>
+              <path fill="#FBBC04" d="M325.3 277.7l60.1 60.1L104.6 499l220.7-221.3z"/>
+              <path fill="#EA4335" d="M444.2 235.8l-58.8-33.8-60.1 60.1 60.1 60.1 58.8-33.8c16.8-9.7 27.8-27.4 27.8-52.6 0-25.2-11-42.9-27.8-52.6z"/>
+            </svg>
+            <span>Google Play</span>
+          </a>
+
           <a 
             href="https://linkedin.com" 
             target="_blank" 

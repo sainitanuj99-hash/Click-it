@@ -28,11 +28,13 @@ import {
   Store,
   Navigation,
   Radio,
-  Activity
+  Activity,
+  ExternalLink
 } from 'lucide-react';
 import { VehicleIllustration } from './VehicleIllustrations';
 import { ClickitLogoMark } from './ClickitLogo';
 import { HeroLogisticsBackground } from './HeroLogisticsBackground';
+import { PLAY_STORE_URL } from '../data/mockData';
 
 interface HeroBookingProps {
   onDownloadAppClick?: () => void;
@@ -452,19 +454,17 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 CALL TO ACTION BUTTONS
                 ========================================================================= */}
             <div className="flex flex-wrap items-center justify-start gap-3.5 w-full pt-1">
-              <button
-                type="button"
-                onClick={() => {
-                  handleTriggerInstall();
-                  if (onDownloadAppClick) onDownloadAppClick();
-                }}
-                className="group relative overflow-hidden bg-[#FF5D00] hover:bg-[#E05200] text-white font-black text-xs sm:text-sm px-7 py-3.5 rounded-xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent"
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden bg-[#FF5D00] hover:bg-[#E05200] text-white font-black text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer active:scale-95 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent"
               >
                 <Smartphone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span>Install Clickit App</span>
+                <span>Download on Google Play</span>
                 <span className="text-white/40">|</span>
-                <span className="text-[11px] bg-black/20 px-2 py-0.5 rounded font-semibold">Google Play &amp; iOS</span>
-              </button>
+                <span className="text-[11px] bg-black/20 px-2 py-0.5 rounded font-semibold">Live Now</span>
+              </a>
 
               <button
                 type="button"
@@ -963,53 +963,39 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               </button>
 
               <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/15 text-[#FF5D00] text-xs font-bold border border-orange-500/30">
-                  <QrCode className="w-3.5 h-3.5" /> Instant App Download
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <QrCode className="w-3.5 h-3.5" /> Live on Google Play
                 </div>
                 <h3 className="text-xl font-black text-white">Scan to Install Clickit</h3>
-                <p className="text-xs text-zinc-400">Point your smartphone camera to get the app immediately</p>
+                <p className="text-xs text-zinc-400">Point your smartphone camera to open Google Play Store directly</p>
               </div>
 
-              {/* Styled High-Contrast QR Code Visual */}
-              <div className="bg-white p-5 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
-                <svg viewBox="0 0 100 100" className="w-40 h-40">
-                  <rect x="0" y="0" width="30" height="30" fill="#000" rx="3" />
-                  <rect x="5" y="5" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="9" y="9" width="12" height="12" fill="#FF5D00" rx="1" />
-
-                  <rect x="70" y="0" width="30" height="30" fill="#000" rx="3" />
-                  <rect x="75" y="5" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="79" y="9" width="12" height="12" fill="#FF5D00" rx="1" />
-
-                  <rect x="0" y="70" width="30" height="30" fill="#000" rx="3" />
-                  <rect x="5" y="75" width="20" height="20" fill="#FFF" rx="2" />
-                  <rect x="9" y="79" width="12" height="12" fill="#FF5D00" rx="1" />
-
-                  <rect x="36" y="8" width="6" height="6" fill="#000" />
-                  <rect x="48" y="8" width="6" height="14" fill="#000" />
-                  <rect x="60" y="14" width="6" height="8" fill="#000" />
-
-                  <rect x="8" y="36" width="14" height="6" fill="#000" />
-                  <rect x="8" y="48" width="6" height="12" fill="#000" />
-                  <rect x="18" y="54" width="8" height="6" fill="#000" />
-
-                  <rect x="36" y="36" width="28" height="28" fill="#FF5D00" rx="4" />
-                  <circle cx="50" cy="50" r="8" fill="#FFF" />
-                  <path d="M 47 48 L 53 48 L 50 54 Z" fill="#FF5D00" />
-
-                  <rect x="70" y="36" width="8" height="14" fill="#000" />
-                  <rect x="84" y="42" width="10" height="8" fill="#000" />
-
-                  <rect x="36" y="70" width="14" height="8" fill="#000" />
-                  <rect x="56" y="76" width="8" height="16" fill="#000" />
-                  <rect x="70" y="70" width="10" height="10" fill="#000" />
-                  <rect x="86" y="84" width="8" height="8" fill="#000" />
-                </svg>
+              {/* Real Scannable Google Play QR Code */}
+              <div className="bg-white p-3 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(PLAY_STORE_URL)}&bgcolor=FFFFFF&color=000000&margin=4`}
+                  alt="Scan to download Clickit on Google Play"
+                  className="w-44 h-44 object-contain rounded-xl"
+                  loading="lazy"
+                />
               </div>
 
-              <div className="space-y-1">
-                <div className="text-xs font-bold text-white">Available on Google Play &amp; Apple App Store</div>
-                <div className="text-[10px] text-zinc-400">Compatible with Android 8.0+ and iOS 14.0+</div>
+              <div className="space-y-3 pt-1">
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 rounded-xl bg-[#01875F] hover:bg-[#00704F] text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition-all cursor-pointer active:scale-95"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Open in Google Play Store</span>
+                </a>
+
+                <div className="space-y-1">
+                  <div className="text-xs font-bold text-white">Clickit Delivery • com.clickit.in</div>
+                  <div className="text-[10px] text-zinc-400">Compatible with Android 8.0+ • Play Protect Verified</div>
+                </div>
               </div>
             </motion.div>
           </div>

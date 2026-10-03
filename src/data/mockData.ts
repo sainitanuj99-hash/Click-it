@@ -385,3 +385,8 @@ export const DEMO_B2B_ACCOUNT: B2BAccount = {
   phone: '+91 98765 43210',
   contractDiscountPercent: 12
 };
+
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.clickit.in&pcampaignid=web_share';
+export const PLAY_STORE_PACKAGE_ID = 'com.clickit.in';
+export const PLAY_STORE_DIRECT_INTENT = 'market://details?id=com.clickit.in';
+

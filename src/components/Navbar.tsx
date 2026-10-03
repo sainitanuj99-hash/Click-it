@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Smartphone, Menu, X, Bike, Truck, Zap, MapPin } from 'lucide-react';
 import { ClickitWordmark } from './ClickitLogo';
+import { PLAY_STORE_URL } from '../data/mockData';
 
 interface NavbarProps {
   activeTab: string;
@@ -173,12 +174,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <MapPin className="w-3.5 h-3.5 text-[#FF5D00]" />
             <span>Jaipur</span>
           </div>
-          <button
-            onClick={() => setActiveTab('app')}
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative overflow-hidden bg-[#FF5D00] hover:bg-[#E05200] text-white text-xs font-black px-4 py-2.5 rounded-xl shadow-md shadow-orange-500/25 transition-all flex items-center gap-1.5 cursor-pointer active:scale-95 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent"
           >
             <Smartphone className="w-4 h-4" /> Download App
-          </button>
+          </a>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -230,12 +233,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             Become a Partner
           </button>
-          <button
-            onClick={() => { setActiveTab('app'); setMobileMenuOpen(false); }}
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
             className="w-full mt-2 bg-[#FF5D00] text-white text-xs font-black py-3 rounded-xl text-center shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2 cursor-pointer"
           >
             <Smartphone className="w-4 h-4" /> Download Clickit App
-          </button>
+          </a>
         </div>
       )}
     </header>

@@ -66,10 +66,10 @@ export const SEO_PAGES: Record<string, PageSeoConfig> = {
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
   app: {
-    title: 'Download Clickit App – Jaipur’s Fastest Mini-Truck & Courier App',
-    description: 'Download the Clickit app for Android & iOS. Book instant Tata Ace, 3-wheeler loaders, and bike deliveries anywhere in Jaipur with live GPS tracking.',
+    title: 'Download Clickit App – Google Play Store | Jaipur Logistics',
+    description: 'Download the official Clickit app on Google Play Store (com.clickit.in). Book instant Tata Ace, 3-wheeler loaders, and bike deliveries anywhere in Jaipur with live GPS tracking.',
     canonicalPath: '/app',
-    keywords: 'Clickit app download, Clickit APK Jaipur, mini truck booking app, Porter alternative Jaipur, Clickit Android app',
+    keywords: 'Clickit app download, Clickit Google Play, com.clickit.in, mini truck booking app, Porter alternative Jaipur, Clickit Android app',
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
 };
