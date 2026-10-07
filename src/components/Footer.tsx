@@ -149,13 +149,6 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
             About Us
           </button>
           <button 
-            onClick={() => setActiveTab('careers')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer flex items-center gap-1 font-bold text-white"
-          >
-            <span>Careers</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          </button>
-          <button 
             onClick={() => setActiveTab('driver-faqs')} 
             className="hover:text-[#FF5D00] transition-colors cursor-pointer"
           >

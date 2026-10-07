@@ -19,7 +19,6 @@ const AboutUs = lazy(() => import('./pages/AboutUs'));
 const HelpSupport = lazy(() => import('./pages/HelpSupport'));
 const DriverAgreement = lazy(() => import('./pages/DriverAgreement'));
 const DriverFAQs = lazy(() => import('./pages/DriverFAQs'));
-const Careers = lazy(() => import('./pages/Careers'));
 const EnterpriseQuoteModal = lazy(() => import('./components/EnterpriseQuoteModal').then(m => ({ default: m.EnterpriseQuoteModal })));
 const PartnerModal = lazy(() => import('./components/PartnerModal').then(m => ({ default: m.PartnerModal })));
 
@@ -33,7 +32,6 @@ const getTabFromLocation = (): string => {
 
   const target = path.replace(/^\//, '') || hash || queryPage;
 
-  if (target.includes('career') || target.includes('hiring') || target.includes('apply') || target.includes('job')) return 'careers';
   if (target.includes('driver-agreement') || target.includes('driver-terms') || target.includes('partner-agreement') || target.includes('driver-contract')) return 'driver-agreement';
   if (target.includes('driver-faq') || target.includes('driver-faqs') || target.includes('driverfaq')) return 'driver-faqs';
   if (target.includes('terms') || target.includes('condition') || target.includes('tos')) return 'terms-and-conditions';
@@ -46,7 +44,6 @@ const getTabFromLocation = (): string => {
 
 // Helper to get URL path from tab name
 const getPathFromTab = (tab: string): string => {
-  if (tab === 'careers' || tab === 'hiring' || tab === 'apply') return '/careers';
   if (tab === 'driver-agreement' || tab === 'driver-terms') return '/driver-agreement';
   if (tab === 'driver-faqs' || tab === 'driver-faq') return '/driver-faqs';
   if (tab === 'terms-and-conditions' || tab === 'terms') return '/terms-and-conditions';
@@ -79,8 +76,7 @@ export default function App() {
   // Direct path navigation helper
   const navigateByPath = (path: string) => {
     const cleanPath = path.toLowerCase().replace(/\/$/, '') || '/';
-    if (cleanPath.includes('career') || cleanPath.includes('hiring') || cleanPath.includes('apply') || cleanPath.includes('job')) setActiveTab('careers');
-    else if (cleanPath.includes('driver-agreement') || cleanPath.includes('driver-terms') || cleanPath.includes('partner-agreement')) setActiveTab('driver-agreement');
+    if (cleanPath.includes('driver-agreement') || cleanPath.includes('driver-terms') || cleanPath.includes('partner-agreement')) setActiveTab('driver-agreement');
     else if (cleanPath.includes('driver-faq') || cleanPath.includes('driver-faqs')) setActiveTab('driver-faqs');
     else if (cleanPath === '/terms-and-conditions' || cleanPath === '/terms' || cleanPath === '/terms-of-service') setActiveTab('terms-and-conditions');
     else if (cleanPath === '/privacy-policy') setActiveTab('privacy-policy');
@@ -194,10 +190,6 @@ export default function App() {
           <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center text-zinc-400">Loading...</div>}>
             {(activeTab === 'about-us' || activeTab === 'about') && (
               <AboutUs onNavigate={navigateByPath} />
-            )}
-
-            {(activeTab === 'careers' || activeTab === 'hiring' || activeTab === 'apply') && (
-              <Careers onNavigate={navigateByPath} />
             )}
 
             {(activeTab === 'driver-agreement' || activeTab === 'driver-terms') && (

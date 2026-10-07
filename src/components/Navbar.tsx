@@ -146,20 +146,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
-            onClick={() => setActiveTab('careers')}
-            className={`px-3.5 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
-              activeTab === 'careers' || activeTab === 'hiring' || activeTab === 'apply'
-                ? 'text-[#FF5D00] bg-orange-500/15 border border-orange-500/30 font-black shadow-sm'
-                : 'text-zinc-300 hover:text-white hover:bg-zinc-800/80'
-            }`}
-          >
-            <span>Careers</span>
-            <span className="px-1.5 py-0.5 rounded-md bg-emerald-500 text-white text-[9px] font-black tracking-wider uppercase leading-none">
-              Hiring
-            </span>
-          </button>
-
-          <button
             onClick={openPartnerModal}
             className="px-3.5 py-2 rounded-xl text-zinc-300 hover:text-[#FF5D00] hover:bg-orange-500/10 transition-all cursor-pointer flex items-center gap-1.5"
           >
@@ -213,19 +199,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             About Us
-          </button>
-          <button
-            onClick={() => { setActiveTab('careers'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold flex items-center justify-between ${
-              activeTab === 'careers' || activeTab === 'hiring' || activeTab === 'apply'
-                ? 'bg-orange-500/15 border border-orange-500/30 text-[#FF5D00]'
-                : 'text-zinc-300 hover:text-white'
-            }`}
-          >
-            <span>Careers & Hiring</span>
-            <span className="px-2 py-0.5 rounded-md bg-emerald-500 text-white text-[10px] font-black uppercase">
-              We're Hiring
-            </span>
           </button>
           <button
             onClick={() => { if (openPartnerModal) openPartnerModal(); setMobileMenuOpen(false); }}
