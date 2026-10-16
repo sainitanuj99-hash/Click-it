@@ -548,7 +548,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
             </span>
           </div>
           <div className="text-zinc-500 font-medium">
-            Updated: September 2026 • Promovers Logistics Solutions Private Limited
+            Updated: September 2026 • Promovers Logistics Solutions Private Limited (Clickit)
           </div>
         </div>
       </div>

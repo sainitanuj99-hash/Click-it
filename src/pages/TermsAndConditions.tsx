@@ -45,7 +45,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           title: "Definitions and Overview of Services",
           desc: "ClickIt acts as a digital technology aggregator connecting users (\"Customers\", \"Shippers\") who require logistics, parcel transportation, or cargo delivery services with independent verified commercial vehicle operators and couriers (\"Delivery Partners\"). ClickIt does not itself own or operate commercial transport vehicles unless expressly stated.",
           points: [
-            "Platform: The digital marketplace mobile app and web portal operated by Clickit.",
+            "Platform: The digital marketplace mobile app and web portal operated by Promovers Logistics Solutions Private Limited under the brand name 'Clickit'.",
             "Customer: Any individual or business entity booking a vehicle or courier delivery through the Platform.",
             "Delivery Partner: Independent driver, fleet operator, or courier executive registered on ClickIt to fulfill deliveries.",
             "Consignment / Cargo: The physical packages, goods, cartons, or materials handed over for transport."
@@ -123,7 +123,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           desc: "Pursuant to the Information Technology Act, 2000 and Consumer Protection (E-Commerce) Rules, 2020, our designated Grievance Officer can be contacted at:",
           officerDetails: {
             name: "Grievance Redressal Desk",
-            company: "Clickit",
+            company: "Promovers Logistics Solutions Private Limited (Brand: Clickit)",
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -146,7 +146,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           title: "परिभाषाएं एवं सेवाओं का विवरण (Overview of Services)",
           desc: "क्लिकइट एक डिजिटल तकनीक आधारित प्लेटफॉर्म (Technology Aggregator) के रूप में कार्य करता है, जो सामान भेजने वाले ग्राहकों (Customers / Shippers) को स्वतंत्र व सत्यापित वाणिज्यिक वाहन चालकों और डिलीवरी पार्टनर्स (Delivery Partners) से जोड़ता है। जब तक स्पष्ट रूप से लिखित न हो, क्लिकइट स्वयं वाणिज्यिक मालवाहक वाहनों का मालिक नहीं है बल्कि बुकिंग और तकनीक सुविधा प्रदाता है।",
           points: [
-            "प्लेटफॉर्म (Platform): क्लिकइट डिलीवरी नेटवर्क प्राइवेट लिमिटेड द्वारा संचालित मोबाइल ऐप और वेबसाइट।",
+            "प्लेटफॉर्म (Platform): Promovers Logistics Solutions Private Limited (ब्रांड: Clickit) द्वारा संचालित मोबाइल ऐप और वेबसाइट।",
             "ग्राहक (Customer): कोई भी व्यक्ति, व्यापारी या संस्था जो सामान भेजने के लिए वाहन या कूरियर बुक करता है।",
             "डिलीवरी पार्टनर (Delivery Partner): प्लेटफॉर्म से जुड़े सत्यापित ड्राइवर, फ्लीट ऑपरेटर या डिलीवरी राइडर।",
             "सामान / कार्गो (Consignment): ग्राहक द्वारा परिवहन हेतु सौंपा गया सामान, कार्टन, पार्सल अथवा उत्पाद।"
@@ -224,7 +224,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           desc: "सूचना प्रौद्योगिकी अधिनियम, 2000 तथा उपभोक्ता संरक्षण (ई-कॉमर्स) नियम, 2020 के अंतर्गत नियुक्त हमारे नोडल शिकायत निवारण अधिकारी से संपर्क करें:",
           officerDetails: {
             name: "शिकायत निवारण प्रकोष्ठ (Grievance Cell)",
-            company: "Clickit",
+            company: "Promovers Logistics Solutions Private Limited (ब्रांड: Clickit)",
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -385,7 +385,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
         </div>
 
         <div className="mt-4 text-center text-xs text-zinc-500">
-          © 2026 Clickit. All rights reserved.
+          © 2026 Promovers Logistics Solutions Private Limited (Clickit). All rights reserved.
         </div>
       </div>
     </div>

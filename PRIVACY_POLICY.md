@@ -8,7 +8,7 @@
 
 ---
 
-This Privacy Policy explains how **ClickIt** (“Company,” “we,” “us,” or “our”), operated by **Clickit**, collects, uses, shares, and protects your information when you use our website (justclickit.in) and our mobile apps **Clickit** (Customer) and **Clickit Partner** (Delivery Partner) (together, the “ClickIt Platform”).
+This Privacy Policy explains how **Clickit** (“Company,” “we,” “us,” or “our”), operated by **PROMOVERS LOGISTICS SOLUTIONS PRIVATE LIMITED** under the brand name **Clickit**, collects, uses, shares, and protects your information when you use our website (justclickit.in) and our mobile apps **Clickit** (Customer) and **Clickit Partner** (Delivery Partner) (together, the “ClickIt Platform”).
 
 By creating an account or using the Platform, you agree to this Policy.
 
@@ -160,6 +160,8 @@ We may update this Policy. The “Last Updated” date will change. Continued us
 
 For privacy questions, deletion help, or escalations:
 
+* **Operating Entity:** PROMOVERS LOGISTICS SOLUTIONS PRIVATE LIMITED
+* **Brand:** Clickit
 * **Title:** Grievance Officer, Clickit
 * **Department:** Clickit Legal & Grievance Department
 * **Address:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016
@@ -177,7 +179,7 @@ For privacy questions, deletion help, or escalations:
 **प्रभावी तिथि:** 24 सितंबर 2026  
 **अंतिम अपडेट:** 24 सितंबर 2026  
 
-यह प्राइवेसी नीति बताती है कि **ClickIt** (“कंपनी,” “हम”), जिसका संचालन **Clickit** करता है, आपकी जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है — जब आप हमारी वेबसाइट (justclickit.in) और मोबाइल ऐप **Clickit** (Customer) तथा **Clickit Partner** (Delivery Partner) का उपयोग करते हैं (एक साथ, “ClickIt Platform”)।
+यह प्राइवेसी नीति बताती है कि **Clickit** (“कंपनी,” “हम”), जिसका संचालन **PROMOVERS LOGISTICS SOLUTIONS PRIVATE LIMITED** (ब्रांड: **Clickit**) करता है, आपकी जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है — जब आप हमारी वेबसाइट (justclickit.in) और मोबाइल ऐप **Clickit** (Customer) तथा **Clickit Partner** (Delivery Partner) का उपयोग करते हैं (एक साथ, “ClickIt Platform”)।
 
 खाता बनाने या प्लेटफ़ॉर्म का उपयोग करने पर आप इस नीति से सहमत होते हैं।
 
@@ -208,7 +210,9 @@ For privacy questions, deletion help, or escalations:
 1. **ऐप में:** सेटिंग्स → प्रोफ़ाइल संपादित करें → खाता हटाएँ → पुष्टि करें (तुरंत निष्पादित)।
 2. **ईमेल द्वारा:** `support@justclickit.in` पर "Delete my Clickit account" लिखकर अपना नाम व नंबर भेजें (अधिकतम 30 दिनों में पूर्ण)।
 
-### 4. शिकायत निवारण अधिकारी संपर्क
+### 4. कानूनी इकाई एवं शिकायत निवारण अधिकारी संपर्क
+* **कानूनी इकाई (Legal Entity):** PROMOVERS LOGISTICS SOLUTIONS PRIVATE LIMITED
+* **ब्रांड (Brand):** Clickit
 * **अधिकारी:** शिकायत अधिकारी, Clickit
 * **विभाग:** Clickit विधिक एवं शिकायत निवारण विभाग
 * **पता:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016

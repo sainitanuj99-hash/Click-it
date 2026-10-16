@@ -800,7 +800,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
             </span>
           </div>
           <div className="text-zinc-500 font-medium">
-            Effective Date: 15 Sept 2026 • © 2026 Clickit. All rights reserved.
+            Effective Date: 15 Sept 2026 • © 2026 Promovers Logistics Solutions Private Limited (Clickit). All rights reserved.
           </div>
         </div>
       </div>

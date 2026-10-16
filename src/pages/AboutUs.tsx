@@ -216,7 +216,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
             </span>
           </div>
           <div className="text-zinc-500 font-medium">
-            Clickit • Jaipur, Rajasthan • All rights reserved.
+            Promovers Logistics Solutions Private Limited (Clickit) • Jaipur, Rajasthan • All rights reserved.
           </div>
         </div>
       </div>

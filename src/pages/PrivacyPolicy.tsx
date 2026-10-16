@@ -71,7 +71,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
       lastUpdated: "Last Updated: 24th Sept 2026",
       effectiveDate: "Effective Date: 24th Sept 2026",
       deepLinkNote: "In-App URL for mobile integration:",
-      intro1: 'This Privacy Policy explains how ClickIt (“Company,” “we,” “us,” or “our”), operated by Clickit, collects, uses, shares, and protects your information when you use our website (justclickit.in) and our mobile apps Clickit (Customer) and Clickit Partner (Delivery Partner) (together, the “ClickIt Platform”).',
+      intro1: 'This Privacy Policy explains how Clickit (“Company,” “we,” “us,” or “our”), operated by Promovers Logistics Solutions Private Limited (“Clickit”), collects, uses, shares, and protects your information when you use our website (justclickit.in) and our mobile apps Clickit (Customer) and Clickit Partner (Delivery Partner) (together, the “ClickIt Platform”).',
       intro2: 'By creating an account or using the Platform, you agree to this Policy.',
       callout: 'We do not sell your personal information. We do not use your data for third-party advertising, and we do not collect advertising IDs for ads.',
       tableHeaders: {
@@ -269,7 +269,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
           intro: "For privacy questions, deletion help, or escalations:",
           contactBox: {
             title: "Grievance Officer, Clickit",
-            subtitle: "Clickit Legal & Grievance Department",
+            subtitle: "Promovers Logistics Solutions Private Limited • Legal & Grievance Department",
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -286,7 +286,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
       lastUpdated: "अंतिम अपडेट: 24 सितंबर 2026",
       effectiveDate: "प्रभावी तिथि: 24 सितंबर 2026",
       deepLinkNote: "मोबाइल ऐप में हिंदी में लिंक करने हेतु यूआरएल:",
-      intro1: 'यह प्राइवेसी नीति बताती है कि ClickIt (“कंपनी,” “हम”), जिसका संचालन Clickit करता है, आपकी जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है — जब आप हमारी वेबसाइट (justclickit.in) और मोबाइल ऐप Clickit (Customer) तथा Clickit Partner (Delivery Partner) का उपयोग करते हैं (एक साथ, “ClickIt Platform”)।',
+      intro1: 'यह प्राइवेसी नीति बताती है कि Clickit (“कंपनी,” “हम”), जिसका संचालन Promovers Logistics Solutions Private Limited (“Clickit”) करता है, आपकी जानकारी कैसे एकत्र, उपयोग, साझा और सुरक्षित करता है — जब आप हमारी वेबसाइट (justclickit.in) और मोबाइल ऐप Clickit (Customer) तथा Clickit Partner (Delivery Partner) का उपयोग करते हैं (एक साथ, “ClickIt Platform”)।',
       intro2: 'खाता बनाने या प्लेटफ़ॉर्म का उपयोग करने पर आप इस नीति से सहमत होते हैं।',
       callout: 'हम आपकी व्यक्तिगत जानकारी बेचते नहीं हैं। हम आपके डेटा का उपयोग तीसरे पक्ष के विज्ञापन के लिए नहीं करते, और विज्ञापन के लिए Advertising ID नहीं लेते।',
       tableHeaders: {
@@ -484,7 +484,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
           intro: "गोपनीयता संबंधी सवाल, खाता हटाने में मदद, या शिकायत के लिए:",
           contactBox: {
             title: "शिकायत अधिकारी, Clickit",
-            subtitle: "Clickit विधिक एवं शिकायत निवारण विभाग",
+            subtitle: "Promovers Logistics Solutions Private Limited • विधिक एवं शिकायत निवारण विभाग",
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -742,7 +742,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
         </div>
 
         <div className="mt-4 text-center text-xs text-zinc-500">
-          © 2026 Clickit. All rights reserved.
+          © 2026 Promovers Logistics Solutions Private Limited (Clickit). All rights reserved.
         </div>
       </div>
     </div>
