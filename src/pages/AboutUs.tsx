@@ -212,7 +212,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <span className="font-semibold text-zinc-200">
-              {lang === 'hi' ? 'क्लिकइट लॉजिस्टिक्स नेटवर्क' : 'Clickit Logistics Network'} • Version 1.0
+              {lang === 'hi' ? 'क्लिकइट' : 'Clickit'} • Version 1.0
             </span>
           </div>
           <div className="text-zinc-500 font-medium">

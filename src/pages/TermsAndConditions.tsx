@@ -34,7 +34,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
     en: {
       badge: "Legal & Regulatory",
       title: "Terms and Conditions",
-      subtitle: "ClickIt Logistics & Delivery Network Agreement",
+      subtitle: "Clickit Terms of Service & User Agreement",
       lastUpdated: "Last Updated: 15th Sept 2026",
       effectiveDate: "Effective Date: 15th Sept 2026",
       intro: "Welcome to ClickIt! These Terms and Conditions (\"Terms\", \"Agreement\") govern your access to and use of ClickIt's mobile application, website, and logistics booking services (collectively, the \"ClickIt Platform\"). By registering, accessing, or placing orders via the ClickIt Platform, you agree to be bound by these Terms. If you do not agree, please do not use the Platform.",
@@ -135,7 +135,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
     hi: {
       badge: "कानूनी एवं विनियामक दस्तावेज",
       title: "नियम एवं शर्तें (Terms and Conditions)",
-      subtitle: "क्लिकइट लॉजिस्टिक्स एवं डिलीवरी नेटवर्क सेवा अनुबंध",
+      subtitle: "क्लिकइट नियम एवं सेवा अनुबंध",
       lastUpdated: "अंतिम संशोधन: 15 सितंबर 2026",
       effectiveDate: "लागू तिथि: 15 सितंबर 2026",
       intro: "क्लिकइट (ClickIt) में आपका स्वागत है! यह नियम एवं शर्तें (\"नियम\", \"अनुबंध\") आपके द्वारा क्लिकइट के मोबाइल एप्लिकेशन, वेबसाइट और लॉजिस्टिक्स व पार्सल डिलीवरी सेवाओं (जिन्हें संयुक्त रूप से \"क्लिकइट प्लेटफॉर्म\" कहा गया है) के उपयोग को नियंत्रित करती हैं। क्लिकइट प्लेटफॉर्म पर पंजीकरण करने, ऑर्डर बुक करने या सेवाओं का उपयोग करने पर आप इन नियमों से कानूनी रूप से बाध्य होने की सहमति देते हैं। यदि आप इन नियमों से सहमत नहीं हैं, तो कृपया प्लेटफॉर्म का उपयोग न करें।",

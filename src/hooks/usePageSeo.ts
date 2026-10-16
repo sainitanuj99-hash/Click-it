@@ -38,8 +38,8 @@ export const SEO_PAGES: Record<string, PageSeoConfig> = {
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
   'driver-agreement': {
-    title: 'Driver Partner Agreement – Clickit Logistics Jaipur',
-    description: 'Statutory onboarding terms, delivery partner code of conduct, payment settlement cycles, and terms of service for Clickit Logistics driver partners.',
+    title: 'Driver Partner Agreement – Clickit',
+    description: 'Statutory onboarding terms, delivery partner code of conduct, payment settlement cycles, and terms of service for Clickit driver partners.',
     canonicalPath: '/driver-agreement',
     keywords: 'Clickit driver partner agreement, delivery partner contract Jaipur, Clickit terms for drivers',
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
@@ -52,8 +52,8 @@ export const SEO_PAGES: Record<string, PageSeoConfig> = {
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
   'privacy-policy': {
-    title: 'Privacy Policy – Clickit Logistics Data Protection',
-    description: 'Clickit Logistics privacy policy: how we collect, safeguard, and use GPS coordinates, booking records, and contact information under Indian IT Act regulations.',
+    title: 'Privacy Policy – Clickit Data Protection',
+    description: 'Clickit privacy policy: how we collect, safeguard, and use GPS coordinates, booking records, and contact information under Indian IT Act regulations.',
     canonicalPath: '/privacy-policy',
     keywords: 'Clickit privacy policy, user data security Clickit, GPS location policy Jaipur delivery',
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',

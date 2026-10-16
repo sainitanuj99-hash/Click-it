@@ -39,7 +39,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
             <div className="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/30 text-[#FF5D00] flex items-center justify-center mx-auto">
               <AlertTriangle className="w-6 h-6" />
             </div>
-            <h1 className="text-xl font-black text-white">Clickit Logistics Application</h1>
+            <h1 className="text-xl font-black text-white">Clickit Application</h1>
             <p className="text-sm text-zinc-400">
               An unexpected display issue occurred. Please click below to refresh the application.
             </p>

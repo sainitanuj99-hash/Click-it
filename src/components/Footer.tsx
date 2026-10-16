@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
         <div className="flex items-center gap-1.5 text-center lg:text-left flex-wrap justify-center lg:justify-start">
           <MapPin className="w-3.5 h-3.5 text-[#FF5D00] shrink-0" />
           <span>
-            <strong className="text-zinc-200">Clickit Logistics (Jaipur HQ):</strong> B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Rajasthan 302016
+            <strong className="text-zinc-200">Clickit (Jaipur HQ):</strong> B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Rajasthan 302016
           </span>
         </div>
         <div className="flex items-center gap-3 text-zinc-400 flex-wrap justify-center">
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
           </a>
           <span className="text-zinc-700 hidden sm:inline">•</span>
           <a 
-            href="https://maps.google.com/?q=Clickit+Logistics+Bani+Park+Jaipur" 
+            href="https://maps.google.com/?q=Clickit+Bani+Park+Jaipur" 
             target="_blank" 
             rel="noreferrer"
             className="text-[#FF5D00] hover:underline flex items-center gap-1 font-semibold"

@@ -48,7 +48,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
           </h1>
 
           <p className="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            Clickit Logistics is India’s tech-first intracity and intercity goods delivery platform. We connect local businesses, traders, and everyday shippers directly with verified driver partners in minutes.
+            Clickit is India’s tech-first intracity and intercity goods delivery platform. We connect local businesses, traders, and everyday shippers directly with verified driver partners in minutes.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
@@ -101,7 +101,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({
               Solving the Chaos of Fragmented Local Goods Transport
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-              Founded with a mission to eliminate empty return trips, unpredictable pricing, and long loading wait times, Clickit Logistics transformed Jaipur's local freight industry.
+              Founded with a mission to eliminate empty return trips, unpredictable pricing, and long loading wait times, Clickit transformed Jaipur's local freight industry.
             </p>
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
               Whether it's a small parcel moved by a 2-wheeler express bike or a 10-ton commercial container transported across intercity industrial highways, Clickit provides end-to-end live tracking, digital proof of delivery, and reliable driver assignment within 3 minutes.
