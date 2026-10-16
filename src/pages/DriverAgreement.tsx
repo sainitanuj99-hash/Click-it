@@ -47,7 +47,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
     legalEntity: "Promovers Logistics Solutions Private Limited",
     gstin: "08AARCP1294R1ZD",
     cin: "U52290RJ2026PTC114862",
-    registeredOffice: "B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan, India",
+    registeredOffice: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
     version: "Version 1.0 • Driver App"
   };
 
@@ -309,7 +309,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         "Legal Entity: Promovers Logistics Solutions Private Limited",
         "GSTIN: 08AARCP1294R1ZD",
         "CIN: U52290RJ2026PTC114862",
-        "Registered Office: B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan, India",
+        "Registered Office: B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
         "Driver Support Email: partners@clickitlogistics.in",
         "Driver Support Phone: +91 1800 203 4567",
         "Grievance Officer Email: grievance@clickitlogistics.in",
@@ -576,7 +576,7 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         "कानूनी इकाई (Legal Entity): Promovers Logistics Solutions Private Limited",
         "जीएसटीआईएन (GSTIN): 08AARCP1294R1ZD",
         "सीआईएन (CIN): U52290RJ2026PTC114862",
-        "पंजीकृत कार्यालय (Registered Office): B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan, India",
+        "पंजीकृत कार्यालय (Registered Office): B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
         "ड्राइवर सपोर्ट ईमेल: partners@clickitlogistics.in",
         "ड्राइवर सपोर्ट फोन: +91 1800 203 4567",
         "शिकायत निवारण अधिकारी ईमेल: grievance@clickitlogistics.in",

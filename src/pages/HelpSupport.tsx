@@ -485,7 +485,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
               </div>
               <div>
                 <div className="text-xs text-zinc-400 font-semibold uppercase tracking-wider">Clickit Jaipur Headquarters & Dispatch Center (Google Business Profile)</div>
-                <div className="text-sm font-bold text-white mt-0.5">B-18-A, Ground Floor, Shiv Marg, Bani Park, Jaipur 302016, Rajasthan, India</div>
+                <div className="text-sm font-bold text-white mt-0.5">B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016</div>
                 <p className="text-xs text-zinc-500 mt-1">Walk-ins welcome for Driver Onboarding & Enterprise Partner Account Management (Mon–Sat, 9:00 AM – 7:00 PM)</p>
               </div>
             </div>

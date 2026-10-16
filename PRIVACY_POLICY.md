@@ -162,7 +162,7 @@ For privacy questions, deletion help, or escalations:
 
 * **Title:** Grievance Officer, Clickit
 * **Department:** Clickit Legal & Grievance Department
-* **Address:** Logistics Park, MI Road / VKI Area, Jaipur, Rajasthan 302013, India
+* **Address:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016
 * **Grievance Email:** [grievance@justclickit.in](mailto:grievance@justclickit.in)
 * **Customer Support:** [support@justclickit.in](mailto:support@justclickit.in)
 * **Helpline:** +91 141 498 2200
@@ -211,6 +211,7 @@ For privacy questions, deletion help, or escalations:
 ### 4. शिकायत निवारण अधिकारी संपर्क
 * **अधिकारी:** शिकायत अधिकारी, Clickit
 * **विभाग:** Clickit विधिक एवं शिकायत निवारण विभाग
+* **पता:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016
 * **ईमेल:** [grievance@justclickit.in](mailto:grievance@justclickit.in)
 * **सपोर्ट ईमेल:** [support@justclickit.in](mailto:support@justclickit.in)
 * **फ़ोन:** +91 141 498 2200

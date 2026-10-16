@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Trash2, AlertCircle, EyeOff, Smartphone, Server } from "lucide-react";
+import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Trash2, AlertCircle, EyeOff, Smartphone, Server, MapPin } from "lucide-react";
 
 interface PrivacyPolicyProps {
   onNavigate?: (path: string) => void;
@@ -34,6 +34,7 @@ interface PrivacySection {
   contactBox?: {
     title: string;
     subtitle: string;
+    address?: string;
     email: string;
     supportEmail: string;
     phone: string;
@@ -269,6 +270,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
           contactBox: {
             title: "Grievance Officer, Clickit",
             subtitle: "Clickit Legal & Grievance Department",
+            address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
             phone: "+91 141 498 2200",
@@ -483,6 +485,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
           contactBox: {
             title: "शिकायत अधिकारी, Clickit",
             subtitle: "Clickit विधिक एवं शिकायत निवारण विभाग",
+            address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
             phone: "+91 141 498 2200",
@@ -683,6 +686,13 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
                       {section.contactBox.subtitle}
                     </div>
                   </div>
+
+                  {section.contactBox.address && (
+                    <div className="flex items-start gap-2 text-zinc-300 text-xs sm:text-sm pt-1">
+                      <MapPin className="w-4 h-4 text-[#FF5D00] shrink-0 mt-0.5" />
+                      <span className="leading-relaxed">{section.contactBox.address}</span>
+                    </div>
+                  )}
 
                   <div className="pt-2 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
                     <a

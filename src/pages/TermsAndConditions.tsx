@@ -124,7 +124,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           officerDetails: {
             name: "Grievance Redressal Desk",
             company: "Clickit",
-            address: "Logistics Park, MI Road / VKI Area, Jaipur, Rajasthan 302013",
+            address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
             phone: "+91 141 498 2200 / 1800-CLICKIT"
@@ -225,7 +225,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           officerDetails: {
             name: "शिकायत निवारण प्रकोष्ठ (Grievance Cell)",
             company: "Clickit",
-            address: "लॉजिस्टिक्स पार्क, एमआई रोड / वीकेआई एरिया, जयपुर, राजस्थान 302013",
+            address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
             phone: "+91 141 498 2200 / 1800-CLICKIT"
