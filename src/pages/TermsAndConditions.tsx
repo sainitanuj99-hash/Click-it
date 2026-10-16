@@ -45,7 +45,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           title: "Definitions and Overview of Services",
           desc: "ClickIt acts as a digital technology aggregator connecting users (\"Customers\", \"Shippers\") who require logistics, parcel transportation, or cargo delivery services with independent verified commercial vehicle operators and couriers (\"Delivery Partners\"). ClickIt does not itself own or operate commercial transport vehicles unless expressly stated.",
           points: [
-            "Platform: The digital marketplace mobile app and web portal operated by Clickit Delivery Network Pvt. Ltd.",
+            "Platform: The digital marketplace mobile app and web portal operated by Clickit.",
             "Customer: Any individual or business entity booking a vehicle or courier delivery through the Platform.",
             "Delivery Partner: Independent driver, fleet operator, or courier executive registered on ClickIt to fulfill deliveries.",
             "Consignment / Cargo: The physical packages, goods, cartons, or materials handed over for transport."
@@ -123,7 +123,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           desc: "Pursuant to the Information Technology Act, 2000 and Consumer Protection (E-Commerce) Rules, 2020, our designated Grievance Officer can be contacted at:",
           officerDetails: {
             name: "Grievance Redressal Desk",
-            company: "Clickit Delivery Network Pvt. Ltd.",
+            company: "Clickit",
             address: "Logistics Park, MI Road / VKI Area, Jaipur, Rajasthan 302013",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -224,7 +224,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
           desc: "सूचना प्रौद्योगिकी अधिनियम, 2000 तथा उपभोक्ता संरक्षण (ई-कॉमर्स) नियम, 2020 के अंतर्गत नियुक्त हमारे नोडल शिकायत निवारण अधिकारी से संपर्क करें:",
           officerDetails: {
             name: "शिकायत निवारण प्रकोष्ठ (Grievance Cell)",
-            company: "क्लिकइट डिलीवरी नेटवर्क प्राइवेट लिमिटेड (Clickit Delivery Network Pvt. Ltd.)",
+            company: "Clickit",
             address: "लॉजिस्टिक्स पार्क, एमआई रोड / वीकेआई एरिया, जयपुर, राजस्थान 302013",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
@@ -385,7 +385,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
         </div>
 
         <div className="mt-4 text-center text-xs text-zinc-500">
-          © 2026 Clickit Delivery Network Pvt. Ltd. All rights reserved.
+          © 2026 Clickit. All rights reserved.
         </div>
       </div>
     </div>

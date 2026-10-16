@@ -45,7 +45,7 @@ export const SEO_PAGES: Record<string, PageSeoConfig> = {
     ogImage: 'https://www.justclickit.in/favicon-512x512.png',
   },
   'terms-and-conditions': {
-    title: 'Terms & Conditions – Clickit Logistics Private Limited',
+    title: 'Terms & Conditions – Clickit',
     description: 'Official user terms, cargo booking rules, pricing policies, cancellation terms, and dispute jurisdiction under competent courts in Jaipur, Rajasthan.',
     canonicalPath: '/terms-and-conditions',
     keywords: 'Clickit terms and conditions, terms of service Clickit Jaipur, logistics booking rules Jaipur',

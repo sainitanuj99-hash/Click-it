@@ -145,7 +145,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
             {current.title}
           </h1>
           <p className="text-zinc-400 font-medium text-sm">
-            {current.category} • Clickit Delivery Network Pvt. Ltd.
+            {current.category} • Clickit
           </p>
         </header>
 
@@ -216,7 +216,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
             </span>
           </div>
           <div className="text-zinc-500 font-medium">
-            Clickit Delivery Network Pvt. Ltd. • Jaipur, Rajasthan • All rights reserved.
+            Clickit • Jaipur, Rajasthan • All rights reserved.
           </div>
         </div>
       </div>

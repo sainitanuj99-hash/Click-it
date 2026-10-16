@@ -182,7 +182,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
 
         {/* Right: Official Copyright */}
         <div className="text-center lg:text-right text-[11px] text-zinc-500 font-medium">
-          <p>© {new Date().getFullYear()} Clickit Delivery Network Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Clickit. All rights reserved.</p>
         </div>
 
       </div>
