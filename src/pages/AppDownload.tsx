@@ -238,7 +238,7 @@ export default function AppDownload() {
 
       {/* Footer Branding Note */}
       <footer className="mt-8 text-center text-xs text-zinc-400 dark:text-zinc-600 font-medium">
-        Clickit • On-Demand Hyperlocal &amp; Intracity Logistics
+        Clickit • On-Demand Intracity Logistics
       </footer>
 
     </div>
