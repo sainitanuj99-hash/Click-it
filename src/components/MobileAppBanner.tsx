@@ -20,25 +20,7 @@ interface MobileAppBannerProps {
 }
 
 export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerModal }) => {
-  const [iosEmail, setIosEmail] = useState('');
-  const [iosSubmitted, setIosSubmitted] = useState(false);
-
-  const handleIosWaitlist = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!iosEmail.trim()) return;
-
-    try {
-      const stored = localStorage.getItem('clickit_ios_waitlist') || '[]';
-      const list = JSON.parse(stored);
-      list.push({ email: iosEmail.trim(), date: new Date().toISOString() });
-      localStorage.setItem('clickit_ios_waitlist', JSON.stringify(list));
-    } catch {
-      // ignore
-    }
-    setIosSubmitted(true);
-  };
-
-  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(PLAY_STORE_URL)}&bgcolor=FFFFFF&color=000000&margin=4`;
+  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`;
 
   return (
     <div className="bg-white text-zinc-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/80 relative overflow-hidden select-none">
@@ -62,7 +44,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-black uppercase tracking-wider shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Now Live on Google Play Store</span>
+                <span>Now Live on Google Play &amp; App Store</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 leading-tight">
@@ -151,52 +133,24 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
               </div>
             </div>
 
-            {/* Apple iOS Notification Section */}
-            <div className="pt-2 border-t border-orange-200/60 max-w-lg">
-              <div className="flex items-center justify-between text-xs pb-2">
-                <span className="font-bold text-zinc-700 flex items-center gap-1.5">
-                  <Smartphone className="w-3.5 h-3.5 text-zinc-500" />
-                  Have an iPhone?
-                </span>
-                <span className="text-[11px] font-bold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">
-                  iOS App Coming Soon
-                </span>
+            {/* Multi-Platform Verified Strip */}
+            <div className="pt-3 border-t border-orange-200/60 max-w-lg flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-600 font-medium">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span>Compatible with Android &amp; iOS</span>
               </div>
-
-              {!iosSubmitted ? (
-                <form onSubmit={handleIosWaitlist} className="flex gap-2">
-                  <div className="relative flex-1">
-                    <Mail className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                    <input
-                      type="email"
-                      required
-                      placeholder="Enter your email for iOS launch..."
-                      value={iosEmail}
-                      onChange={(e) => setIosEmail(e.target.value)}
-                      className="w-full bg-white text-xs text-zinc-900 placeholder-zinc-400 rounded-xl pl-9 pr-3 py-2.5 border border-zinc-300 focus:border-[#FF5D00] focus:ring-1 focus:ring-[#FF5D00] focus:outline-none shadow-xs"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap active:scale-95"
-                  >
-                    Notify Me
-                  </button>
-                </form>
-              ) : (
-                <div className="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl text-emerald-800 text-xs flex items-center gap-2 font-medium">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>You'll receive an email as soon as the iOS app drops on the Apple App Store!</span>
-                </div>
-              )}
+              <div className="flex items-center gap-1.5 text-zinc-500">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>Play Protect &amp; App Store Verified</span>
+              </div>
             </div>
 
           </div>
 
-          {/* Right Column (5 Cols): Real Scannable QR Code & Visual App Card */}
+          {/* Right Column (5 Cols): Real Scannable Universal QR Code & Visual App Card */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center bg-white p-6 sm:p-8 rounded-3xl border border-orange-200/80 space-y-5 text-center shadow-lg relative">
             
-            {/* Top Play Store Logo & App Title */}
+            {/* Top Store Logo & App Title */}
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#FF5D00] to-orange-400 p-0.5 flex items-center justify-center shadow-md shadow-orange-500/20">
                 <div className="w-full h-full bg-[#12141C] rounded-[14px] flex items-center justify-center">
@@ -208,7 +162,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
                 <p className="text-xs text-zinc-500 font-medium">com.clickit.in</p>
                 <div className="flex items-center gap-1 mt-0.5 text-[11px] font-bold text-emerald-600">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>Available on Google Play</span>
+                  <span>Available on Google Play &amp; App Store</span>
                 </div>
               </div>
             </div>
@@ -217,7 +171,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
             <div className="bg-white p-3.5 rounded-2xl border-2 border-orange-200/90 shadow-md inline-block">
               <img 
                 src={qrImageUrl}
-                alt="Scan QR code to install Clickit Android App from Google Play Store"
+                alt="Scan QR code to install Clickit on Android or iPhone"
                 className="w-44 h-44 sm:w-48 sm:h-48 object-contain rounded-xl"
                 loading="lazy"
               />
@@ -229,20 +183,32 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
                 <span>Scan with your phone to install</span>
               </p>
               <p className="text-[11px] text-zinc-500 font-medium max-w-xs leading-relaxed">
-                Open your phone's camera and point at this QR code to open the Google Play Store directly.
+                Scan with your smartphone camera to download automatically on Android or iPhone.
               </p>
             </div>
 
-            {/* Direct Link as backup */}
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold text-[#FF5D00] hover:text-[#E05200] underline flex items-center justify-center gap-1 cursor-pointer pt-1"
-            >
-              <span>Or click here to open on Google Play</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+            {/* Direct Links */}
+            <div className="flex items-center justify-center gap-3 text-xs font-bold pt-1">
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF5D00] hover:text-[#E05200] underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>Google Play</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <span className="text-zinc-300">•</span>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF5D00] hover:text-[#E05200] underline flex items-center gap-1 cursor-pointer"
+              >
+                <span>App Store</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
 
           </div>
 

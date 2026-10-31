@@ -34,7 +34,7 @@ import {
 import { VehicleIllustration } from './VehicleIllustrations';
 import { ClickitLogoMark } from './ClickitLogo';
 import { HeroLogisticsBackground } from './HeroLogisticsBackground';
-import { PLAY_STORE_URL } from '../data/mockData';
+import { PLAY_STORE_URL, APP_STORE_URL } from '../data/mockData';
 
 interface HeroBookingProps {
   onDownloadAppClick?: () => void;
@@ -965,36 +965,47 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               <div className="space-y-1.5">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <QrCode className="w-3.5 h-3.5" /> Live on Google Play
+                  <QrCode className="w-3.5 h-3.5" /> Live on Google Play &amp; App Store
                 </div>
                 <h3 className="text-xl font-black text-white">Scan to Install Clickit</h3>
-                <p className="text-xs text-zinc-400">Point your smartphone camera to open Google Play Store directly</p>
+                <p className="text-xs text-zinc-400">Point your smartphone camera to download on Android or iOS</p>
               </div>
 
-              {/* Real Scannable Google Play QR Code */}
+              {/* Real Scannable Universal QR Code */}
               <div className="bg-white p-3 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
                 <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(PLAY_STORE_URL)}&bgcolor=FFFFFF&color=000000&margin=4`}
-                  alt="Scan to download Clickit on Google Play"
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`}
+                  alt="Scan to download Clickit on Google Play and App Store"
                   className="w-44 h-44 object-contain rounded-xl"
                   loading="lazy"
                 />
               </div>
 
               <div className="space-y-3 pt-1">
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-[#01875F] hover:bg-[#00704F] text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition-all cursor-pointer active:scale-95"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Open in Google Play Store</span>
-                </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={PLAY_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Google Play</span>
+                  </a>
+                  <a
+                    href={APP_STORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-white" />
+                    <span>App Store</span>
+                  </a>
+                </div>
 
-                <div className="space-y-1">
-                  <div className="text-xs font-bold text-white">Clickit Delivery • com.clickit.in</div>
-                  <div className="text-[10px] text-zinc-400">Compatible with Android 8.0+ • Play Protect Verified</div>
+                <div className="space-y-0.5">
+                  <div className="text-xs font-bold text-white">Clickit Delivery • Available for iOS &amp; Android</div>
+                  <div className="text-[10px] text-zinc-400">Official App Store &amp; Play Protect Verified</div>
                 </div>
               </div>
             </motion.div>
