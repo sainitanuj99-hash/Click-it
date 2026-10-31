@@ -129,19 +129,16 @@ export default function AppDownload() {
         {/* Subtle Brand Accent Glow */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-[#FF5D00]/15 dark:bg-[#FF5D00]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Brand App Icon */}
-        <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl bg-gradient-to-br from-[#FF5D00] via-[#FF6A00] to-[#E04800] p-4 shadow-lg shadow-orange-500/30 flex items-center justify-center text-white">
-          <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-            {/* Minimalist modern truck / pin icon */}
-            <rect x="6" y="14" width="22" height="18" rx="3" fill="currentColor" fillOpacity="0.9" />
-            <path d="M28 19H36L41 25V32H28V19Z" fill="currentColor" />
-            <circle cx="14" cy="34" r="4" fill="white" />
-            <circle cx="14" cy="34" r="2" fill="#E04800" />
-            <circle cx="34" cy="34" r="4" fill="white" />
-            <circle cx="34" cy="34" r="2" fill="#E04800" />
-            <path d="M12 21H22" stroke="white" strokeWidth="2" strokeLinecap="round" />
-            <path d="M12 25H18" stroke="white" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+        {/* Brand App Icon: Original Clickit Logo */}
+        <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl overflow-hidden shadow-xl shadow-orange-500/25 border border-zinc-200/90 dark:border-zinc-800 bg-black flex items-center justify-center p-2.5 transition-transform hover:scale-105 select-none">
+          <img
+            src="/favicon-512x512.png"
+            alt="Clickit Logo"
+            className="w-full h-full object-contain rounded-xl"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/favicon.svg';
+            }}
+          />
         </div>
 
         {isRedirecting ? (
