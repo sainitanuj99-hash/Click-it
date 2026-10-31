@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ClickitLogoMark } from './ClickitLogo';
-import { PLAY_STORE_URL, PLAY_STORE_PACKAGE_ID } from '../data/mockData';
+import { PLAY_STORE_URL, APP_STORE_URL, PLAY_STORE_PACKAGE_ID } from '../data/mockData';
 import { 
   Smartphone, 
   Mail, 
@@ -81,31 +81,50 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3.5 bg-black hover:bg-zinc-800 text-white px-6 py-3.5 rounded-2xl shadow-xl shadow-black/20 hover:shadow-orange-500/20 hover:-translate-y-0.5 transition-all duration-200 border border-zinc-800 cursor-pointer active:scale-95"
+                className="group inline-flex items-center gap-3 bg-black hover:bg-zinc-800 text-white px-5 py-3 rounded-2xl shadow-xl shadow-black/20 hover:shadow-orange-500/20 hover:-translate-y-0.5 transition-all duration-200 border border-zinc-800 cursor-pointer active:scale-95"
               >
                 {/* Official Google Play Vector Icon */}
-                <svg className="w-7 h-7 shrink-0" viewBox="0 0 512 512">
+                <svg className="w-6 h-6 shrink-0" viewBox="0 0 512 512">
                   <path fill="#4285F4" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z"/>
                   <path fill="#34A853" d="M47 38.6c-4.4 7.7-6.9 17.5-6.9 29v376.8c0 11.5 2.5 21.3 6.9 29l212.9-213.7L47 38.6z"/>
                   <path fill="#FBBC04" d="M325.3 277.7l60.1 60.1L104.6 499l220.7-221.3z"/>
                   <path fill="#EA4335" d="M444.2 235.8l-58.8-33.8-60.1 60.1 60.1 60.1 58.8-33.8c16.8-9.7 27.8-27.4 27.8-52.6 0-25.2-11-42.9-27.8-52.6z"/>
                 </svg>
                 <div className="text-left">
-                  <div className="text-[10px] text-zinc-300 font-medium tracking-wider uppercase leading-none">
+                  <div className="text-[9px] text-zinc-300 font-medium tracking-wider uppercase leading-none">
                     GET IT ON
                   </div>
-                  <div className="text-base sm:text-lg font-black tracking-tight text-white leading-tight">
+                  <div className="text-sm sm:text-base font-black tracking-tight text-white leading-tight">
                     Google Play
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 transition-transform ml-1" />
+              </a>
+
+              {/* Official Apple App Store Button */}
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-black hover:bg-zinc-800 text-white px-5 py-3 rounded-2xl shadow-xl shadow-black/20 hover:shadow-orange-500/20 hover:-translate-y-0.5 transition-all duration-200 border border-zinc-800 cursor-pointer active:scale-95"
+              >
+                <svg className="w-6 h-6 shrink-0 fill-current text-white" viewBox="0 0 170 170">
+                  <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.07-7.69-7.85-11.98-14.35-5.88-8.91-10.45-18.79-13.72-29.63-3.27-10.84-4.91-21.2-4.91-31.08 0-14.36 3.59-26.31 10.77-35.86 7.18-9.54 16.32-14.42 27.42-14.64 4.8 0 10.15 1.25 16.06 3.75 5.91 2.5 9.71 3.86 11.4 4.08 1.48-.32 5.39-1.74 11.73-4.26 6.34-2.52 11.69-3.7 16.06-3.53 12.2.65 22.09 5.33 29.67 14.04-10.67 6.42-15.89 15.24-15.67 26.44.22 8.7 3.69 16.05 10.41 22.04 6.72 6 14.46 9.38 23.23 10.15-2.28 7.08-4.99 13.93-8.13 20.55zM119.22 31.81c0-7.07 2.57-13.74 7.71-20.02 5.14-6.28 11.51-10.41 19.11-12.4-.87 7.07-3.56 13.62-8.08 19.65-4.52 6.03-10.63 10.23-18.34 12.6-.14-.76-.4-1.63-.4-2.58z" />
+                </svg>
+                <div className="text-left">
+                  <div className="text-[9px] text-zinc-300 font-medium tracking-wider uppercase leading-none">
+                    Download on the
+                  </div>
+                  <div className="text-sm sm:text-base font-black tracking-tight text-white leading-tight">
+                    App Store
+                  </div>
+                </div>
               </a>
 
               {onOpenPartnerModal && (
                 <button
                   type="button"
                   onClick={onOpenPartnerModal}
-                  className="inline-flex items-center gap-2 bg-white hover:bg-orange-50/80 text-zinc-900 font-bold text-xs sm:text-sm px-5 py-3.5 rounded-2xl border border-zinc-200 hover:border-orange-300 shadow-xs transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-orange-50/80 text-zinc-900 font-bold text-xs sm:text-sm px-5 py-3 rounded-2xl border border-zinc-200 hover:border-orange-300 shadow-xs transition-all cursor-pointer"
                 >
                   <span>Become a Partner Driver</span>
                 </button>

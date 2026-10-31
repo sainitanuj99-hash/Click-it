@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 // =========================================================================
 // CONFIG: EDIT YOUR APP DOWNLOAD LINKS HERE
 // =========================================================================
-export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.clickit.in&pcampaignid=web_share";
-export const APP_STORE_URL = "https://apps.apple.com/app/clickit-delivery/id6742357731";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.clickit.in";
+export const APP_STORE_URL = "https://apps.apple.com/in/app/clickit-on-demand-logistics/id6814781045";
 // =========================================================================
 
 export type DeviceType = 'android' | 'ios' | 'other';
@@ -232,17 +232,6 @@ export default function AppDownload() {
                 </div>
               </a>
 
-            </div>
-
-            {/* Direct Home Link */}
-            <div className="pt-2">
-              <a
-                href="/"
-                className="text-xs font-semibold text-[#FF5D00] hover:text-orange-600 transition-colors inline-flex items-center gap-1.5"
-              >
-                <span>Or continue to website</span>
-                <span aria-hidden="true">→</span>
-              </a>
             </div>
 
           </div>
