@@ -119,5 +119,12 @@ export function usePageSeo(activeTab: string) {
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Update robots meta tag (noindex for standalone /app smart redirect)
+    if (activeTab === 'app') {
+      updateMeta('name', 'robots', 'noindex, nofollow');
+    } else {
+      updateMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    }
   }, [activeTab]);
 }

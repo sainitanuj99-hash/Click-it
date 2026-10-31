@@ -214,6 +214,9 @@ Format your response cleanly with bullet points:
         html = html.replace(/<meta\s+name="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:title" content="${seo.title}" />`);
         html = html.replace(/<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:description" content="${seo.description}" />`);
         html = html.replace(/<link\s+rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link rel="canonical" href="${seo.canonical}" />`);
+        if (reqPath === '/app') {
+          html = html.replace(/<meta\s+name="robots"[\s\S]*?\/?>/i, '<meta name="robots" content="noindex, nofollow" />');
+        }
 
         res.setHeader('Content-Type', 'text/html; charset=utf-8');
         res.send(html);

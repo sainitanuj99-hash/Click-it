@@ -19,6 +19,7 @@ const AboutUs = lazy(() => import('./pages/AboutUs'));
 const HelpSupport = lazy(() => import('./pages/HelpSupport'));
 const DriverAgreement = lazy(() => import('./pages/DriverAgreement'));
 const DriverFAQs = lazy(() => import('./pages/DriverFAQs'));
+const AppDownload = lazy(() => import('./pages/AppDownload'));
 const EnterpriseQuoteModal = lazy(() => import('./components/EnterpriseQuoteModal').then(m => ({ default: m.EnterpriseQuoteModal })));
 const PartnerModal = lazy(() => import('./components/PartnerModal').then(m => ({ default: m.PartnerModal })));
 
@@ -100,11 +101,15 @@ export default function App() {
   }, []);
 
   const handleDownloadAppRedirect = () => {
-    setActiveTab('app');
-    const appSection = document.getElementById('mobile-app-download');
-    if (appSection) {
-      appSection.scrollIntoView({ behavior: 'smooth' });
+    if (activeTab !== 'home') {
+      setActiveTab('home');
     }
+    setTimeout(() => {
+      const appSection = document.getElementById('mobile-app-download');
+      if (appSection) {
+        appSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   const handleHowItWorksScroll = () => {
@@ -113,6 +118,15 @@ export default function App() {
       howItWorksEl.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Standalone public route at /app (without navbar, sidebar, or footer)
+  if (activeTab === 'app') {
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-zinc-50 dark:bg-[#07080C] flex items-center justify-center text-zinc-400">Loading…</div>}>
+        <AppDownload />
+      </Suspense>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#07080C] text-zinc-900 flex flex-col font-sans selection:bg-[#FF5D00] selection:text-white w-full relative">
@@ -167,23 +181,6 @@ export default function App() {
               <div id="mobile-app-download">
                 <MobileAppBanner onOpenPartnerModal={() => setIsPartnerModalOpen(true)} />
               </div>
-            </>
-          )}
-
-          {activeTab === 'app' && (
-            <>
-              <div id="mobile-app-download">
-                <MobileAppBanner />
-              </div>
-              <WhyChooseClickit 
-                onOpenPartnerModal={() => setIsPartnerModalOpen(true)}
-                onBookClick={handleDownloadAppRedirect}
-              />
-              <FAQSection
-                onNavigate={navigateByPath}
-                onOpenQuoteModal={() => { setAiAdvisorCargo(null); setIsQuoteModalOpen(true); }}
-                onOpenPartnerModal={() => setIsPartnerModalOpen(true)}
-              />
             </>
           )}
 
