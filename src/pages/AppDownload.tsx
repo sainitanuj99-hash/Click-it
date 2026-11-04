@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ClickitAppIcon } from '../components/ClickitAppIcon';
 
 // =========================================================================
 // CONFIG: EDIT YOUR APP DOWNLOAD LINKS HERE
@@ -129,16 +130,9 @@ export default function AppDownload() {
         {/* Subtle Brand Accent Glow */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-[#FF5D00]/15 dark:bg-[#FF5D00]/10 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Brand App Icon: Original Clickit Logo */}
-        <div className="relative mx-auto mb-5 w-20 h-20 rounded-2xl overflow-hidden shadow-xl shadow-orange-500/25 border border-zinc-200/90 dark:border-zinc-800 bg-black flex items-center justify-center p-2.5 transition-transform hover:scale-105 select-none">
-          <img
-            src="/favicon-512x512.png"
-            alt="Clickit Logo"
-            className="w-full h-full object-contain rounded-xl"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = '/favicon.svg';
-            }}
-          />
+        {/* Brand App Icon: Official Clickit App Icon (Uploaded Wordmark on Black) */}
+        <div className="relative mx-auto mb-5 flex items-center justify-center select-none transition-transform hover:scale-105 duration-200">
+          <ClickitAppIcon className="w-20 h-20 sm:w-22 sm:h-22" rounded="rounded-2xl" shadow={true} />
         </div>
 
         {isRedirecting ? (
