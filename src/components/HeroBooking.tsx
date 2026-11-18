@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Smartphone, 
@@ -275,7 +276,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.12]">
-                Clickit Jaipur — Deliver Anything In Your City. <br />
+                Clickit — Deliver Anything In Your City. <br />
                 <span className="text-[#FF5D00] drop-shadow-[0_2px_18px_rgba(255,93,0,0.22)]">Fast, Safe &amp; On-Demand.</span>
               </h1>
             </div>
@@ -942,76 +943,83 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       </div>
 
       {/* =========================================================================
-          QR CODE DOWNLOAD MODAL POPUP
+          QR CODE DOWNLOAD MODAL POPUP (Portaled to document.body to escape transform context)
           ========================================================================= */}
-      <AnimatePresence>
-        {showQrModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="relative w-full max-w-sm bg-[#12141F] border border-zinc-700 rounded-3xl p-6 sm:p-7 shadow-2xl text-center space-y-5 text-white"
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {showQrModal && (
+            <div
+              onClick={() => setShowQrModal(false)}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
             >
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setShowQrModal(false)}
-                className="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 p-1.5 rounded-full transition-colors cursor-pointer"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-sm bg-[#12141F] border border-zinc-700 rounded-3xl p-6 sm:p-7 shadow-2xl text-center space-y-5 text-white"
               >
-                <X className="w-4 h-4" />
-              </button>
+                {/* Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowQrModal(false)}
+                  className="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 p-1.5 rounded-full transition-colors cursor-pointer"
+                >
+                  <X className="w-4 h-4" />
+                </button>
 
-              <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <QrCode className="w-3.5 h-3.5" /> Live on Google Play &amp; App Store
-                </div>
-                <h3 className="text-xl font-black text-white">Scan to Install Clickit</h3>
-                <p className="text-xs text-zinc-400">Point your smartphone camera to download on Android or iOS</p>
-              </div>
-
-              {/* Real Scannable Universal QR Code */}
-              <div className="bg-white p-3 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
-                <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`}
-                  alt="Scan to download Clickit on Google Play and App Store"
-                  className="w-44 h-44 object-contain rounded-xl"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="space-y-3 pt-1">
-                <div className="grid grid-cols-2 gap-2">
-                  <a
-                    href={PLAY_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Google Play</span>
-                  </a>
-                  <a
-                    href={APP_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 text-white" />
-                    <span>App Store</span>
-                  </a>
+                <div className="space-y-1.5">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-bold border border-emerald-500/30">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    <QrCode className="w-3.5 h-3.5" /> Live on Google Play &amp; App Store
+                  </div>
+                  <h3 className="text-xl font-black text-white">Scan to Install Clickit</h3>
+                  <p className="text-xs text-zinc-400">Point your smartphone camera to download on Android or iOS</p>
                 </div>
 
-                <div className="space-y-0.5">
-                  <div className="text-xs font-bold text-white">Clickit Delivery • Available for iOS &amp; Android</div>
-                  <div className="text-[10px] text-zinc-400">Official App Store &amp; Play Protect Verified</div>
+                {/* Real Scannable Universal QR Code */}
+                <div className="bg-white p-3 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`}
+                    alt="Scan to download Clickit on Google Play and App Store"
+                    className="w-44 h-44 object-contain rounded-xl"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+
+                <div className="space-y-3 pt-1">
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={PLAY_STORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Google Play</span>
+                    </a>
+                    <a
+                      href={APP_STORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 text-white" />
+                      <span>App Store</span>
+                    </a>
+                  </div>
+
+                  <div className="space-y-0.5">
+                    <div className="text-xs font-bold text-white">Clickit Delivery • Available for iOS &amp; Android</div>
+                    <div className="text-[10px] text-zinc-400">Official App Store &amp; Play Protect Verified</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
 
     </section>
   );
