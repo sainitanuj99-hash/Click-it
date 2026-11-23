@@ -3,8 +3,8 @@
  * (PartnerModal and EnterpriseQuoteModal post to /api/lead).
  */
 
-export const SUPPORT_PHONE_DISPLAY = '+91 91450 91460';
-export const SUPPORT_PHONE_TEL = 'tel:+919145091460';
+export const SUPPORT_PHONE_DISPLAY = '+91 141 498 2200';
+export const SUPPORT_PHONE_TEL = 'tel:+911414982200';
 export const SUPPORT_EMAIL = 'support@justclickit.in';
 
 /** Accepts 10-digit Indian mobile numbers with an optional +91 / 91 / 0 prefix. */
