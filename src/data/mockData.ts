@@ -303,7 +303,7 @@ export const APP_STORE_URL = 'https://apps.apple.com/in/app/clickit-on-demand-lo
 export const PLAY_STORE_PACKAGE_ID = 'com.clickit.in';
 
 // Official social profiles. An icon only shows in the footer once its URL is filled in.
-export const INSTAGRAM_URL = '';
+export const INSTAGRAM_URL = 'https://www.instagram.com/clickit_app/';
 export const FACEBOOK_URL = '';
 export const PLAY_STORE_DIRECT_INTENT = 'market://details?id=com.clickit.in';
 
