@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDocumentLang } from '../hooks/useDocumentLang';
 import { Shield, ArrowLeft, Mail, Phone, Lock, FileText, Globe, Trash2, AlertCircle, EyeOff, Smartphone, Server, MapPin } from "lucide-react";
 
 interface PrivacyPolicyProps {
@@ -53,6 +54,9 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
     }
     return 'en';
   });
+
+  useDocumentLang(lang);
+
 
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
@@ -128,7 +132,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             },
             {
               title: "Website",
-              description: "On justclickit.in we may use cookies or similar tools for session, language, and security.\nWe do not collect contacts, microphone audio, or your SMS inbox."
+              description: "On justclickit.in we may use cookies or similar tools for session, language, and security.\nWe use Google Analytics to understand how visitors use the website, such as pages viewed, device and browser type, and approximate location. Google Analytics sets its own cookies. We do not use this data for advertising.\nWe do not collect contacts, microphone audio, or your SMS inbox."
             }
           ]
         },
@@ -343,7 +347,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             },
             {
               title: "वेबसाइट",
-              description: "justclickit.in पर हम सेशन, भाषा और सुरक्षा के लिए कुकीज़ या ऐसी ही तकनीक इस्तेमाल कर सकते हैं।\nहम संपर्क सूची, माइक्रोफ़ोन ऑडियो, या आपका SMS इनबॉक्स एकत्र नहीं करते।"
+              description: "justclickit.in पर हम सेशन, भाषा और सुरक्षा के लिए कुकीज़ या ऐसी ही तकनीक इस्तेमाल कर सकते हैं।\nवेबसाइट का उपयोग समझने के लिए हम Google Analytics का इस्तेमाल करते हैं, जैसे देखे गए पेज, डिवाइस और ब्राउज़र का प्रकार, और अनुमानित लोकेशन। Google Analytics अपनी कुकीज़ सेट करता है। हम इस डेटा का उपयोग विज्ञापन के लिए नहीं करते।\nहम संपर्क सूची, माइक्रोफ़ोन ऑडियो, या आपका SMS इनबॉक्स एकत्र नहीं करते।"
             }
           ]
         },

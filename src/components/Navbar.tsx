@@ -4,6 +4,9 @@ import { Smartphone, Menu, X, Bike, Truck, Zap, MapPin } from 'lucide-react';
 import { ClickitWordmark } from './ClickitLogo';
 import { PLAY_STORE_URL } from '../data/mockData';
 
+// Let Ctrl/Cmd/middle-click open the page in a new tab; otherwise navigate in-app.
+const isPlainLeftClick = (e: React.MouseEvent) => e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+
 interface NavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
@@ -77,8 +80,10 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         
         {/* Clickit Unified Brand Logo + Schbang-Style Kinetic Service Lockup */}
-        <div 
-          onClick={() => setActiveTab('estimate')}
+        <a 
+          href="/"
+          aria-label="Clickit home"
+          onClick={(e) => { if (!isPlainLeftClick(e)) return; e.preventDefault(); setActiveTab('estimate'); }}
           className="cursor-pointer group py-1 flex items-center select-none"
           onMouseEnter={() => setIsTickerHovered(true)}
           onMouseLeave={() => setIsTickerHovered(false)}
@@ -119,12 +124,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </AnimatePresence>
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold">
-          <button
-            onClick={() => setActiveTab('estimate')}
+          <a
+            href="/"
+            aria-current={activeTab === 'estimate' ? 'page' : undefined}
+            onClick={(e) => { if (!isPlainLeftClick(e)) return; e.preventDefault(); setActiveTab('estimate'); }}
             className={`px-3.5 py-2 rounded-xl transition-all cursor-pointer ${
               activeTab === 'estimate'
                 ? 'text-[#FF5D00] bg-orange-500/15 border border-orange-500/30 font-black shadow-sm'
@@ -132,10 +139,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             Home
-          </button>
+          </a>
 
-          <button
-            onClick={() => setActiveTab('about-us')}
+          <a
+            href="/about-us"
+            aria-current={activeTab === 'about-us' ? 'page' : undefined}
+            onClick={(e) => { if (!isPlainLeftClick(e)) return; e.preventDefault(); setActiveTab('about-us'); }}
             className={`px-3.5 py-2 rounded-xl transition-all cursor-pointer ${
               activeTab === 'about-us'
                 ? 'text-[#FF5D00] bg-orange-500/15 border border-orange-500/30 font-black shadow-sm'
@@ -143,9 +152,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             About Us
-          </button>
+          </a>
 
           <button
+            type="button"
             onClick={openPartnerModal}
             className="px-3.5 py-2 rounded-xl text-zinc-300 hover:text-[#FF5D00] hover:bg-orange-500/10 transition-all cursor-pointer flex items-center gap-1.5"
           >
@@ -173,7 +183,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile Hamburger Toggle */}
         <div className="flex md:hidden items-center">
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
             className="p-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg focus:outline-none"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -184,23 +197,26 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0A0B10] border-b border-zinc-800 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
-          <button
-            onClick={() => { setActiveTab('estimate'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+          <a
+            href="/"
+            onClick={(e) => { if (!isPlainLeftClick(e)) return; e.preventDefault(); setActiveTab('estimate'); setMobileMenuOpen(false); }}
+            className={`block w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold ${
               activeTab === 'estimate' ? 'bg-orange-500/15 border border-orange-500/30 text-[#FF5D00]' : 'text-zinc-300 hover:text-white'
             }`}
           >
             Home
-          </button>
-          <button
-            onClick={() => { setActiveTab('about-us'); setMobileMenuOpen(false); }}
-            className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+          </a>
+          <a
+            href="/about-us"
+            onClick={(e) => { if (!isPlainLeftClick(e)) return; e.preventDefault(); setActiveTab('about-us'); setMobileMenuOpen(false); }}
+            className={`block w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold ${
               activeTab === 'about-us' ? 'bg-orange-500/15 border border-orange-500/30 text-[#FF5D00]' : 'text-zinc-300 hover:text-white'
             }`}
           >
             About Us
-          </button>
+          </a>
           <button
+            type="button"
             onClick={() => { if (openPartnerModal) openPartnerModal(); setMobileMenuOpen(false); }}
             className="w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-bold text-zinc-300 hover:text-[#FF5D00]"
           >

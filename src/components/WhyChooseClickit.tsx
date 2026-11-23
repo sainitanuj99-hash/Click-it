@@ -51,7 +51,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             SECTION HEADER
             ========================================================================= */}
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5D00] shadow-sm mb-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#C2410C] shadow-sm mb-1">
             <span>Tailored for Every Need</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-900 tracking-tight">
@@ -78,7 +78,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Retailers &amp; Wholesalers
                 </h3>
-                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#FF5D00] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
+                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#C2410C] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
                   BUSINESS USE
                 </span>
               </div>
@@ -90,11 +90,14 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             {/* Photo Container */}
             <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
               <img 
-                src="/images/retailers-wholesalers.jpg" 
+                src="/images/retailers-wholesalers-800.webp"
+                srcSet="/images/retailers-wholesalers-800.webp 800w, /images/retailers-wholesalers-1200.webp 1200w"
+                sizes="(min-width: 1024px) 420px, 92vw"
                 onError={(e) => {
                   const target = e.currentTarget;
-                  if (target.src !== 'https://plain-apac-prod-public.komododecks.com/202609/17/Bc7pnwwZMZwUNSmxyGaA/image.jpg') {
-                    target.src = 'https://plain-apac-prod-public.komododecks.com/202609/17/Bc7pnwwZMZwUNSmxyGaA/image.jpg';
+                  if (!target.src.endsWith('/images/retailers-wholesalers.jpg')) {
+                    target.removeAttribute('srcset');
+                    target.src = '/images/retailers-wholesalers.jpg';
                   }
                 }}
                 alt="Clickit delivery partner delivering express parcel to retail merchant outside shop"
@@ -154,7 +157,7 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">
                   Individuals
                 </h3>
-                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#FF5D00] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
+                <span className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#C2410C] bg-orange-100/70 px-2.5 py-1 rounded-full shrink-0">
                   PERSONAL USE
                 </span>
               </div>
@@ -166,11 +169,14 @@ export const WhyChooseClickit: React.FC<WhyChooseClickitProps> = ({
             {/* Photo Container */}
             <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-md">
               <img 
-                src="/images/individuals.jpg" 
+                src="/images/individuals-800.webp"
+                srcSet="/images/individuals-800.webp 800w, /images/individuals-1200.webp 1200w"
+                sizes="(min-width: 1024px) 420px, 92vw"
                 onError={(e) => {
                   const target = e.currentTarget;
-                  if (target.src !== 'https://plain-apac-prod-public.komododecks.com/202609/17/pY4EZPeZUXM3ar0wx8ZV/image.jpg') {
-                    target.src = 'https://plain-apac-prod-public.komododecks.com/202609/17/pY4EZPeZUXM3ar0wx8ZV/image.jpg';
+                  if (!target.src.endsWith('/images/individuals.jpg')) {
+                    target.removeAttribute('srcset');
+                    target.src = '/images/individuals.jpg';
                   }
                 }}
                 alt="Clickit express delivery courier delivering package to customer"

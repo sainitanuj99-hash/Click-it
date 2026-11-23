@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDocumentLang } from '../hooks/useDocumentLang';
 import { 
   ArrowLeft, 
   HelpCircle, 
@@ -53,6 +54,9 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
       prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
     );
   };
+
+  useDocumentLang(lang);
+
 
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);

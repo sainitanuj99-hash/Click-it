@@ -68,7 +68,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
       question: "How do I book my first delivery on ClickIt?",
       answer: "Booking on-demand logistics takes less than 60 seconds with our streamlined 4-step dispatch system:",
       bulletPoints: [
-        "Select your vehicle: Choose between 2-Wheeler (documents/parcels), 3-Wheeler Loader, Tata Ace (7ft), Pickup (8ft/9ft), or Heavy 14ft-19ft Trucks.",
+        "Select your vehicle: Choose between 2-Wheeler (documents/parcels), 3-Wheeler Loader, Tata Ace (7ft), or 8ft Pickup (Bolero).",
         "Enter pickup and drop locations with receiver's contact details.",
         "Review upfront transparent pricing — zero hidden charges or unexpected surges.",
         "Confirm your booking. Our smart dispatch engine allocates the closest verified driver partner in under 2 minutes with live GPS tracking."
@@ -126,7 +126,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
       bulletPoints: [
         "Call the driver directly via the in-app call button for an immediate status update.",
         "If delayed beyond 15 minutes, tap 'Reassign Driver' to instantly assign another nearest vehicle without extra charges.",
-        "Reach our live logistics helpline (1800-CLICKIT-LOGISTICS) for priority operational escalation."
+        "Call our helpline on +91 91450 91460 for priority operational escalation."
       ]
     },
     {
@@ -320,7 +320,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <FileText className="w-5 h-5 text-[#FF5D00]" />
               Frequently Answered Questions
-              <span className="text-xs text-zinc-500 font-normal ml-2">({filteredFaqs.length} results)</span>
+              <span className="text-xs text-zinc-500 font-normal ml-2">({filteredFaqs.length} {filteredFaqs.length === 1 ? 'result' : 'results'})</span>
             </h2>
             <button
               onClick={() => {
@@ -451,8 +451,8 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
               <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                 <Phone className="w-4 h-4" />
               </div>
-              <div className="text-xs text-zinc-400 font-medium">Toll-Free Helpline</div>
-              <div className="text-sm font-bold text-white">1800-CLICKIT-LOGISTICS</div>
+              <div className="text-xs text-zinc-400 font-medium">Phone Helpline</div>
+              <a href="tel:+919145091460" className="block text-sm font-bold text-white hover:text-orange-400">+91 91450 91460</a>
               <p className="text-[11px] text-zinc-500">Available 24x7 for active trips</p>
             </div>
 

@@ -54,6 +54,7 @@ Device type, OS, app version, IP address, crash/performance logs, network status
 
 ### Website
 On justclickit.in we may use cookies or similar tools for session, language, and security.  
+We use Google Analytics to understand how visitors use the website, such as pages viewed, device and browser type, and approximate location. Google Analytics sets its own cookies. We do not use this data for advertising.  
 We do not collect contacts, microphone audio, or your SMS inbox.
 
 ---

@@ -94,15 +94,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
       categoryLabel: 'Fleet & Cargo',
       categoryIcon: Truck,
       question: 'Which vehicle should I choose for my shipment size and weight?',
-      answer: 'Clickit provides an extensive commercial fleet tailored for micro parcels, retail inventory, and heavy industrial freight:',
+      answer: 'Clickit provides an extensive commercial fleet tailored for small parcels, retail inventory, and heavy goods across Jaipur:',
       points: [
         '2-Wheeler (Bike): Ideal for documents, packages, lunchboxes, and retail parcels under 20 kg.',
         '3-Wheeler Loader / E-Rickshaw: Perfect for cartons, consumer goods, and wholesale boxes up to 500 kg.',
         'Tata Ace / Chota Hathi (7ft): Standard choice for retail restocking, appliances, and hardware up to 750 kg.',
-        '8ft / 9ft Pickup (Bolero): Built for furniture, industrial raw materials, and heavy loads up to 1,500 kg.',
-        '14ft - 19ft Trucks: Enterprise-grade intra-city bulk freight and warehouse distribution up to 5,000 kg.'
+        '8ft Pickup (Bolero): Built for furniture, industrial raw materials, and heavy loads up to 1,500 kg.'
       ],
-      highlight: '20kg to 5 Tonnes'
+      highlight: '20 kg to 1,500 kg'
     },
     {
       id: 'faq-4',
@@ -238,14 +237,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
             HEADER
             ========================================================================= */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5D00] shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#C2410C] shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#FF5D00]" />
             <span>Help &amp; Knowledge Base</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
             Frequently Asked{' '}
-            <span className="text-[#FF5D00]">
+            <span className="text-[#E05200]">
               Questions
             </span>
           </h2>

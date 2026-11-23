@@ -1,8 +1,6 @@
 import React from 'react';
 import { 
-  Linkedin, 
   Instagram, 
-  Youtube, 
   Facebook,
   MapPin,
   Phone,
@@ -10,7 +8,19 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { ClickitWordmark } from './ClickitLogo';
-import { PLAY_STORE_URL } from '../data/mockData';
+import { PLAY_STORE_URL, INSTAGRAM_URL, FACEBOOK_URL } from '../data/mockData';
+
+const FOOTER_LINKS: { tab: string; href: string; label: string }[] = [
+  { tab: 'about-us', href: '/about-us', label: 'About Us' },
+  { tab: 'driver-faqs', href: '/driver-faqs', label: 'Driver FAQs' },
+  { tab: 'driver-agreement', href: '/driver-agreement', label: 'Driver Agreement' },
+  { tab: 'help-support', href: '/help-support', label: 'Contact' },
+  { tab: 'privacy-policy', href: '/privacy-policy', label: 'Privacy' },
+  { tab: 'terms-and-conditions', href: '/terms-and-conditions', label: 'Terms' },
+];
+
+// Let Ctrl/Cmd/middle-click open the page in a new tab; otherwise navigate in-app.
+const isPlainLeftClick = (e: React.MouseEvent) => e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -30,17 +40,17 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
       */}
       <div className="flex-1 flex flex-col justify-center items-center my-auto relative pt-4 sm:pt-6 pb-2 w-full">
         <div className="w-full flex items-center justify-center overflow-visible">
-          <h1 className="text-[16vw] sm:text-[17.5vw] md:text-[18.5vw] lg:text-[19.5vw] leading-[0.9] select-none inline-flex items-baseline group cursor-default whitespace-nowrap">
+          <div role="img" aria-label="Clickit" className="text-[16vw] sm:text-[17.5vw] md:text-[18.5vw] lg:text-[19.5vw] leading-[0.9] select-none inline-flex items-baseline group cursor-default whitespace-nowrap">
             <ClickitWordmark 
               className="group-hover:scale-[1.01] transition-transform duration-300"
               textColorClick="orange"
               textColorIt="white"
               showTrailingDot={false}
             />
-          </h1>
+          </div>
         </div>
         <p className="text-zinc-400 font-medium uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[11px] sm:text-xs md:text-sm text-center mt-2 sm:mt-3">
-          Samman Apka, Zimedari Humari
+          Samman Apka, Zimmedari Humari
         </p>
       </div>
 
@@ -102,83 +112,49 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
             <span>Google Play</span>
           </a>
 
-          <a 
-            href="https://linkedin.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="w-8 h-8 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
-            title="LinkedIn"
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://instagram.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="w-8 h-8 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
-            title="Instagram"
-          >
-            <Instagram className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://youtube.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="w-8 h-8 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
-            title="YouTube"
-          >
-            <Youtube className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://facebook.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="w-8 h-8 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
-            title="Facebook"
-          >
-            <Facebook className="w-4 h-4" />
-          </a>
+          {INSTAGRAM_URL && (
+            <a 
+              href={INSTAGRAM_URL} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="w-10 h-10 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
+              aria-label="Clickit on Instagram"
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+          )}
+          {FACEBOOK_URL && (
+            <a 
+              href={FACEBOOK_URL} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="w-10 h-10 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-white flex items-center justify-center transition-all hover:scale-105 hover:border-zinc-700"
+              aria-label="Clickit on Facebook"
+              title="Facebook"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+          )}
         </div>
 
         {/* Center: Horizontal Clean Nav Links */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-5 font-medium text-white/85 text-xs sm:text-[13px]">
-          <button 
-            onClick={() => setActiveTab('about-us')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            About Us
-          </button>
-          <button 
-            onClick={() => setActiveTab('driver-faqs')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            Driver FAQs
-          </button>
-          <button 
-            onClick={() => setActiveTab('driver-agreement')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            Driver Agreement
-          </button>
-          <button 
-            onClick={() => setActiveTab('help-support')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            Contact
-          </button>
-          <button 
-            onClick={() => setActiveTab('privacy-policy')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            Privacy
-          </button>
-          <button 
-            onClick={() => setActiveTab('terms-and-conditions')} 
-            className="hover:text-[#FF5D00] transition-colors cursor-pointer"
-          >
-            Terms
-          </button>
-        </div>
+        <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 font-medium text-white/85 text-xs sm:text-[13px]">
+          {FOOTER_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => {
+                if (!isPlainLeftClick(e)) return;
+                e.preventDefault();
+                setActiveTab(link.tab);
+              }}
+              className="px-1.5 py-2.5 hover:text-[#FF5D00] transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
         {/* Right: Official Copyright */}
         <div className="text-center lg:text-right text-[11px] text-zinc-500 font-medium">

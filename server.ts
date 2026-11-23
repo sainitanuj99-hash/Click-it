@@ -2,8 +2,9 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
-import { GoogleGenAI } from '@google/genai';
-import { SAMPLE_SHIPMENTS, VEHICLE_FLEET } from './src/data/mockData.ts';
+import { SAMPLE_SHIPMENTS } from './src/data/mockData.ts';
+import { handleLead } from './api/lead.ts';
+import { getCargoAdvice } from './api/ai-advisor.ts';
 
 async function startServer() {
   const app = express();
@@ -38,11 +39,11 @@ async function startServer() {
         receiverCompany: 'Metro Distribution Hub',
         receiverAddress: 'Sitapura Industrial Phase 3',
         receiverCity: 'Jaipur',
-        vehicleId: 'container-14ft',
-        vehicleName: '14ft Closed Container',
+        vehicleId: 'pickup-8ft',
+        vehicleName: 'Pickup 8ft (Bolero)',
         vehicleNo: 'RJ-14-TR-4920',
         goodsCategory: 'General Industrial Freight',
-        weightKg: 1850,
+        weightKg: 1150,
         status: 'in_transit' as const,
         progressPercent: 55,
         scheduledDate: new Date(Date.now() - 86400000).toLocaleString(),
@@ -70,51 +71,15 @@ async function startServer() {
     return res.status(404).json({ success: false, message: 'Shipment or Waybill not found.' });
   });
 
-  // API 3: AI Logistics & Cargo Sizing Advisor (using @google/genai)
+  // API 3: AI Logistics & Cargo Sizing Advisor (same handler as the Vercel function in api/ai-advisor.ts)
   app.post('/api/ai-advisor', async (req, res) => {
-    try {
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) {
-        return res.json({
-          advice: "For optimum B2B cargo movement with Clickit, we recommend using a 14ft Closed Container for multi-box FMCG goods or a 32ft MX Container for heavy volume freight. Ensure all items are palletized and E-Way bills are attached.",
-          recommendedVehicle: "14ft Closed Container"
-        });
-      }
+    res.json(await getCargoAdvice(req.body));
+  });
 
-      const { goodsType, weightKg, origin, destination, specialInstructions } = req.body;
-
-      const ai = new GoogleGenAI({ apiKey });
-      const prompt = `You are Clickit Senior B2B Cargo Logistics & Freight Specialist.
-Provide a concise, professional recommendation for a B2B shipment:
-- Cargo Type: ${goodsType || 'General Freight'}
-- Weight: ${weightKg || 1000} kg
-- Pickup: ${origin || 'Jaipur'}
-- Drop: ${destination || 'Jaipur'}
-- Notes: ${specialInstructions || 'None'}
-
-Vehicles available:
-${VEHICLE_FLEET.map(v => `- ${v.name}: ${v.capacityDisplay}, Body: ${v.bodyType}, Base Rate: ₹${v.baseFare} + ₹${v.perKmRate}/km`).join('\n')}
-
-Format your response cleanly with bullet points:
-1. Recommended Vehicle & Why
-2. Route & Transit Estimate
-3. Safety & Packaging Tips
-4. B2B Documentation needed (e.g. E-Way Bill, GST invoice, Insurance)`;
-
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: prompt
-      });
-
-      const text = response.text || 'Recommendation generated based on optimal fleet payload.';
-      res.json({ success: true, advice: text });
-    } catch (err: any) {
-      console.error('Gemini AI Advisor Error:', err);
-      res.json({
-        success: true,
-        advice: "• Recommended Vehicle: 14ft Closed Container or Tata Ace\n• Packaging Tip: Ensure goods are shrink-wrapped and securely palletized.\n• Docs Needed: GST Invoice & E-Way Bill for intercity transit (> ₹50,000 value)."
-      });
-    }
+  // API 4: Partner and B2B form submissions (same handler as the Vercel function in api/lead.ts)
+  app.post('/api/lead', async (req, res) => {
+    const result = await handleLead(req.body);
+    res.status(result.status).json(result.body);
   });
 
   // Route metadata for server-rendered SEO

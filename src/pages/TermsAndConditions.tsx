@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDocumentLang } from '../hooks/useDocumentLang';
 import { Shield, ArrowLeft, FileText, CheckCircle2, AlertTriangle, Scale, Phone, Mail, Globe } from "lucide-react";
 
 interface TermsAndConditionsProps {
@@ -20,6 +21,8 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
   });
 
   // Sync lang state with URL parameter for easy sharing
+  useDocumentLang(lang);
+
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
     if (typeof window !== 'undefined') {
@@ -127,7 +130,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200 / 1800-CLICKIT"
+            phone: "+91 141 498 2200"
           }
         }
       ]
@@ -228,7 +231,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200 / 1800-CLICKIT"
+            phone: "+91 141 498 2200"
           }
         }
       ]
@@ -357,7 +360,7 @@ export default function TermsAndConditions({ onNavigate, initialLang }: TermsAnd
                       {section.officerDetails.email}
                     </a>
                     <a
-                      href={`tel:${section.officerDetails.phone}`}
+                      href={`tel:${section.officerDetails.phone.replace(/[^0-9+]/g, '')}`}
                       className="inline-flex items-center gap-1.5 text-zinc-300 hover:text-white font-semibold"
                     >
                       <Phone className="w-3.5 h-3.5" />

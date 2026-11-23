@@ -1,8 +1,43 @@
 {
-  "rewrites": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/help", "destination": "/help-support", "permanent": true },
+    { "source": "/support", "destination": "/help-support", "permanent": true },
+    { "source": "/contact", "destination": "/help-support", "permanent": true },
+    { "source": "/terms", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/terms-of-service", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/tos", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/driver-faq", "destination": "/driver-faqs", "permanent": true },
+    { "source": "/driver-terms", "destination": "/driver-agreement", "permanent": true },
+    { "source": "/partner-agreement", "destination": "/driver-agreement", "permanent": true },
+    { "source": "/driver-contract", "destination": "/driver-agreement", "permanent": true },
+    { "source": "/download", "destination": "/app", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800" }
+      ]
+    },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" }
+      ]
     }
   ]
 }

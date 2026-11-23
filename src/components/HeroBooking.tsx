@@ -67,6 +67,7 @@ interface ImageSlide {
   title: string;
   subtitle: string;
   imageUrl: string;
+  srcSet: string;
   fallbackUrl: string;
   eta: string;
   liveBadge: string;
@@ -92,8 +93,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'zap',
       title: '2-Wheeler Express Courier',
       subtitle: 'Fastest doorstep pickup in 10-15 mins for documents, keys, parcels & food orders.',
-      imageUrl: '/images/2w-express.jpg',
-      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/bhfnPun1VOcfo2hy95Ky/image.jpg',
+      imageUrl: '/images/2w-express-800.webp',
+      srcSet: '/images/2w-express-800.webp 800w, /images/2w-express-1200.webp 1200w',
+      fallbackUrl: '/images/2w-express.jpg',
       eta: '10–15 Min Pickup',
       liveBadge: '⚡ 320+ Active Bikers',
       highlightPill: 'Instant Bike Dispatch • ₹40 Base'
@@ -105,8 +107,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'home',
       title: 'Stress-Free House & Room Shifting',
       subtitle: 'Sofas, beds, appliances, carton packaging & verified loading helper crews.',
-      imageUrl: '/images/house-shifting.jpg',
-      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/dmTDhWzQlEurfK9IKr7Z/image.jpg',
+      imageUrl: '/images/house-shifting-800.webp',
+      srcSet: '/images/house-shifting-800.webp 800w, /images/house-shifting-1200.webp 1200w',
+      fallbackUrl: '/images/house-shifting.jpg',
       eta: 'Immediate / Scheduled',
       liveBadge: '📦 100% Zero-Damage',
       highlightPill: 'Trained Helper & Labor Support'
@@ -118,8 +121,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
       iconType: 'store',
       title: 'Wholesale Drops & Store Restocking',
       subtitle: 'Multi-stop delivery for shops, traders, distributors, textile & hardware merchants.',
-      imageUrl: '/images/retailers-wholesalers.jpg',
-      fallbackUrl: 'https://plain-apac-prod-public.komododecks.com/202609/17/Bc7pnwwZMZwUNSmxyGaA/image.jpg',
+      imageUrl: '/images/retailers-wholesalers-800.webp',
+      srcSet: '/images/retailers-wholesalers-800.webp 800w, /images/retailers-wholesalers-1200.webp 1200w',
+      fallbackUrl: '/images/retailers-wholesalers.jpg',
       eta: 'Instant Dispatch',
       liveBadge: '🛒 Bulk GST Invoicing',
       highlightPill: 'Multi-Stop Drop Routes'
@@ -264,7 +268,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200/90 text-xs font-bold text-[#FF5D00] shadow-md shadow-orange-500/5"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-orange-200/90 text-xs font-bold text-[#C2410C] shadow-md shadow-orange-500/5"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#FF5D00]" />
                 <span className="tracking-wide uppercase text-[11px] font-black">Clickit Jaipur • On-Demand Fleet</span>
@@ -277,7 +281,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.12]">
                 Clickit — Deliver Anything In Your City. <br />
-                <span className="text-[#FF5D00] drop-shadow-[0_2px_18px_rgba(255,93,0,0.22)]">Fast, Safe &amp; On-Demand.</span>
+                <span className="text-[#E05200] drop-shadow-[0_2px_18px_rgba(255,93,0,0.22)]">Fast, Safe &amp; On-Demand.</span>
               </h1>
             </div>
 
@@ -301,6 +305,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 >
                   <img
                     src={activeSlide.imageUrl}
+                    srcSet={activeSlide.srcSet}
+                    sizes="(min-width: 1024px) 560px, 92vw"
                     alt={activeSlide.title}
                     referrerPolicy="no-referrer"
                     fetchPriority="high"
@@ -308,7 +314,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     className="w-full h-full object-cover object-center brightness-[1.03] contrast-[1.06] saturate-[1.14] transition-transform duration-1000 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.currentTarget;
-                      if (target.src !== activeSlide.fallbackUrl) {
+                      if (!target.src.endsWith(activeSlide.fallbackUrl)) {
+                        target.removeAttribute('srcset');
                         target.src = activeSlide.fallbackUrl;
                       }
                     }}
@@ -359,7 +366,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     type="button"
                     onClick={() => setIsSlideAutoPlaying(!isSlideAutoPlaying)}
                     title={isSlideAutoPlaying ? 'Pause' : 'Play'}
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
+                    aria-label={isSlideAutoPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
                   >
                     {isSlideAutoPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3 fill-current" />}
                   </button>
@@ -367,7 +375,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     type="button"
                     onClick={handlePrevSlide}
                     title="Previous"
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
+                    aria-label="Previous slide"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
                   >
                     <ChevronLeft className="w-3.5 h-3.5" />
                   </button>
@@ -375,7 +384,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                     type="button"
                     onClick={handleNextSlide}
                     title="Next"
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
+                    aria-label="Next slide"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 hover:text-white hover:bg-white/15 transition-colors cursor-pointer"
                   >
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
@@ -424,7 +434,9 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                         key={slide.id}
                         type="button"
                         onClick={() => setCurrentSlideIndex(idx)}
-                        className="group flex flex-col gap-1.5 text-left cursor-pointer focus:outline-none"
+                        aria-label={`Show slide: ${slide.title}`}
+                        aria-current={isActive ? 'true' : undefined}
+                        className="group flex flex-col gap-1.5 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 rounded"
                       >
                         <div className="w-full h-1.5 rounded-full bg-white/25 overflow-hidden">
                           <div
@@ -494,7 +506,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
             <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-zinc-600 pt-0.5">
               <span className="flex items-center gap-1.5 text-zinc-800">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#FF5D00]" />
-                <span>15,000+ Completed Deliveries</span>
+                <span>500+ Completed Deliveries</span>
               </span>
               <span className="text-zinc-300">•</span>
               <span className="flex items-center gap-1.5 text-zinc-800">
@@ -561,6 +573,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   setIsAutoPlaying(true);
                 }}
                 title="Replay Installation Animation"
+                aria-label="Replay installation animation"
                 className="p-1.5 rounded-full text-zinc-500 hover:text-zinc-900 bg-zinc-100 hover:bg-zinc-200 transition-colors ml-0.5 cursor-pointer"
               >
                 <RotateCcw className="w-3 h-3" />
@@ -638,13 +651,10 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                             {/* Titles */}
                             <div className="min-w-0 flex-1">
                               <h2 className="text-base font-bold text-white leading-tight">
-                                Clickit: City Trucks &amp; Logistics
+                                Clickit - On-Demand Logistics
                               </h2>
                               <p className="text-xs text-[#01875F] font-semibold mt-0.5">
-                                Clickit India Technologies
-                              </p>
-                              <p className="text-[10px] text-zinc-500 mt-0.5">
-                                Contains ads • In-app purchases
+                                Justclickit
                               </p>
                             </div>
                           </div>
@@ -659,8 +669,8 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                               <div className="text-[9px] text-zinc-400">Jaipur Fleet</div>
                             </div>
                             <div className="space-y-0.5 border-l border-zinc-800">
-                              <div className="font-bold text-white">100K+</div>
-                              <div className="text-[9px] text-zinc-400">Downloads</div>
+                              <div className="font-bold text-white">500+</div>
+                              <div className="text-[9px] text-zinc-400">Deliveries</div>
                             </div>
                             <div className="space-y-0.5 border-l border-zinc-800">
                               <div className="font-bold text-white">28 MB</div>
@@ -930,7 +940,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs font-black text-zinc-900 leading-tight">Lightweight 28 MB</div>
-                    <div className="text-[10px] text-zinc-500 font-medium leading-snug truncate">Play Protect Verified</div>
+                    <div className="text-[11px] text-zinc-500 font-medium leading-snug truncate">On Google Play &amp; App Store</div>
                   </div>
                 </div>
               </div>
@@ -963,6 +973,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowQrModal(false)}
+                  aria-label="Close"
                   className="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 p-1.5 rounded-full transition-colors cursor-pointer"
                 >
                   <X className="w-4 h-4" />
@@ -980,7 +991,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
                 {/* Real Scannable Universal QR Code */}
                 <div className="bg-white p-3 rounded-2xl inline-block shadow-lg mx-auto border-4 border-[#FF5D00]/20">
                   <img
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`}
+                    src="/images/app-qr.svg"
                     alt="Scan to download Clickit on Google Play and App Store"
                     className="w-44 h-44 object-contain rounded-xl"
                     loading="lazy"
@@ -1011,7 +1022,7 @@ export const HeroBooking: React.FC<HeroBookingProps> = ({
 
                   <div className="space-y-0.5">
                     <div className="text-xs font-bold text-white">Clickit Delivery • Available for iOS &amp; Android</div>
-                    <div className="text-[10px] text-zinc-400">Official App Store &amp; Play Protect Verified</div>
+                    <div className="text-[10px] text-zinc-400">Official Google Play &amp; App Store listings</div>
                   </div>
                 </div>
               </motion.div>

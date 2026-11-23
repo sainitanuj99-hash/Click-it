@@ -20,7 +20,7 @@ interface MobileAppBannerProps {
 }
 
 export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerModal }) => {
-  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent('https://www.justclickit.in/app')}&bgcolor=FFFFFF&color=000000&margin=4`;
+  const qrImageUrl = '/images/app-qr.svg';
 
   return (
     <div className="bg-white text-zinc-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-t border-zinc-200/80 relative overflow-hidden select-none">
@@ -121,7 +121,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
               </div>
               <div className="flex items-center gap-2.5 bg-white/95 p-3 rounded-xl border border-orange-100 shadow-xs">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span className="font-bold">Play Protect Verified • 28 MB</span>
+                <span className="font-bold">Free on Google Play &amp; App Store • 28 MB</span>
               </div>
               <div className="flex items-center gap-2.5 bg-white/95 p-3 rounded-xl border border-orange-100 shadow-xs">
                 <CheckCircle2 className="w-4 h-4 text-[#FF5D00] shrink-0" />
@@ -141,7 +141,7 @@ export const MobileAppBanner: React.FC<MobileAppBannerProps> = ({ onOpenPartnerM
               </div>
               <div className="flex items-center gap-1.5 text-zinc-500">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Play Protect &amp; App Store Verified</span>
+                <span>Official Google Play &amp; App Store listings</span>
               </div>
             </div>
 
