@@ -66,9 +66,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openQuoteModal }) 
           </span>
         </div>
         <div className="flex items-center gap-3 text-zinc-400 flex-wrap justify-center">
-          <a href="tel:+911414982200" className="hover:text-white transition-colors flex items-center gap-1">
+          <a href="tel:+919145091460" className="hover:text-white transition-colors flex items-center gap-1">
             <Phone className="w-3 h-3 text-[#FF5D00]" />
-            <span>+91 141 498 2200</span>
+            <span>+91 91450 91460</span>
           </a>
           <span className="text-zinc-700 hidden sm:inline">•</span>
           <a href="mailto:support@justclickit.in" className="hover:text-white transition-colors flex items-center gap-1">

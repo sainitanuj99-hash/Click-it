@@ -96,7 +96,7 @@ async function startServer() {
     },
     '/help-support': {
       title: '24/7 Help & Support – Clickit Jaipur Helpline & Dispatch Office',
-      description: 'Contact Clickit Jaipur 24/7 support at +91 141 498 2200 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',
+      description: 'Contact Clickit Jaipur 24/7 support at +91 91450 91460 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',
       canonical: 'https://www.justclickit.in/help-support'
     },
     '/driver-faqs': {

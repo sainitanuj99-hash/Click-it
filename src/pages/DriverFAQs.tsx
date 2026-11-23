@@ -204,7 +204,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           category: 'support',
           categoryName: 'Safety & Helpline',
           q: "What should I do in case of a vehicle breakdown or emergency during a trip?",
-          a: "Your safety and the safety of the cargo are paramount. Immediately press the 'SOS / Emergency' button in the Driver App or call our 24/7 Partner Helpline at +91 1800 203 4567. Our operations team will dispatch a rescue fleet vehicle to transfer the goods seamlessly.",
+          a: "Your safety and the safety of the cargo are paramount. Immediately press the 'SOS / Emergency' button in the Driver App or call our 24/7 Partner Helpline at +91 91450 91460. Our operations team will dispatch a rescue fleet vehicle to transfer the goods seamlessly.",
         },
         {
           id: 'support-2',
@@ -351,7 +351,7 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           category: 'support',
           categoryName: 'सुरक्षा व हेल्पलाइन',
           q: "रास्ते में गाड़ी खराब होने या दुर्घटना होने पर क्या करें?",
-          a: "आपकी और माल की सुरक्षा हमारे लिए सर्वोपरि है। तुरंत ऐप का 'इमरजेंसी / SOS' बटन दबाएं या पार्टनर हेल्पलाइन 1800 203 4567 पर कॉल करें। हमारी टीम मौके पर तुरंत बैकअप वाहन भेजकर माल ट्रांसफर कराएगी।",
+          a: "आपकी और माल की सुरक्षा हमारे लिए सर्वोपरि है। तुरंत ऐप का 'इमरजेंसी / SOS' बटन दबाएं या पार्टनर हेल्पलाइन +91 91450 91460 पर कॉल करें। हमारी टीम मौके पर तुरंत बैकअप वाहन भेजकर माल ट्रांसफर कराएगी।",
         },
         {
           id: 'support-2',
@@ -536,10 +536,10 @@ export default function DriverFAQs({ onNavigate, initialLang }: DriverFAQsProps)
           </div>
 
           <a
-            href="tel:18002034567"
+            href="tel:+919145091460"
             className="w-full sm:w-auto text-center bg-[#FF5D00] hover:bg-[#E05200] text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-xl transition-all shadow-sm active:scale-95"
           >
-            1800 203 4567 (Toll Free)
+            +91 91450 91460
           </a>
         </div>
 

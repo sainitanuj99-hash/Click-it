@@ -126,7 +126,7 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
       bulletPoints: [
         "Call the driver directly via the in-app call button for an immediate status update.",
         "If delayed beyond 15 minutes, tap 'Reassign Driver' to instantly assign another nearest vehicle without extra charges.",
-        "Call our helpline on +91 141 498 2200 for priority operational escalation."
+        "Call our helpline on +91 91450 91460 for priority operational escalation."
       ]
     },
     {
@@ -446,13 +446,13 @@ export default function HelpSupport({ onNavigate }: HelpSupportProps) {
               <p className="text-[11px] text-zinc-500">Average response time: &lt; 15 mins</p>
             </div>
 
-            {/* Toll-Free Phone */}
+            {/* Phone Helpline */}
             <div className="bg-zinc-950/80 p-5 rounded-2xl border border-zinc-800/80 hover:border-orange-500/40 transition-colors space-y-2">
               <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="text-xs text-zinc-400 font-medium">Phone Helpline</div>
-              <a href="tel:+911414982200" className="block text-sm font-bold text-white hover:text-orange-400">+91 141 498 2200</a>
+              <a href="tel:+919145091460" className="block text-sm font-bold text-white hover:text-orange-400">+91 91450 91460</a>
               <p className="text-[11px] text-zinc-500">Available 24x7 for active trips</p>
             </div>
 

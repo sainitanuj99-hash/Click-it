@@ -168,7 +168,7 @@ For privacy questions, deletion help, or escalations:
 * **Address:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016
 * **Grievance Email:** [grievance@justclickit.in](mailto:grievance@justclickit.in)
 * **Customer Support:** [support@justclickit.in](mailto:support@justclickit.in)
-* **Helpline:** +91 141 498 2200
+* **Helpline:** +91 91450 91460
 
 *Pursuant to the Information Technology Act, 2000, and applicable Indian data-protection law.*
 
@@ -219,4 +219,4 @@ For privacy questions, deletion help, or escalations:
 * **पता:** B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016
 * **ईमेल:** [grievance@justclickit.in](mailto:grievance@justclickit.in)
 * **सपोर्ट ईमेल:** [support@justclickit.in](mailto:support@justclickit.in)
-* **फ़ोन:** +91 141 498 2200
+* **फ़ोन:** +91 91450 91460

@@ -277,7 +277,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200",
+            phone: "+91 91450 91460",
             statutoryNote: "Pursuant to the Information Technology Act, 2000, and applicable Indian data-protection law."
           }
         }
@@ -492,7 +492,7 @@ export default function PrivacyPolicy({ onNavigate, initialLang }: PrivacyPolicy
             address: "B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
             email: "grievance@justclickit.in",
             supportEmail: "support@justclickit.in",
-            phone: "+91 141 498 2200",
+            phone: "+91 91450 91460",
             statutoryNote: "सूचना प्रौद्योगिकी अधिनियम, 2000, और लागू भारतीय डेटा-संरक्षण कानून के अंतर्गत।"
           }
         }
