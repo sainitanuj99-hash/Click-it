@@ -8,62 +8,74 @@ export interface PageSeoConfig {
   ogImage?: string;
 }
 
+export const SITE_ORIGIN = 'https://www.justclickit.in';
+export const OG_IMAGE = `${SITE_ORIGIN}/images/og-clickit.jpg`;
+
+/** Pages that must not appear in search results. */
+export const NOINDEX_TABS = new Set(['app', 'not-found']);
+
 export const SEO_PAGES: Record<string, PageSeoConfig> = {
   home: {
     title: 'Clickit Jaipur – On-Demand Intracity Logistics & Delivery Network',
     description: 'Clickit Jaipur: Book instant bike couriers, 3-wheeler loaders, Tata Ace, and pickup trucks with real-time GPS tracking across Jaipur. 10-minute express pickup.',
     canonicalPath: '/',
     keywords: 'Clickit, Clickit Jaipur, Click It, Click It Jaipur, Clickit Logistics, Tata Ace Jaipur, mini truck rent Jaipur, intracity delivery Jaipur, bike courier Jaipur',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'about-us': {
     title: 'About Clickit Jaipur – Moving Jaipur & India Forward',
     description: 'Learn about Clickit Jaipur, our verified driver partner network, intracity freight innovation, and headquarters in Bani Park, Jaipur. On-demand logistics with zero surge.',
     canonicalPath: '/about-us',
     keywords: 'About Clickit Jaipur, Clickit Logistics founder, transport network Jaipur, delivery partners Jaipur, Bani Park logistics company',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'help-support': {
     title: '24/7 Help & Support – Clickit Jaipur Helpline & Dispatch Office',
-    description: 'Contact Clickit Jaipur 24/7 support at +91 141 498 2200 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',
+    description: 'Contact Clickit Jaipur 24/7 support at +91 91450 91460 or email support@justclickit.in. Visit our Bani Park HQ for immediate dispatch or enterprise assistance.',
     canonicalPath: '/help-support',
     keywords: 'Clickit Jaipur customer care number, Clickit helpline, Clickit Bani park address, support justclickit in, driver support Jaipur',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'driver-faqs': {
     title: 'Driver FAQs & Earnings – Join Clickit Jaipur Fleet',
     description: 'Frequently asked questions for delivery drivers and vehicle owners in Jaipur. Learn about daily payouts, commercial vehicle requirements, fuel perks, and joining Clickit.',
     canonicalPath: '/driver-faqs',
     keywords: 'Clickit driver attach Jaipur, Tata Ace attach Clickit, delivery partner earnings Jaipur, driver faqs Clickit',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'driver-agreement': {
     title: 'Driver Partner Agreement – Clickit',
     description: 'Statutory onboarding terms, delivery partner code of conduct, payment settlement cycles, and terms of service for Clickit driver partners.',
     canonicalPath: '/driver-agreement',
     keywords: 'Clickit driver partner agreement, delivery partner contract Jaipur, Clickit terms for drivers',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'terms-and-conditions': {
     title: 'Terms & Conditions – Clickit',
     description: 'Official user terms, cargo booking rules, pricing policies, cancellation terms, and dispute jurisdiction under competent courts in Jaipur, Rajasthan.',
     canonicalPath: '/terms-and-conditions',
     keywords: 'Clickit terms and conditions, terms of service Clickit Jaipur, logistics booking rules Jaipur',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   'privacy-policy': {
     title: 'Privacy Policy – Clickit Data Protection',
     description: 'Clickit privacy policy: how we collect, safeguard, and use GPS coordinates, booking records, and contact information under Indian IT Act regulations.',
     canonicalPath: '/privacy-policy',
     keywords: 'Clickit privacy policy, user data security Clickit, GPS location policy Jaipur delivery',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
   },
   app: {
     title: 'Download Clickit App – Google Play Store | Jaipur Logistics',
     description: 'Download the official Clickit app on Google Play Store (com.clickit.in). Book instant Tata Ace, 3-wheeler loaders, and bike deliveries anywhere in Jaipur with live GPS tracking.',
     canonicalPath: '/app',
     keywords: 'Clickit app download, Clickit Google Play, com.clickit.in, mini truck booking app, Porter alternative Jaipur, Clickit Android app',
-    ogImage: 'https://www.justclickit.in/favicon-512x512.png',
+    ogImage: OG_IMAGE,
+  },
+  'not-found': {
+    title: 'Page not found – Clickit',
+    description: 'This page does not exist. Go to the Clickit homepage to book bikes, 3-wheeler loaders, Tata Ace and pickups across Jaipur.',
+    canonicalPath: '/',
+    ogImage: OG_IMAGE,
   },
 };
 
@@ -72,7 +84,7 @@ export function usePageSeo(activeTab: string) {
     if (typeof document === 'undefined') return;
 
     const config = SEO_PAGES[activeTab] || SEO_PAGES.home;
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://www.justclickit.in';
+    const origin = typeof window !== 'undefined' ? window.location.origin : SITE_ORIGIN;
     const canonicalUrl = `${origin}${config.canonicalPath}`;
 
     // Update document title
@@ -120,8 +132,8 @@ export function usePageSeo(activeTab: string) {
     }
     canonicalLink.setAttribute('href', canonicalUrl);
 
-    // Update robots meta tag (noindex for standalone /app smart redirect)
-    if (activeTab === 'app') {
+    // Update robots meta tag (noindex for the /app smart redirect and the 404 page)
+    if (NOINDEX_TABS.has(activeTab)) {
       updateMeta('name', 'robots', 'noindex, nofollow');
     } else {
       updateMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');

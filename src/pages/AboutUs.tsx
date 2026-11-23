@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDocumentLang } from '../hooks/useDocumentLang';
 import { ArrowLeft, CheckCircle2, Award, Zap, Eye, ShieldCheck, HeartHandshake } from "lucide-react";
 
 interface AboutUsProps {
@@ -17,6 +18,9 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
     }
     return 'en';
   });
+
+  useDocumentLang(lang);
+
 
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
@@ -58,7 +62,7 @@ export default function AboutUs({ onNavigate, initialLang }: AboutUsProps) {
       ],
       visionTitle: "Our Vision",
       visionDesc: "To build India's most trusted, technologically advanced on-demand logistics ecosystem — empowering shippers with speed and reliability while enabling commercial fleet drivers to earn higher, dignified, and timely livelihoods with full respect.",
-      motto: "Samman Apka, Zimedari Humari",
+      motto: "Samman Apka, Zimmedari Humari",
     },
     hi: {
       badge: "ऑन-डिमांड लॉजिस्टिक्स नेटवर्क",

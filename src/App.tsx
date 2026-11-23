@@ -23,25 +23,76 @@ const AppDownload = lazy(() => import('./pages/AppDownload'));
 const EnterpriseQuoteModal = lazy(() => import('./components/EnterpriseQuoteModal').then(m => ({ default: m.EnterpriseQuoteModal })));
 const PartnerModal = lazy(() => import('./components/PartnerModal').then(m => ({ default: m.PartnerModal })));
 
-// Helper to determine initial tab from URL pathname, hash, or query param
+// Canonical page paths. Old or short URLs (e.g. /about, /terms) are 301-redirected
+// to these in vercel.json; the same aliases are accepted here for local development.
+const PATH_TO_TAB: Record<string, string> = {
+  '/': 'home',
+  '/index.html': 'home',
+  '/about-us': 'about-us',
+  '/help-support': 'help-support',
+  '/driver-faqs': 'driver-faqs',
+  '/driver-agreement': 'driver-agreement',
+  '/terms-and-conditions': 'terms-and-conditions',
+  '/privacy-policy': 'privacy-policy',
+  '/app': 'app',
+  // aliases
+  '/about': 'about-us',
+  '/help': 'help-support',
+  '/support': 'help-support',
+  '/contact': 'help-support',
+  '/terms': 'terms-and-conditions',
+  '/terms-of-service': 'terms-and-conditions',
+  '/tos': 'terms-and-conditions',
+  '/privacy': 'privacy-policy',
+  '/driver-faq': 'driver-faqs',
+  '/driver-terms': 'driver-agreement',
+  '/partner-agreement': 'driver-agreement',
+  '/driver-contract': 'driver-agreement',
+  '/download': 'app',
+};
+
+// Older links used ?page=privacy or #privacy on the homepage; keep those working.
+const getTabFromHomeHint = (hint: string): string => {
+  if (hint.includes('driver-agreement') || hint.includes('driver-terms') || hint.includes('partner-agreement') || hint.includes('driver-contract')) return 'driver-agreement';
+  if (hint.includes('driver-faq')) return 'driver-faqs';
+  if (hint.includes('terms') || hint.includes('condition') || hint.includes('tos')) return 'terms-and-conditions';
+  if (hint.includes('privacy')) return 'privacy-policy';
+  if (hint.includes('about')) return 'about-us';
+  if (hint.includes('help') || hint.includes('support')) return 'help-support';
+  if (hint === 'app' || hint.includes('download')) return 'app';
+  return 'home';
+};
+
+// Helper to determine the current tab from the URL pathname, hash, or query param
 const getTabFromLocation = (): string => {
   if (typeof window === 'undefined') return 'home';
-  const path = (window.location.pathname || '').toLowerCase().replace(/\/$/, '') || '/';
+  const path = (window.location.pathname || '').toLowerCase().replace(/\/+$/, '') || '/';
+  const tab = PATH_TO_TAB[path];
+  if (!tab) return 'not-found';
+  if (tab !== 'home') return tab;
+
   const hash = (window.location.hash || '').toLowerCase().replace(/^#\/?/, '');
   const urlParams = new URLSearchParams(window.location.search || '');
   const queryPage = (urlParams.get('page') || urlParams.get('p') || urlParams.get('tab') || '').toLowerCase();
-
-  const target = path.replace(/^\//, '') || hash || queryPage;
-
-  if (target.includes('driver-agreement') || target.includes('driver-terms') || target.includes('partner-agreement') || target.includes('driver-contract')) return 'driver-agreement';
-  if (target.includes('driver-faq') || target.includes('driver-faqs') || target.includes('driverfaq')) return 'driver-faqs';
-  if (target.includes('terms') || target.includes('condition') || target.includes('tos')) return 'terms-and-conditions';
-  if (target.includes('privacy')) return 'privacy-policy';
-  if (target.includes('about')) return 'about-us';
-  if (target.includes('help') || target.includes('support')) return 'help-support';
-  if (target.includes('app') || target.includes('download')) return 'app';
-  return 'home';
+  return getTabFromHomeHint(hash || queryPage);
 };
+
+const NotFound: React.FC<{ onHome: () => void }> = ({ onHome }) => (
+  <section className="max-w-xl mx-auto px-6 py-24 sm:py-32 text-center space-y-5">
+    <p className="text-sm font-bold tracking-widest uppercase text-[#C2410C]">Error 404</p>
+    <h1 className="text-3xl sm:text-4xl font-black text-zinc-900">This page doesn't exist</h1>
+    <p className="text-zinc-600">
+      The link may be old or mistyped. You can book a delivery or learn about Clickit from the homepage.
+    </p>
+    <a
+      href="/"
+      onClick={(e) => { e.preventDefault(); onHome(); }}
+      className="inline-block bg-[#C2410C] hover:bg-[#9A3412] text-white text-sm font-bold px-6 py-3 rounded-xl"
+    >
+      Go to homepage
+    </a>
+  </section>
+);
 
 // Helper to get URL path from tab name
 const getPathFromTab = (tab: string): string => {
@@ -207,6 +258,10 @@ export default function App() {
 
             {(activeTab === 'help-support' || activeTab === 'help') && (
               <HelpSupport onNavigate={navigateByPath} />
+            )}
+
+            {activeTab === 'not-found' && (
+              <NotFound onHome={() => setActiveTab('home')} />
             )}
           </Suspense>
         </main>

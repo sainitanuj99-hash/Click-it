@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDocumentLang } from '../hooks/useDocumentLang';
 import { 
   ArrowLeft, 
   Shield, 
@@ -32,6 +33,9 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
     }
     return 'en';
   });
+
+  useDocumentLang(lang);
+
 
   const handleLangChange = (newLang: 'en' | 'hi') => {
     setLang(newLang);
@@ -310,9 +314,9 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         "GSTIN: 08AARCP1294R1ZD",
         "CIN: U52290RJ2026PTC114862",
         "Registered Office: B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
-        "Driver Support Email: partners@clickitlogistics.in",
-        "Driver Support Phone: +91 1800 203 4567",
-        "Grievance Officer Email: grievance@clickitlogistics.in",
+        "Driver Support Email: support@justclickit.in",
+        "Driver Support Phone: +91 91450 91460",
+        "Grievance Officer Email: grievance@justclickit.in",
         "Effective Date: 15th September 2026",
         "Version: 1.0"
       ]
@@ -577,9 +581,9 @@ export default function DriverAgreement({ onNavigate, initialLang }: DriverAgree
         "जीएसटीआईएन (GSTIN): 08AARCP1294R1ZD",
         "सीआईएन (CIN): U52290RJ2026PTC114862",
         "पंजीकृत कार्यालय (Registered Office): B 18, Shiv Marg, opp. DHARMANS SANSTHAN, Banipark, Kanti Nagar, Bani Park, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302016",
-        "ड्राइवर सपोर्ट ईमेल: partners@clickitlogistics.in",
-        "ड्राइवर सपोर्ट फोन: +91 1800 203 4567",
-        "शिकायत निवारण अधिकारी ईमेल: grievance@clickitlogistics.in",
+        "ड्राइवर सपोर्ट ईमेल: support@justclickit.in",
+        "ड्राइवर सपोर्ट फोन: +91 91450 91460",
+        "शिकायत निवारण अधिकारी ईमेल: grievance@justclickit.in",
         "प्रभावी तिथि: 15 सितम्बर 2026",
         "संस्करण (Version): 1.0"
       ]
